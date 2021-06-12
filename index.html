@@ -53,7 +53,9 @@
                                 }
                             }).inject(widget.body);
 
-                            var table = widget.createElement('table').inject(widget.body)
+                            var table = widget.createElement('table',{
+                                border:"1"
+                            }).inject(widget.body)
                             var tr1= widget.createElement('tr').inject(table)
                             var tr2= widget.createElement('tr').inject(table)
                             
@@ -69,6 +71,14 @@
                                 html: 'Série'
                             }).inject(tr1)
 
+                            var td1 = widget.createElement('td').inject(tr2)
+                            var td2 = widget.createElement('td').inject(tr2)
+                            var td3 = widget.createElement('td').inject(tr2)
+
+
+                            var input1 = widget.createElement('input').inject(td1);
+                            var input2 = widget.createElement('input').inject(td2);
+                            var input3 = widget.createElement('input').inject(td3);
 
 
 
