@@ -55,7 +55,7 @@
 
                             var table = widget.createElement('table', {
                                 border: "1",
-                                id:'kids'
+                                id:''
                             }).inject(widget.body)
                             var tr1 = widget.createElement('tr').inject(table)
                             var tr2 = widget.createElement('tr').inject(table)
@@ -85,10 +85,10 @@
                             
                             
                             
-                            function removeKid(element) {
-                                document.getElementById('kids').removeChild(element.parentNode);
-                                i--;
-                            }
+                            // function removeKid(element) {
+                            //     document.getElementById('kids').removeChild(element.parentNode);
+                            //     i--;
+                            // }
 
                             var input1 = widget.createElement('input').inject(td1);
                             var input2 = widget.createElement('input').inject(td2);
