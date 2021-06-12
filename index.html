@@ -80,10 +80,25 @@
                             var input1 = widget.createElement('input').inject(td1);
                             var input2 = widget.createElement('input').inject(td2);
                             var input3 = widget.createElement('input').inject(td3);
+
+
+                            function addKid() {
+                                if (i < 5) {
+                                    var newRow = document.createElement('tr');
+
+                                    newRow.innerHTML = '<td> <input type="text" name="Designation_' + i + '" ><td> <input type="text" name="Serie_' + i + '" ></td><td><input type="text" name="Quantite_' + i + '" ></td><td><input type="button" id="add_kid()" onClick="addKid()" value="+" /><input type="button" value="-" onclick="removeKid(this.parentNode)"></td>';
+
+                                    document.getElementById('kids').appendChild(newRow);
+                                    i++;
+                                }
+                            }
+
+
                             var addBtn = new UWA.Controls.Input.Button({
                                 value: "+",
                                 events: {
-                                    onClick: function () { console.log('Epstein') },
+                                    onClick: addKid(),
+                                    id:"add_kid()"
                                 }
                             }).inject(td4);
 
