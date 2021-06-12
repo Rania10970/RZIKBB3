@@ -52,6 +52,28 @@
                                     click: function () { console.log(user) }
                                 }
                             }).inject(widget.body);
+
+                            var table = widget.createElement('table').inject(widget.body)
+                            var tr1= widget.createElement('tr').inject(table)
+                            var tr2= widget.createElement('tr').inject(table)
+                            
+                            var th1 = widget.createElement('th',{
+                                html: 'Désignation'
+                            }).inject(tr1)
+
+                            var th2 = widget.createElement('th',{
+                                html: 'Quantité'
+                            }).inject(tr1)
+
+                            var th3 = widget.createElement('th',{
+                                html: 'Série'
+                            }).inject(tr1)
+
+
+
+
+
+
                         },
 						
                             onRefresh: function () {
