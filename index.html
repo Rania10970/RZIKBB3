@@ -25,7 +25,7 @@
                 [
                     'DS/PlatformAPI/PlatformAPI',
                 ],
-                function ( PlatformAPI) {
+                function (PlatformAPI) {
 
                     var platformId;
                     var theConnectedUser;
@@ -43,7 +43,7 @@
 
                     var myWidget = {
                         onLoad: function () {
-
+                            var i = 0;
                             // Here we update the content of the widget body.
                             widget.setBody('Hello World!');
                             widget.createElement('a', {
@@ -53,37 +53,63 @@
                                 }
                             }).inject(widget.body);
 
-                            var table = widget.createElement('table',{
-                                border:"1"
+                            var table = widget.createElement('table', {
+                                border: "1",
+                                id:'kids'
                             }).inject(widget.body)
-                            var tr1= widget.createElement('tr').inject(table)
-                            var tr2= widget.createElement('tr').inject(table)
-                            
-                            var th1 = widget.createElement('th',{
+                            var tr1 = widget.createElement('tr').inject(table)
+                            var tr2 = widget.createElement('tr').inject(table)
+
+                            var th1 = widget.createElement('th', {
                                 html: 'Désignation'
                             }).inject(tr1)
 
-                            var th2 = widget.createElement('th',{
+                            var th2 = widget.createElement('th', {
                                 html: 'Quantité'
                             }).inject(tr1)
 
-                            var th3 = widget.createElement('th',{
+                            var th3 = widget.createElement('th', {
                                 html: 'Série'
                             }).inject(tr1)
 
-                            var td1 = widget.createElement('td').inject(tr2)
-                            var td2 = widget.createElement('td').inject(tr2)
-                            var td3 = widget.createElement('td').inject(tr2)
+                            var td1 = widget.createElement('td', {
+                                name="Designation"
+                            }).inject(tr2)
+                            var td2 = widget.createElement('td', {
+                                name="Designation"
+                            }).inject(tr2)
+                            var td3 = widget.createElement('td', {
+                                name="Designation"
+                            }).inject(tr2)
                             var td4 = widget.createElement('td').inject(tr2)
-
+                            
+                            
+                            
+                            function removeKid(element) {
+                                document.getElementById('kids').removeChild(element.parentNode);
+                                i--;
+                            }
 
                             var input1 = widget.createElement('input').inject(td1);
                             var input2 = widget.createElement('input').inject(td2);
                             var input3 = widget.createElement('input').inject(td3);
+
+
+
                             var addBtn = new UWA.Controls.Input.Button({
                                 value: "+",
                                 events: {
-                                    onClick: function () { console.log('Epstein') }
+                                    onClick: function addKid() {
+                                        if (i < 5) {
+                                            var newRow = document.createElement('tr');
+
+                                            newRow.innerHTML = '<td> <input type="text" name="Designation_' + i + '" ><td> <input type="text" name="Serie_' + i + '" ></td><td><input type="text" name="Quantite_' + i + '" ></td><td><input type="button" id="add_kid()" onClick="addKid()" value="+" /><input type="button" value="-" onclick="removeKid(this.parentNode)"></td>';
+
+                                            document.getElementById('kids').appendChild(newRow);
+                                            i++;
+                                        }
+                                    },
+                                    id: "add_kid()"
                                 }
                             }).inject(td4);
 
@@ -94,8 +120,8 @@
 
 
                         },
-						
-                            onRefresh: function () {
+
+                        onRefresh: function () {
                             ExpandController.onRefresh(widget);
                         },
                         onResize: function () {
