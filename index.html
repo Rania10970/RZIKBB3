@@ -54,7 +54,8 @@
                             }).inject(widget.body);
 
                             var table = widget.createElement('table',{
-                                border:"1"
+                                border:"1",
+                                id:'kids'
                             }).inject(widget.body)
                             var tr1= widget.createElement('tr').inject(table)
                             var tr2= widget.createElement('tr').inject(table)
@@ -82,7 +83,7 @@
                             var input3 = widget.createElement('input').inject(td3);
 
 
-                            function addKid() {
+                            var add = function addKid() {
                                 if (i < 5) {
                                     var newRow = document.createElement('tr');
 
@@ -97,9 +98,9 @@
                             var addBtn = new UWA.Controls.Input.Button({
                                 value: "+",
                                 events: {
-                                    onClick: addKid(),
-                                    
-                                }
+                                    onClick: add,   
+                                },
+                                id:'add_kid()'
                             }).inject(td4);
 
 
