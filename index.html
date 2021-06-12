@@ -59,7 +59,7 @@
                             }).inject(widget.body)
                             var tr1= widget.createElement('tr').inject(table)
                             var tr2= widget.createElement('tr').inject(table)
-                            
+                            var i = 0;
                             var th1 = widget.createElement('th',{
                                 html: 'Désignation'
                             }).inject(tr1)
@@ -84,7 +84,29 @@
 
 
                             var add = function addKid() {
-                                console.log('amigos')
+                                if (i < 5) {
+                                    var newRow = widget.createElement('tr').inject(table);
+                                    
+                                    var addtd1 = widget.createElement('td').inject(newRow)
+                                    var addtd2 = widget.createElement('td').inject(newRow)
+                                    var addtd3 = widget.createElement('td').inject(newRow)
+                                    var addtd4 = widget.createElement('td').inject(newRow) 
+
+
+                                    var add1 = widget.createElement('input').inject(addtd1);
+                                    var add2= widget.createElement('input').inject(addtd2);
+                                    var add3 = widget.createElement('input').inject(addtd3);
+                                    var add4 = new UWA.Controls.Input.Button({
+                                        value: "+",
+                                        events: {
+                                            onClick: add,
+                                        },
+                                        id: 'add_kid()'
+                                    }).inject(addtd4);
+
+                                    document.getElementById('kids').appendChild(newRow);
+                                    i++;
+                                }
                             }
 
 
