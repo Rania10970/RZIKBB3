@@ -104,10 +104,11 @@
                                     var add1 = widget.createElement('input').inject(addtd1);
                                     var add2= widget.createElement('input').inject(addtd2);
                                     var add3 = widget.createElement('input').inject(addtd3);
+                                    
                                     var add4 = new UWA.Controls.Input.Button({
                                         value: "-",
                                         events: {
-                                            onClick: add,
+                                            onClick: function(e){console.log(e)},
                                         },
                                         id: 'add_kid()'
                                     }).inject(addtd4);
@@ -126,15 +127,8 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
-                            var addBtn = new UWA.Controls.Input.Button({
-                                value: "-",
-                                events: {
-                                    onClick: function(e){console.log(e)}    
-                                },
-                                id:'remove_kid()'
-                            }).inject(td4);
-
                             
+
                             
                             function removeKid(id) {
                                 var trToRemove = document.getElementById(id);
