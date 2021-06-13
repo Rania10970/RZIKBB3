@@ -93,7 +93,10 @@
                             var add = function addKid() {
                                 console.log("in ADD ================")
                                 if (i < 5) {
-                                    var newRow = widget.createElement('tr').inject(table);
+                                    i++;
+                                    var newRow = widget.createElement('tr',{
+                                        id:'tr_'+i
+                                    }).inject(table);
                                     
                                     var addtd1 = widget.createElement('td').inject(newRow)
                                     var addtd2 = widget.createElement('td').inject(newRow)
@@ -108,14 +111,18 @@
                                     var add4 = new UWA.Controls.Input.Button({
                                         value: "-",
                                         attributes: {
-                                            id: 'someID'
+                                            id: 'susBtn_'+i
                                         },
                                         events: {
-                                            onClick: function(e){console.log(e.target.id)},
+                                            onClick: function(e){
+
+                                                widget.getElementById(e.target.id.replace('susBtn','tr')).remove()
+                                                i--
+
+                                            },
                                         },
                                         
                                     }).inject(addtd4);
-                                    i++;
 
                                   
                                 }
