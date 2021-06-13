@@ -24,9 +24,8 @@
             require(
                 [
                     'DS/PlatformAPI/PlatformAPI',
-                    'DS/Controls/Button'
                 ],
-                function ( PlatformAPI,WUXButton) {
+                function ( PlatformAPI) {
 
                     var platformId;
                     var theConnectedUser;
@@ -106,27 +105,15 @@
                                     var add2= widget.createElement('input').inject(addtd2);
                                     var add3 = widget.createElement('input').inject(addtd3);
                                     
-                                    // var add4 = new UWA.Controls.Input.Button({
-                                    //     value: "-",
-                                    //     events: {
-                                    //         onClick: function(e){console.log(e)},
-                                    //     },
-                                    //     id: 'add_kid()'
-                                    // }).inject(addtd4);
-
-                                    var wux = new WUXButton({
-                                        label: '-',
+                                    var add4 = new UWA.Controls.Input.Button({
+                                        value: "-",
+                                        id: 'add_kid',
+                                        test:'ha',
+                                        events: {
+                                            onClick: function(e){console.log(e)},
+                                        },
                                         
-                                        onClick: function (e) {
-                                            console.log(e)
-                                        }
-                                    }).inject(addtd4)
-
-
-
-
-
-
+                                    }).inject(addtd4);
                                     i++;
 
                                   
@@ -141,8 +128,6 @@
                                 },
                                 id:'add_kid()'
                             }).inject(th4);
-
-
 
                             
 
