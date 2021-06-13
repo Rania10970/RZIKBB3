@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
@@ -22,7 +23,7 @@
             'use strict';
             require(
                 [
-                    'DS/PlatformAPI/PlatformAPI', 
+                    'DS/PlatformAPI/PlatformAPI',
                 ],
                 function ( PlatformAPI) {
 
@@ -93,14 +94,10 @@
                             var input2 = widget.createElement('input').inject(td2);
                             var input3 = widget.createElement('input').inject(td3);
 
-                            var 
-
 
                             var add = function addKid() {
                                 if (i < 5) {
-                                    var newRow = widget.createElement('tr'{
-                                        id:'tr_'+i
-                                    }).inject(table);
+                                    var newRow = widget.createElement('tr').inject(table);
                                     
                                     var addtd1 = widget.createElement('td').inject(newRow)
                                     var addtd2 = widget.createElement('td').inject(newRow)
@@ -114,12 +111,12 @@
                                     var del = new UWA.Controls.Input.Button({
                                         value: "-",
                                         events: {
-                                            onClick: document.getElementById('tr_'+i),
+                                            onClick: function(){console.log('haha')},
                                         },
                                         id: 'add_kid()'
                                     }).inject(addtd4);
 
-                                    document.getElementById('kids').appendChild(newRow);
+                                    widget.getElementById('kids').appendChild(newRow);
                                     i++;
                                 }
                             }
