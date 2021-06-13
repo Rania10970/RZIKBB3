@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
@@ -22,7 +23,7 @@
             'use strict';
             require(
                 [
-                    'DS/PlatformAPI/PlatformAPI', 
+                    'DS/PlatformAPI/PlatformAPI',
                 ],
                 function ( PlatformAPI) {
 
@@ -93,7 +94,7 @@
                             var input2 = widget.createElement('input').inject(td2);
                             var input3 = widget.createElement('input').inject(td3);
 
-                            var 
+                            
 
 
                             var add = function addKid() {
@@ -120,12 +121,10 @@
                                     }).inject(addtd4);
 
                                     document.getElementById('kids').appendChild(newRow);
-                                    i++;
+                                    i--;
                                 }
                             }
 
-
-                           
 
 
 
