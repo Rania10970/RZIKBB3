@@ -107,8 +107,9 @@
                                     
                                     var add4 = new UWA.Controls.Input.Button({
                                         value: "-",
-                                        id: 'add_kid',
-                                        test:'ha',
+                                        attributes: {
+                                            id: 'someID'
+                                        },
                                         events: {
                                             onClick: function(e){console.log(e)},
                                         },
