@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
+<!DOCTYPE html>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
@@ -23,7 +22,7 @@
             'use strict';
             require(
                 [
-                    'DS/PlatformAPI/PlatformAPI',
+                    'DS/PlatformAPI/PlatformAPI', 
                 ],
                 function ( PlatformAPI) {
 
@@ -72,6 +71,18 @@
                                 html: 'Série'
                             }).inject(tr1)
 
+                            var th4 = widget.createElement('th').inject(tr1)
+
+                            var addBtn = new UWA.Controls.Input.Button({
+                                value: "+",
+                                events: {
+                                    onClick: add,   
+                                },
+                                id:'add_kid()'
+                            }).inject(th4);
+
+
+
                             var td1 = widget.createElement('td').inject(tr2)
                             var td2 = widget.createElement('td').inject(tr2)
                             var td3 = widget.createElement('td').inject(tr2)
@@ -82,10 +93,14 @@
                             var input2 = widget.createElement('input').inject(td2);
                             var input3 = widget.createElement('input').inject(td3);
 
+                            var 
+
 
                             var add = function addKid() {
                                 if (i < 5) {
-                                    var newRow = widget.createElement('tr').inject(table);
+                                    var newRow = widget.createElement('tr'{
+                                        id:'tr_'+i
+                                    }).inject(table);
                                     
                                     var addtd1 = widget.createElement('td').inject(newRow)
                                     var addtd2 = widget.createElement('td').inject(newRow)
@@ -96,10 +111,10 @@
                                     var add1 = widget.createElement('input').inject(addtd1);
                                     var add2= widget.createElement('input').inject(addtd2);
                                     var add3 = widget.createElement('input').inject(addtd3);
-                                    var add4 = new UWA.Controls.Input.Button({
-                                        value: "+",
+                                    var del = new UWA.Controls.Input.Button({
+                                        value: "-",
                                         events: {
-                                            onClick: add,
+                                            onClick: document.getElementById('tr_'+i),
                                         },
                                         id: 'add_kid()'
                                     }).inject(addtd4);
@@ -110,13 +125,7 @@
                             }
 
 
-                            var addBtn = new UWA.Controls.Input.Button({
-                                value: "+",
-                                events: {
-                                    onClick: add,   
-                                },
-                                id:'add_kid()'
-                            }).inject(td4);
+                           
 
 
 
