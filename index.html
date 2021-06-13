@@ -84,8 +84,9 @@
 
 
                             var add = function addKid() {
+                                console.log("in ADD ================")
                                 if (i < 5) {
-                                    var newRow = widget.createElement('tr').inject();
+                                    var newRow = widget.createElement('tr').inject(table);
                                     
                                     var addtd1 = widget.createElement('td').inject(newRow)
                                     var addtd2 = widget.createElement('td').inject(newRow)
@@ -103,7 +104,6 @@
                                         },
                                         id: 'add_kid()'
                                     }).inject(addtd4);
-                                    document.getElementById('kids').appendChild(newRow);
                                     i++;
                                 }
                             }
@@ -125,12 +125,7 @@
 
                         },
 						
-                            onRefresh: function () {
-                            ExpandController.onRefresh(widget);
-                        },
-                        onResize: function () {
-                            ExpandController.onResize(widget);
-                        }
+                        
                     };
                     console.log("9GAG");
 
