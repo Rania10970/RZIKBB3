@@ -72,15 +72,10 @@
                                 html: 'Série'
                             }).inject(tr1)
 
-                            var th4 = new UWA.Controls.Input.Button({
-                                        value: "-",
-                                        events: {
-                                            onClick: add,
-                                        },
-                                        id: 'add_kid()'
-                                    }).inject(tr1);
-                                    i++;
+                            var th4 = widget.createElement('th',{
 
+
+                            }).inject(tr1)
                            
 
                             var i = 0;
@@ -129,7 +124,7 @@
                                     onClick: add,   
                                 },
                                 id:'add_kid()'
-                            }).inject(td4);
+                            }).inject(th4);
 
 
 
