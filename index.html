@@ -116,7 +116,7 @@
                                         events: {
                                             onClick: function(e){
 
-                                                document.getElementById(e.target.id.replace('susBtn','tr')).remove()
+                                                e.target.getParent().remove()
                                                 i--
 
                                             },
