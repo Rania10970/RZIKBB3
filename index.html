@@ -71,6 +71,18 @@
                             var th3 = widget.createElement('th',{
                                 html: 'Série'
                             }).inject(tr1)
+
+                            var th4 = new UWA.Controls.Input.Button({
+                                        value: "-",
+                                        events: {
+                                            onClick: add,
+                                        },
+                                        id: 'add_kid()'
+                                    }).inject(addtd4);
+                                    i++;
+
+                           
+
                             var i = 0;
                             var td1 = widget.createElement('td').inject(tr2)
                             var td2 = widget.createElement('td').inject(tr2)
@@ -98,7 +110,7 @@
                                     var add2= widget.createElement('input').inject(addtd2);
                                     var add3 = widget.createElement('input').inject(addtd3);
                                     var add4 = new UWA.Controls.Input.Button({
-                                        value: "+",
+                                        value: "-",
                                         events: {
                                             onClick: add,
                                         },
@@ -106,14 +118,7 @@
                                     }).inject(addtd4);
                                     i++;
 
-                                    var add5 = new UWA.Controls.Input.Button({
-                                        value: "+",
-                                        events: {
-                                            onClick: add,
-                                        },
-                                        id: 'add_kid()'
-                                    }).inject(addtd4);
-                                    i++;
+                                  
                                 }
                             }
 
