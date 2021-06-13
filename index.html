@@ -93,17 +93,17 @@
                             var add = function addKid() {
                                 console.log("in ADD ================")
                                 if (i < 5) {
-                                    var newRow = widget.removeElement('tr').inject(table);
+                                    var newRow = widget.createElement('tr').inject(table);
                                     
-                                    var addtd1 = widget.removeElement('td').inject(newRow)
-                                    var addtd2 = widget.removeElement('td').inject(newRow)
-                                    var addtd3 = widget.removeElement('td').inject(newRow)
-                                    var addtd4 = widget.removeElement('td').inject(newRow) 
+                                    var addtd1 = widget.createElement('td').inject(newRow)
+                                    var addtd2 = widget.createElement('td').inject(newRow)
+                                    var addtd3 = widget.createElement('td').inject(newRow)
+                                    var addtd4 = widget.createElement('td').inject(newRow) 
 
 
-                                    var add1 = widget.removeElement('input').inject(addtd1);
-                                    var add2= widget.removeElement('input').inject(addtd2);
-                                    var add3 = widget.removeElement('input').inject(addtd3);
+                                    var add1 = widget.createElement('input').inject(addtd1);
+                                    var add2= widget.createElement('input').inject(addtd2);
+                                    var add3 = widget.createElement('input').inject(addtd3);
                                     var add4 = new UWA.Controls.Input.Button({
                                         value: "-",
                                         events: {
@@ -125,6 +125,42 @@
                                 },
                                 id:'add_kid()'
                             }).inject(th4);
+
+                            var addBtn = new UWA.Controls.Input.Button({
+                                value: "-",
+                                events: {
+                                    onClick: remove,   
+                                },
+                                id:'remove_kid()'
+                            }).inject(td4);
+
+                            var remove = function removeKid() {
+                                console.log("in ADD ================")
+                                if (i < 5) {
+                                    var newRow = widget.removeElement('tr').inject(table);
+                                    
+                                    var addtd1 = widget.removeElement('td').inject(newRow)
+                                    var addtd2 = widget.removeElement('td').inject(newRow)
+                                    var addtd3 = widget.removeElement('td').inject(newRow)
+                                    var addtd4 = widget.removeElement('td').inject(newRow) 
+
+
+                                    var add1 = widget.removeElement('input').inject(addtd1);
+                                    var add2= widget.removeElement('input').inject(addtd2);
+                                    var add3 = widget.removeElement('input').inject(addtd3);
+                                    var add4 = new UWA.Controls.Input.Button({
+                                        value: "-",
+                                        events: {
+                                            onClick: add,
+                                        },
+                                        id: 'add_kid()'
+                                    }).inject(addtd4);
+                                    i--;
+
+                                  
+                                }
+                            }
+
 
 
 
