@@ -115,8 +115,8 @@
                                         },
                                         events: {
                                             onClick: function(e){
-
-                                                e.target.getParent().remove()
+                                                console.log(e.target.getParents())
+                                                e.target.getParent().getParent().remove()
                                                 i--
 
                                             },
