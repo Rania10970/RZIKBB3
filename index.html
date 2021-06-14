@@ -78,17 +78,7 @@
 
                             }).inject(tr1)
 
-                            var th1 = widget.createElement('th',{
-                                var:sendBtn = new UWA.Controls.Input.Button({
-                                value: "Send",
-                                events: {
-                                    onClick: send,   
-                                },
-                                id:'submit()'
-                            }).inject(th3)
-
-                              
-                            }).inject(tr3)
+                         
                            
 
                             var i = 0;
@@ -150,7 +140,14 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
-                          
+                            var sendBtn = new UWA.Controls.Input.Button({
+                                value: "Send",
+                                events: {
+                                    onClick: send,   
+                                },
+                                id:'submit()'
+                            }).inject(tr3);
+
                             
 
                           
