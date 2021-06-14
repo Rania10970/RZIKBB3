@@ -144,16 +144,21 @@
                             }).inject(th4);
 
                             var sendBtn = new UWA.Controls.Input.Button({
-                                value: "send",
-                                events: {
-                                    onClick: send,   
-                                },
-                                id:'submit()'
-                            }).inject(th5);
+                                        value: "send",
+                                        attributes: {
+                                            id: 'submit'
+                                        },
+                                        events: {
+                                            onClick: function(){
+                                                console.log("submit button ")
+                                                
 
-                            var send = function submit() {
-                                console.log("in ADD ================")}.inject(addtd5);
-
+                                            },
+                        
+                                        },
+                                        
+                                    }).inject(th5);
+                            
                             
 
                          
