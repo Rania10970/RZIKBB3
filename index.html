@@ -165,11 +165,28 @@
                                     }).inject(th5);
 
                             
+                                    var Input = UWA.Controls.Abstract.extend({
+                                    name: 'uwa-input',
+
+                                    options: {
+                                        className: '',
+                                    },
+
+                                    buildSkeleton: function () {
+                                        this.elements.container = UWA.createElement('div', { 'class': this.getClassNames() });
+                                        this.elements.content = UWA.createElement('div', { 'class': this.getClassNames('-content') });
+                                    }
+                                    });
+
                                     var Radio = Input.extend({
-                                         name: 'uwa-inputradio'
-                                                            }).inject(th6);
-                            
-                            
+                                    name: 'uwa-inputradio'
+                                    });
+
+                                    new Radio({
+                                        className: 'toto black'
+                                    }).inject(th6);
+                                                                
+                                                                
 
                          
 
