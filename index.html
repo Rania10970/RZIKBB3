@@ -74,13 +74,20 @@
                                 html: 'Série'
                             }).inject(tr1)
 
-                           // var th4 = widget.createElement('th',{
+                           var th4 = widget.createElement('th',{
 
-
-                            //}).inject(tr1)
+                            }).inject(tr1)
 
                             var th1 = widget.createElement('th',{
-                                html: 'Désignation'
+                                var:sendBtn = new UWA.Controls.Input.Button({
+                                value: "Send",
+                                events: {
+                                    onClick: send,   
+                                },
+                                id:'submit()'
+                            }).inject(th3)
+
+                              
                             }).inject(tr3)
                            
 
@@ -143,6 +150,7 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
+                          
                             
 
                           
