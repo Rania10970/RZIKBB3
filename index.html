@@ -170,7 +170,11 @@
 
                                     options: {
                                         className: '',
-                                    },
+                                    }, 
+                                    buildSkeleton: function () {
+                                    this.elements.container = UWA.createElement('div', { 'class': this.getClassNames() });
+                                    this.elements.content = UWA.createElement('div', { 'class': this.getClassNames('-content') });
+                                     }
 
                                     
                                     });
