@@ -78,7 +78,7 @@
                             }).inject(tr1)
                             
                             var th5 = widget.createElement('th',{
-                                html: 'Rania'
+                             
 
                             }).inject(tr1)
                            
@@ -143,13 +143,17 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
-                            
+                            var sendBtn = new UWA.Controls.Input.Button({
+                                value: "send",
+                                events: {
+                                    onClick: add,   
+                                },
+                                id:'submit()'
+                            }).inject(th5);
 
                             
-                            function removeKid(id) {
-                                var trToRemove = document.getElementById(id);
-                                trToRemove.remove();
-                            }
+
+                         
 
 
 
