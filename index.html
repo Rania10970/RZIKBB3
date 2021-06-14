@@ -85,20 +85,6 @@
 
                             }).inject(tr1)
 
-                            var sendBtn = new UWA.Controls.Input.Button({
-                                value: "Send",
-                                events: {
-                                    onClick: send,   
-                                },
-                                id:'submit()'
-                            }).inject(th5);
-
-                            var send = function submit() {
-                                console.log("in submit================") }
-
-                         
-                           
-
                             var i = 0;
                             var td1 = widget.createElement('td').inject(tr2)
                             var td2 = widget.createElement('td').inject(tr2)
@@ -157,6 +143,18 @@
                                 },
                                 id:'add_kid()'
                             }).inject(th4);
+
+
+                            var sendBtn = new UWA.Controls.Input.Button({
+                                value: "Send",
+                                events: {
+                                    onClick: send,   
+                                },
+                                id:'submit()'
+                            }).inject(th5);
+
+                            var send = function submit() {
+                                console.log("in submit================") }
 
                           
                             
