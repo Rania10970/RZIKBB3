@@ -49,8 +49,8 @@
                             widget.createElement('a', {
                                 text: 'My link',
                                 events: {
-                                   // click: function () { console.log(user) }
-                               }
+                                    click: function () { console.log(user) }
+                                }
                             }).inject(widget.body);
 
                             var table = widget.createElement('table',{
@@ -59,15 +59,10 @@
                             }).inject(widget.body)
                             var tr1= widget.createElement('tr').inject(table)
                             var tr2= widget.createElement('tr').inject(table)
-                            var tr3=widget.createElement('tr').inject(table)
-
-                           
-
                             
                             var th1 = widget.createElement('th',{
                                 html: 'Désignation'
                             }).inject(tr1)
-
 
                             var th2 = widget.createElement('th',{
                                 html: 'Quantité'
@@ -77,11 +72,11 @@
                                 html: 'Série'
                             }).inject(tr1)
 
-                           var th4 = widget.createElement('th',{
+                            var th4 = widget.createElement('th',{
+
 
                             }).inject(tr1)
-
-                  
+                           
 
                             var i = 0;
                             var td1 = widget.createElement('td').inject(tr2)
@@ -125,6 +120,7 @@
                                                 i--
 
                                             },
+                        
                                         },
                                         
                                     }).inject(addtd4);
@@ -142,24 +138,14 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
-
-                           // var sendBtn = new UWA.Controls.Input.Button({
-                              //  value: "Send",
-                              //  events: {
-                                //    onClick: send,   
-                              //  },
-                             //   id:'submit()'
-                          //  }).inject(th5);
-
-                           // var send = function submit() {
-                              //  console.log("in submit================") }
-
-                          
                             
 
-                          
+                            
+                            function removeKid(id) {
+                                var trToRemove = document.getElementById(id);
+                                trToRemove.remove();
+                            }
 
-                           
 
 
 
