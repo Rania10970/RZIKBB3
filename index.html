@@ -172,18 +172,11 @@
                                         className: '',
                                     },
 
-                                    buildSkeleton: function () {
-                                        this.elements.container = UWA.createElement('div', { 'class': this.getClassNames() });
-                                        this.elements.content = UWA.createElement('div', { 'class': this.getClassNames('-content') });
-                                    }
+                                    
                                     });
 
                                     var Radio = Input.extend({
                                     name: 'uwa-inputradio'
-                                    });
-
-                                    new Radio({
-                                        className: 'toto black'
                                     }).inject(th6);
                                                                 
                                                                 
