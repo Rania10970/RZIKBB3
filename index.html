@@ -45,13 +45,13 @@
                         onLoad: function () {
 
                             // Here we update the content of the widget body.
-                            widget.setBody('Hello World!');
-                            widget.createElement('a', {
-                                text: 'My link',
-                                events: {
-                                    click: function () { console.log(user) }
-                                }
-                            }).inject(widget.body);
+                           // widget.setBody('Hello World!');
+                            //widget.createElement('a', {
+                               // text: 'My link',
+                               // events: {
+                                   // click: function () { console.log(user) }
+                             //   }
+                           // }).inject(widget.body);
 
                             var table = widget.createElement('table',{
                                 border:"1",
@@ -61,13 +61,7 @@
                             var tr2= widget.createElement('tr').inject(table)
                             var tr3=widget.createElement('tr').inject(table)
 
-                            var sendBtn = new UWA.Controls.Input.Button('th',{
-                                value: "Send",
-                                events: {
-                                    onClick: send,   
-                                },
-                                id:'submit()'
-                            }).inject(tr3);
+                           
 
                             
                             var th1 = widget.createElement('th',{
@@ -87,7 +81,17 @@
 
                             }).inject(tr1)
 
-                            
+                            var th5 = widget.createElement('th',{
+
+                            }).inject(tr1)
+
+                            var sendBtn = new UWA.Controls.Input.Button({
+                                value: "Send",
+                                events: {
+                                    onClick: send,   
+                                },
+                                id:'submit()'
+                            }).inject(th5);
 
                          
                            
