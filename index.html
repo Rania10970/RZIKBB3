@@ -174,16 +174,16 @@
                                         value: "Value1",
                                         options: [
                                             {
-                                                label: "Source Tenant",
+                                                label: "Tenant 1",
                                                 value: "Value1"
                                             },
                                             {
-                                                label: "Target Tenant",
+                                                label: "Tenant 2",
                                                 value: "Value2"
                                             },
                                            
                                         ],
-                                        value: " "
+                                        value: "-Other- "
                                     }
                                     ],
                                   //  events: {
@@ -191,9 +191,10 @@
 
                                       //  },
 
-                                       // onSubmit: function(event, values) {
+                                        onSubmit: function(event, values) {
+                                            cosole.log("send evnet")
 
-                                       // }
+                                        }
                                     //}
                                     }) .inject(th6);
                                                                         
