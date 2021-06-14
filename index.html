@@ -60,6 +60,15 @@
                             var tr1= widget.createElement('tr').inject(table)
                             var tr2= widget.createElement('tr').inject(table)
                             var tr3=widget.createElement('tr').inject(table)
+
+                            var sendBtn = new UWA.Controls.Input.Button('th',{
+                                value: "Send",
+                                events: {
+                                    onClick: send,   
+                                },
+                                id:'submit()'
+                            }).inject(tr3);
+
                             
                             var th1 = widget.createElement('th',{
                                 html: 'Désignation'
@@ -142,14 +151,7 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
-                            var sendBtn = new UWA.Controls.Input.Button({
-                                value: "Send",
-                                events: {
-                                    onClick: send,   
-                                },
-                                id:'submit()'
-                            }).inject(tr3);
-
+                          
                             
 
                           
