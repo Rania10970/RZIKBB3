@@ -59,10 +59,12 @@
                             }).inject(widget.body)
                             var tr1= widget.createElement('tr').inject(table)
                             var tr2= widget.createElement('tr').inject(table)
+                            var tr5=widget.createElement('tr').inject(table)
                             
                             var th1 = widget.createElement('th',{
                                 html: 'Désignation'
                             }).inject(tr1)
+
 
                             var th2 = widget.createElement('th',{
                                 html: 'Quantité'
@@ -76,6 +78,10 @@
 
 
                             }).inject(tr1)
+
+                            var th1 = widget.createElement('th',{
+                                html: 'Désignation'
+                            }).inject(tr5)
                            
 
                             var i = 0;
@@ -137,14 +143,9 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
-                            
+                          
 
-                            
-                            function removeKid(id) {
-                                var trToRemove = document.getElementById(id);
-                                trToRemove.remove();
-                            }
-
+                           
 
 
 
