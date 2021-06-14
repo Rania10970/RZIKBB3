@@ -166,71 +166,34 @@
 
                                     var prefs = new UWA.Controls.Form({
                                     fields: [
-                                    {
-                                        type: "text",
-                                        name: "my_text",
-                                        label: "My text pref",
-                                        value: ""
-                                    },
-                                    {
-                                        type: "password",
-                                        name: "my_password",
-                                        label: "My password pref",
-                                        value: ""
-                                    },
-                                    {
-                                        type: "boolean",
-                                        name: "my_checkbox",
-                                        label: "My checkbox pref",
-                                        value: "false"
-                                    },
-                                    {
-                                        type: "hidden",
-                                        name: "my_hidden",
-                                        value: ""
-                                    },
-                                    {
-                                        type: "range",
-                                        name: "my_range",
-                                        label: "My range pref",
-                                        value: "10",
-                                        step: "5",
-                                        min: "5",
-                                        max: "15",
-                                        value: "10"
-                                    },
+
                                     {
                                         type: "list",
-                                        name: "my_list",
+                                        name: "Choose Tenant",
                                         label: "My list",
                                         value: "Value1",
                                         options: [
                                             {
-                                                label: "Label1",
+                                                label: "Source Tenant",
                                                 value: "Value1"
                                             },
                                             {
-                                                label: "Label2",
+                                                label: "Target Tenant",
                                                 value: "Value2"
                                             },
-                                            {
-                                                label: "Label3",
-                                                value: "Value3"
-                                            }
+                                           
                                         ],
-                                        value: "Value1"
+                                        value: " "
                                     }
                                     ],
                                     events: {
-                                        onChange: function(callback, name, value) {
-
-                                        },
+                                     
 
                                         onSubmit: function(event, values) {
 
                                         }
                                     }
-                                    }) .inject(th6);;
+                                    }) .inject(th6);
                                                                         
 
                                     
