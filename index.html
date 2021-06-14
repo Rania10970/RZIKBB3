@@ -45,6 +45,39 @@
                         onLoad: function () {
 
                             // Here we update the content of the widget body.
+                            var prefs = new UWA.Controls.Form({
+                                    fields: [
+
+                                    {
+                                        type: "list",
+                                        name: "My List",
+                                        label: "Choose Tenant",
+                                        value: "Value1",
+                                        options: [
+                                            {
+                                                label: "Tenant 1",
+                                                value: "Value1"
+                                            },
+                                            {
+                                                label: "Tenant 2",
+                                                value: "Value2"
+                                            },
+                                           
+                                        ],
+                                        value: "-Other- "
+                                    }
+                                    ],
+                                  //  events: {
+                                      //  onChange: function(callback, name, value) {
+
+                                      //  },
+
+                                        onSubmit: function(event, values) {
+                                            cosole.log("send evnet")
+
+                                        }
+                                    //}
+                                    }) .inject(th6);
                             widget.setBody('Hello World!');
                             widget.createElement('a', {
                                 text: 'My link',
@@ -54,13 +87,14 @@
                             }).inject(widget.body);
 
                             var table = widget.createElement('table',{
-                                border:"1",
+                                border:"0",
                                 id:'kids'
                             }).inject(widget.body)
                             var tr1= widget.createElement('tr').inject(table)
                             var tr2= widget.createElement('tr').inject(table)
                             
                             var th1 = widget.createElement('th',{
+                               
                                 html: 'Désignation'
                             }).inject(tr1)
 
@@ -164,42 +198,28 @@
                                         
                                     }).inject(th5);
 
-                                    var prefs = new UWA.Controls.Form({
-                                    fields: [
-
-                                    {
-                                        type: "list",
-                                        name: "My List",
-                                        label: "Choose Tenant",
-                                        value: "Value1",
-                                        options: [
-                                            {
-                                                label: "Tenant 1",
-                                                value: "Value1"
-                                            },
-                                            {
-                                                label: "Tenant 2",
-                                                value: "Value2"
-                                            },
-                                           
-                                        ],
-                                        value: "-Other- "
-                                    }
-                                    ],
-                                  //  events: {
-                                      //  onChange: function(callback, name, value) {
-
-                                      //  },
-
-                                        onSubmit: function(event, values) {
-                                            cosole.log("send evnet")
-
-                                        }
-                                    //}
-                                    }) .inject(th6);
+                                   
                                                                         
 
-                                    
+                        var theInput = widget.body.querySelector('.myInputType');
+						var theStatus = widget.body.querySelector('.myStatusDrop');
+						
+						DataDragAndDrop.droppable( theInput , {  
+							drop : function(data) {	
+                                console.log("hello")						    
+								theInput.value = data ;
+								theStatus.value = 'drop' ;
+							},
+							enter: function() {	
+								theStatus.value = 'enter' ;
+							},
+							over: function() {	
+								theStatus.value = 'over' ;
+							}, 
+							leave: function() {
+								theStatus.value = 'leave' ;
+							}
+						}) ;
                                                                 
                                                                 
 
