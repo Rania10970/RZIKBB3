@@ -90,7 +90,9 @@
                             var td4 = widget.createElement('td').inject(tr2)
 
 
-                            var input1 = widget.createElement('input').inject(td1);
+                            var input1 = widget.createElement('input',{
+                                id:'input1'
+                            }).inject(td1);
                             var input2 = widget.createElement('input').inject(td2);
                             var input3 = widget.createElement('input').inject(td3);
 
@@ -144,26 +146,28 @@
                             }).inject(th4);
 
                             
-                            var theInput = widget.body.querySelector('.td1');
+                            var theInput = widget.body.querySelector('.input1');
 					
 						
 						DataDragAndDrop.droppable( theInput , {  
 							drop : function(data) {		
                                 console.log("drop")					    
 								theInput.value = data ;
-								theStatus.value = 'drop' ;
+                                console.log("data")
+							
 							},
+
 							enter: function() {	
                                 console.log("drop1")
-								theStatus.value = 'enter' ;
+								
 							},
 							over: function() {
                                 console.log("drop2")	
-								theStatus.value = 'over' ;
+								
 							}, 
 							leave: function() {
                                 console.log("drop3")
-								theStatus.value = 'leave' ;
+								
 							}
 						}) ;	
                         
