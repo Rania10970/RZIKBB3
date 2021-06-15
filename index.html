@@ -161,13 +161,13 @@
                             }).inject(th4);
 
 
-                            var theInput = document.getElementById('input1');
+                            var theInput = document.getElementById('maindiv');
                             console.log(theInput)
 
 
-                            DataDragAndDrop.droppable(maindiv, {
+                            DataDragAndDrop.droppable(theInput, {
                                 drop: function (data) {
-                                    console.log(data.data)
+                                    console.log("haha")
                                     // for(object in data.data.items){
                                     //     addKid();
                                     //     var displayName = document.getElementById('input1_'+i);
@@ -178,11 +178,6 @@
                                     //     objectId.value = object.objectId
                                     // }
                                     
-                          
-
-
-
-
                                 },
 
                                 enter: function () {
