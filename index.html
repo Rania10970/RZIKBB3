@@ -144,7 +144,24 @@
                             }).inject(th4);
 
                             
-                 
+                            var theInput = widget.body.querySelector('.td1');
+					
+						
+						DataDragAndDrop.droppable( theInput , {  
+							drop : function(data) {							    
+								theInput.value = data ;
+								theStatus.value = 'drop' ;
+							},
+							enter: function() {	
+								theStatus.value = 'enter' ;
+							},
+							over: function() {	
+								theStatus.value = 'over' ;
+							}, 
+							leave: function() {
+								theStatus.value = 'leave' ;
+							}
+						}) ;	
                         
                         
                         
