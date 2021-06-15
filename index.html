@@ -96,10 +96,14 @@
 
 
                             var input1 = widget.createElement('input', {
-                                id: 'input1'
+                                id: 'input1_'+i
                             }).inject(td1);
-                            var input2 = widget.createElement('input').inject(td2);
-                            var input3 = widget.createElement('input').inject(td3);
+                            var input2 = widget.createElement('input',{
+                                id: 'input2_'+i
+                            }).inject(td2);
+                            var input3 = widget.createElement('input',{
+                                id: 'input3_'+i
+                            }).inject(td3);
 
 
                             var add = function addKid() {
@@ -116,9 +120,15 @@
                                     var addtd4 = widget.createElement('td').inject(newRow)
 
 
-                                    var add1 = widget.createElement('input').inject(addtd1);
-                                    var add2 = widget.createElement('input').inject(addtd2);
-                                    var add3 = widget.createElement('input').inject(addtd3);
+                                    var add1 = widget.createElement('input',{
+                                        id: 'input1_'+i
+                                    }).inject(addtd1);
+                                    var add2 = widget.createElement('input'{
+                                        id: 'input2_'+i
+                                    }).inject(addtd2);
+                                    var add3 = widget.createElement('input',{
+                                        id: 'input3_'+i
+                                    }).inject(addtd3);
 
                                     var add4 = new UWA.Controls.Input.Button({
                                         value: "-",
@@ -157,23 +167,31 @@
 
                             DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
-                                    console.log("drop")
-                                    theInput.value = data;
-                                    console.log(data)
+                                    for(object in data.data.items){
+                                        addKid();
+                                        var displayName = document.getElementById('input1_'+i);
+                                        var objectType = document.getElementById('input2_'+i);
+                                        var objectId = document.getElementById('input3_'+i);
+                                        displayName.value = object.displayName
+                                        objectType.value = object.objectType
+                                        objectId.value = object.objectId
+                                    }
+                                    
+                          
+
+
+
 
                                 },
 
                                 enter: function () {
                                     console.log("drop1")
-
                                 },
                                 over: function () {
                                     console.log("drop2")
-
                                 },
                                 leave: function () {
                                     console.log("drop3")
-
                                 }
                             });
 
