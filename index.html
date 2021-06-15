@@ -168,8 +168,9 @@
                             DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
                                     console.log(data)
-                                    console.log(data["data"])
-                                    for(object in data['data']['items']){
+                                    var jsondata = JSON.parse(data)
+                                    console.log(jsondata["data"])
+                                    for(object in jsondata['data']['items']){
                                         addKid();
                                         var displayName = document.getElementById('input1_'+i);
                                         var objectType = document.getElementById('input2_'+i);
