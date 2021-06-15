@@ -57,6 +57,7 @@
                                 border:"1",
                                 id:'kids'
                             }).inject(widget.body)
+
                             var tr1= widget.createElement('tr').inject(table)
                             var tr2= widget.createElement('tr').inject(table)
                             
@@ -80,6 +81,9 @@
 
                             var i = 0;
                             var td1 = widget.createElement('td').inject(tr2)
+                            var td1 = widget.createElement('td',{
+                                id:'td1'
+                            }).inject(tr2)
                             var td2 = widget.createElement('td').inject(tr2)
                             var td3 = widget.createElement('td').inject(tr2)
                             var td4 = widget.createElement('td').inject(tr2)
@@ -138,12 +142,18 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
-                            var myControl = new UWA.Controls.DropDown();
-                                myControl.getInnerElement().empty(true).addContent('foo');
-                                myControl.show();
-				
+                            
+                        var theInput = widget.body.querySelector('.td1');
+					
+						
+						DataDragAndDrop.droppable( theInput , {  
+							drop : function(data) {
+                                console.log ("hello drop ")							    
+								theInput.value = data ;
+								theStatus.value = 'drop' ;
+							},
 
-
+                                }) ;
                         
                         
                         
