@@ -24,9 +24,9 @@
             require(
                 [
                     'DS/PlatformAPI/PlatformAPI',
-                    'DS/DataDragAndDrop/DataDragAndDrop' , 
+                    'DS/DataDragAndDrop/DataDragAndDrop',
                 ],
-                function ( PlatformAPI,DataDragAndDrop) {
+                function (PlatformAPI, DataDragAndDrop) {
 
                     var platformId;
                     var theConnectedUser;
@@ -54,44 +54,44 @@
                                 }
                             }).inject(widget.body);
 
-                            var table = widget.createElement('table',{
-                                border:"1",
-                                id:'kids'
+                            var table = widget.createElement('table', {
+                                border: "1",
+                                id: 'kids'
                             }).inject(widget.body)
 
-                            var tr1= widget.createElement('tr').inject(table)
-                            var tr2= widget.createElement('tr').inject(table)
-                            
-                            var th1 = widget.createElement('th',{
+                            var tr1 = widget.createElement('tr').inject(table)
+                            var tr2 = widget.createElement('tr').inject(table)
+
+                            var th1 = widget.createElement('th', {
                                 html: 'Désignation'
                             }).inject(tr1)
 
-                            var th2 = widget.createElement('th',{
+                            var th2 = widget.createElement('th', {
                                 html: 'Quantité'
                             }).inject(tr1)
 
-                            var th3 = widget.createElement('th',{
+                            var th3 = widget.createElement('th', {
                                 html: 'Série'
                             }).inject(tr1)
 
-                            var th4 = widget.createElement('th',{
+                            var th4 = widget.createElement('th', {
 
 
                             }).inject(tr1)
-                           
+
 
                             var i = 0;
-                            
-                            var td1 = widget.createElement('td',{
-                                id:'td1'
+
+                            var td1 = widget.createElement('td', {
+                                id: 'td1'
                             }).inject(tr2)
                             var td2 = widget.createElement('td').inject(tr2)
                             var td3 = widget.createElement('td').inject(tr2)
                             var td4 = widget.createElement('td').inject(tr2)
 
 
-                            var input1 = widget.createElement('input',{
-                                id:'input1'
+                            var input1 = widget.createElement('input', {
+                                id: 'input1'
                             }).inject(td1);
                             var input2 = widget.createElement('input').inject(td2);
                             var input3 = widget.createElement('input').inject(td3);
@@ -101,38 +101,38 @@
                                 console.log("in ADD ================")
                                 if (i < 5) {
                                     i++;
-                                    var newRow = widget.createElement('tr',{
-                                        id:'tr_'+i
+                                    var newRow = widget.createElement('tr', {
+                                        id: 'tr_' + i
                                     }).inject(table);
-                                    
+
                                     var addtd1 = widget.createElement('td').inject(newRow)
                                     var addtd2 = widget.createElement('td').inject(newRow)
                                     var addtd3 = widget.createElement('td').inject(newRow)
-                                    var addtd4 = widget.createElement('td').inject(newRow) 
+                                    var addtd4 = widget.createElement('td').inject(newRow)
 
 
                                     var add1 = widget.createElement('input').inject(addtd1);
-                                    var add2= widget.createElement('input').inject(addtd2);
+                                    var add2 = widget.createElement('input').inject(addtd2);
                                     var add3 = widget.createElement('input').inject(addtd3);
-                                    
+
                                     var add4 = new UWA.Controls.Input.Button({
                                         value: "-",
                                         attributes: {
-                                            id: 'susBtn_'+i
+                                            id: 'susBtn_' + i
                                         },
                                         events: {
-                                            onClick: function(e){
+                                            onClick: function (e) {
                                                 console.log(e.target.getParents())
                                                 e.target.getParents()[1].remove()
                                                 i--
 
                                             },
-                        
+
                                         },
-                                        
+
                                     }).inject(addtd4);
 
-                                  
+
                                 }
                             }
 
@@ -140,47 +140,48 @@
                             var addBtn = new UWA.Controls.Input.Button({
                                 value: "+",
                                 events: {
-                                    onClick: add,   
+                                    onClick: add,
                                 },
-                                id:'add_kid()'
+                                id: 'add_kid()'
                             }).inject(th4);
 
-                            
-                            var theInput = widget.body.querySelector('.input1');
-					
-						
-						DataDragAndDrop.droppable( theInput , {  
-							drop : function(data) {		
-                                console.log("drop")					    
-								theInput.value = data ;
-                                console.log("data")
-							
-							},
 
-							enter: function() {	
-                                console.log("drop1")
-								
-							},
-							over: function() {
-                                console.log("drop2")	
-								
-							}, 
-							leave: function() {
-                                console.log("drop3")
-								
-							}
-						}) ;	
-                        
-                        
-                        
-                        
-                        
-                        
+                            var theInput = document.getElementById('input1');
+                            console.log(theInput)
+
+
+                            DataDragAndDrop.droppable(theInput, {
+                                drop: function (data) {
+                                    console.log("drop")
+                                    theInput.value = data;
+                                    console.log("data")
+
+                                },
+
+                                enter: function () {
+                                    console.log("drop1")
+
+                                },
+                                over: function () {
+                                    console.log("drop2")
+
+                                },
+                                leave: function () {
+                                    console.log("drop3")
+
+                                }
+                            });
+
+
+
+
+
+
                         },
-                        
-	
-       	
-                        
+
+
+
+
                     };
                     console.log("9GAG");
 
