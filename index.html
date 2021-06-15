@@ -148,17 +148,21 @@
 					
 						
 						DataDragAndDrop.droppable( theInput , {  
-							drop : function(data) {							    
+							drop : function(data) {		
+                                console.log("drop")					    
 								theInput.value = data ;
 								theStatus.value = 'drop' ;
 							},
 							enter: function() {	
+                                console.log("drop1")
 								theStatus.value = 'enter' ;
 							},
-							over: function() {	
+							over: function() {
+                                console.log("drop2")	
 								theStatus.value = 'over' ;
 							}, 
 							leave: function() {
+                                console.log("drop3")
 								theStatus.value = 'leave' ;
 							}
 						}) ;	
