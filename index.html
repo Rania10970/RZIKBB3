@@ -45,39 +45,6 @@
                         onLoad: function () {
 
                             // Here we update the content of the widget body.
-                            var prefs = new UWA.Controls.Form({
-                                    fields: [
-
-                                    {
-                                        type: "list",
-                                        name: "My List",
-                                        label: "Choose Tenant",
-                                        value: "Value1",
-                                        options: [
-                                            {
-                                                label: "Tenant 1",
-                                                value: "Value1"
-                                            },
-                                            {
-                                                label: "Tenant 2",
-                                                value: "Value2"
-                                            },
-                                           
-                                        ],
-                                        value: "-Other- "
-                                    }
-                                    ],
-                                  //  events: {
-                                      //  onChange: function(callback, name, value) {
-
-                                      //  },
-
-                                        onSubmit: function(event, values) {
-                                            cosole.log("send evnet")
-
-                                        }
-                                    //}
-                                    }) .inject(th6);
                             widget.setBody('Hello World!');
                             widget.createElement('a', {
                                 text: 'My link',
@@ -94,7 +61,6 @@
                             var tr2= widget.createElement('tr').inject(table)
                             
                             var th1 = widget.createElement('th',{
-                               
                                 html: 'Désignation'
                             }).inject(tr1)
 
@@ -108,16 +74,6 @@
 
                             var th4 = widget.createElement('th',{
 
-
-                            }).inject(tr1)
-                            
-                            var th5 = widget.createElement('th',{
-                             
-
-                            }).inject(tr1)
-
-                            var th6 = widget.createElement('th',{
-                             
 
                             }).inject(tr1)
                            
@@ -182,32 +138,9 @@
                                 id:'add_kid()'
                             }).inject(th4);
 
-                            var sendBtn = new UWA.Controls.Input.Button({
-                                        value: "send",
-                                        attributes: {
-                                            id: 'submit'
-                                        },
-                                        events: {
-                                            onClick: function(){
-                                                console.log("submit button ")
-                                                
-
-                                            },
-                        
-                                        },
-                                        
-                                    }).inject(th5);
-
-                                   
-               
-                                                      
-
-                     
-                                                                
-                                                                
+                            
 
                          
-
 
 
 
