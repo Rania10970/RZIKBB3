@@ -54,10 +54,15 @@
                                 }
                             }).inject(widget.body);
 
+                            var maindiv = widget.createElement('div', {
+                                id: 'mainDiv'
+                            }).inject(widget.body)
+                            
+                            
                             var table = widget.createElement('table', {
                                 border: "1",
                                 id: 'kids'
-                            }).inject(widget.body)
+                            }).inject(maindiv)
 
                             var tr1 = widget.createElement('tr').inject(table)
                             var tr2 = widget.createElement('tr').inject(table)
@@ -150,7 +155,7 @@
                             console.log(theInput)
 
 
-                            DataDragAndDrop.droppable(theInput, {
+                            DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
                                     console.log("drop")
                                     theInput.value = data;
