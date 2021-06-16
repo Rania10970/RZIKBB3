@@ -113,7 +113,7 @@
                             }).inject(td3);
 
                             var i = 0;
-                            var add = function addKid() {
+                            function addKid() {
                                 console.log("in ADD ================")
                                 if (i < 5) {
                                     i++;
@@ -158,6 +158,7 @@
                                 }
                             }
 
+                            var add = addKid();
 
                             var addBtn = new UWA.Controls.Input.Button({
                                 value: "+",
@@ -244,15 +245,7 @@
                                     }
                                     
 
-                                    //for (var i=0; i<jsondata['data']['items'].lengh ;i++)
-                                   // {  addKid();
-                                      //var displayName = document.getElementById('input1_'+i);
-                                      //  var objectType = document.getElementById('input2_'+i);
-                                       // var objectId = document.getElementById('input3_'+i);
-                                      //  displayName.value = object['displayName']
-                                      //  objectType.value = object['objectType']
-                                      //  objectId.value = object['objectId']  
-                                 //  }                                    
+                                                                    
 
 
 
