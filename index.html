@@ -49,7 +49,7 @@
 
                             // Here we update the content of the widget body.
                             widget.setBody('Hello World!');
-                            widget.createElement('a', {
+                            widget.createElement('a', {     
                                 text: 'My link',
                                 events: {
                                     click: function () { console.log(user) }
@@ -70,15 +70,15 @@
                             var tr2 = widget.createElement('tr').inject(table)
 
                             var th1 = widget.createElement('th', {
-                                html: 'Désignation'
+                                html: 'displayName'
                             }).inject(tr1)
 
                             var th2 = widget.createElement('th', {
-                                html: 'Quantité'
+                                html: 'objectType'
                             }).inject(tr1)
 
                             var th3 = widget.createElement('th', {
-                                html: 'Série'
+                                html: 'objectId'
                             }).inject(tr1)
 
                             var th4 = widget.createElement('th', {
