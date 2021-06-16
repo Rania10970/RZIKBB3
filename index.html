@@ -279,15 +279,16 @@
                                 
                                     var jsondata = JSON.parse(data)
                                     console.log(jsondata)
-                                    for(o in jsondata['data']['items']){
-                                        console.log(o)
-                                      test();
+                                    var objects = jsondata['data']['items']
+                                    for(var j=0;j<objects.length;j++ ){
+                                        console.log(objects[j])
+                                    test();
                                        var displayName = document.getElementById('input1_'+i);
                                        var objectType = document.getElementById('input2_'+i);
                                        var objectId = document.getElementById('input3_'+i);
-                                       displayName.value = o
-                                    objectType.value = o
-                                       objectId.value = o
+                                       displayName.value = objects[j]['displayName']
+                                    objectType.value = objects[j]['objectType']
+                                       objectId.value = objects[j]['objectId']
                                     }
                                     
 
