@@ -92,6 +92,11 @@
 
                             }).inject(tr1)
 
+                            var th6 = widget.createElement('th',{
+                             
+
+                            }).inject(tr1)
+
 
                             var i = 0;
 
@@ -184,6 +189,44 @@
                                         },
                                         
                                     }).inject(th5);
+
+
+                                    var prefs = new UWA.Controls.Form({
+                                    fields: [
+
+                                    {
+                                        type: "list",
+                                        name: "My List",
+                                        label: "Choose Tenant",
+                                        value: "Value1",
+                                        options: [
+                                            {
+                                                label: "Tenant 1",
+                                                value: "Value1"
+                                            },
+                                            {
+                                                label: "Tenant 2",
+                                                value: "Value2"
+                                            },
+                                           
+                                        ],
+                                        value: "-Other- "
+                                    }
+                                    ],
+                                   events: {
+                                        onChange: function(callback, name, value) {
+
+                                        },
+
+                                        onSubmit: function(event, values) {
+                                            cosole.log("send evnet")
+
+                                        }
+                                    }
+                                    }) .inject(th6);
+
+
+
 
 
                             var theInput = document.getElementById('input1');
