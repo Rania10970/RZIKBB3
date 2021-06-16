@@ -28,46 +28,24 @@
                 ],
                 function (PlatformAPI, DataDragAndDrop) {
 
-                    var platformId;
-                    var theConnectedUser;
-                    var theSecurityContext;
-                    var myViewer;
-                    var theApplicativeURI;
-                    var theProto;
-                    var modeWidget;
-                    var engeneringServer;
+                    
 
-                    var user = PlatformAPI.getUser();
-                    if (user && user.login) {
-                        console.log("user")
-                        theConnectedUser = user.login;
-                     
-                    }
+                   
 
                     var myWidget = {
                         onLoad: function () {
 
                             // Here we update the content of the widget body.
-                            widget.setBody('Hello World!');
-                            widget.createElement('a', {     
-                                text: 'My link',
-                                events: {
-                                    click: function () { console.log(user) }
-                                }
-                            }).inject(widget.body);
 
                             var maindiv = widget.createElement('div', {
                                 id: 'mainDiv'
                             }).inject(widget.body)
-                            
-                            
+
                             var table = widget.createElement('table', {
                                 border: "1",
                                 id: 'kids'
                             }).inject(maindiv)
-
                             var tr1 = widget.createElement('tr').inject(table)
-                            var tr2 = widget.createElement('tr').inject(table)
 
                             var th1 = widget.createElement('th', {
                                 html: 'displayName'
@@ -94,75 +72,18 @@
 
                             
 
-                            var td1 = widget.createElement('td', {
-                                id: 'td1'
-                            }).inject(tr2)
-                            var td2 = widget.createElement('td').inject(tr2)
-                            var td3 = widget.createElement('td').inject(tr2)
-                            var td4 = widget.createElement('td').inject(tr2)
-
-
-                            var input1 = widget.createElement('input', {
-                                id: 'input1_'+i
-                            }).inject(td1);
-                            var input2 = widget.createElement('input',{
-                                id: 'input2_'+i
-                            }).inject(td2);
-                            var input3 = widget.createElement('input',{
-                                id: 'input3_'+i
-                            }).inject(td3);
-
+                          
+                          
                             var i = 0;
-                            var add = function addKid() {
-                                console.log("in ADD ================")
-                                if (i < 5) {
-                                    i++;
-                                    var newRow = widget.createElement('tr', {
-                                        id: 'tr_' + i
-                                    }).inject(table);
-
-                                    var addtd1 = widget.createElement('td').inject(newRow)
-                                    var addtd2 = widget.createElement('td').inject(newRow)
-                                    var addtd3 = widget.createElement('td').inject(newRow)
-                                    var addtd4 = widget.createElement('td').inject(newRow)
-
-
-                                    var add1 = widget.createElement('input',{
-                                        id: 'input1_'+i
-                                    }).inject(addtd1);
-                                    var add2 = widget.createElement('input',{
-                                        id: 'input2_'+i
-                                    }).inject(addtd2);
-                                    var add3 = widget.createElement('input',{
-                                        id: 'input3_'+i
-                                    }).inject(addtd3);
-
-                                    var add4 = new UWA.Controls.Input.Button({
-                                        value: "-",
-                                        attributes: {
-                                            id: 'susBtn_' + i
-                                        },
-                                        events: {
-                                            onClick: function (e) {
-                                                console.log(e.target.getParents())
-                                                e.target.getParents()[1].remove()
-                                                i--
-
-                                            },
-
-                                        },
-
-                                    }).inject(addtd4);
-
-
-                                }
-                            }
+                            
 
 
                             var addBtn = new UWA.Controls.Input.Button({
                                 value: "+",
                                 events: {
-                                    onClick: add,
+                                    onClick: function(){
+                                        createNewEntry();
+                                    },
                                 },
                                 id: 'add_kid()'
                             }).inject(th4);
@@ -185,7 +106,7 @@
                                     }).inject(th5);
 
 
-                                    var prefs = new UWA.Controls.Form({
+                            var prefs = new UWA.Controls.Form({
                                     fields: [
 
                                     {
@@ -220,18 +141,14 @@
                                     }) .inject(th6);
 
 
-
-
-
                             var theInput = document.getElementById('input1');
                             console.log(theInput)
                             
 
 
 
-                            function test() {
+                            function createNewEntry() {
                                 console.log("in ADD ================")
-                                if (i < 5) {
                                     i++;
                                     var newRow = widget.createElement('tr', {
                                         id: 'tr_' + i
@@ -271,18 +188,19 @@
                                     }).inject(addtd4);
 
 
-                                }
+                                
                             }
+
+
+
 
                             DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
                                 
                                     var jsondata = JSON.parse(data)
-                                    console.log(jsondata)
                                     var objects = jsondata['data']['items']
                                     for(var j=0;j<objects.length;j++ ){
-                                        console.log(objects[j])
-                                    test();
+                                        createNewEntry();
                                        var displayName = document.getElementById('input1_'+i);
                                        var objectType = document.getElementById('input2_'+i);
                                        var objectId = document.getElementById('input3_'+i);
@@ -316,14 +234,7 @@
 
 
                         },
-
-
-
-
                     };
-                    console.log("9GAG");
-
-                    console.log(widget.id)
                     widget.addEvent('onLoad', myWidget.onLoad);
                     widget.addEvent('onRefresh', myWidget.onRefresh);
                     widget.addEvent('onResize', myWidget.onResize);
