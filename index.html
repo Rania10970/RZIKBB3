@@ -229,9 +229,10 @@
 
                             DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
-                                    console.log(data)
-                                    //var jsondata = JSON.parse(data)
-                                   // console.log(jsondata["data"])
+                                   // console.log(data)
+                                    var jsondata = JSON.parse(items.data)
+                                  //  console.log(jsondata["data"])
+                                    console.log(jsondata)
                                     //for(object in jsondata['data']['items']){
                                       //  addKid();
                                       //  var displayName = document.getElementById('input1_'+i);
@@ -243,15 +244,15 @@
                                    // }
                                     
 
-                                    for (var i=0; i<jsondata['data']['items'].lengh ;i++)
-                                    {  addKid();
-                                      var displayName = document.getElementById('input1_'+i);
-                                        var objectType = document.getElementById('input2_'+i);
-                                        var objectId = document.getElementById('input3_'+i);
-                                        displayName.value = object['displayName']
-                                        objectType.value = object['objectType']
-                                        objectId.value = object['objectId']  
-                                   }                                    
+                                    //for (var i=0; i<jsondata['data']['items'].lengh ;i++)
+                                   // {  addKid();
+                                      //var displayName = document.getElementById('input1_'+i);
+                                      //  var objectType = document.getElementById('input2_'+i);
+                                       // var objectId = document.getElementById('input3_'+i);
+                                      //  displayName.value = object['displayName']
+                                      //  objectType.value = object['objectType']
+                                      //  objectId.value = object['objectId']  
+                                 //  }                                    
 
 
 
