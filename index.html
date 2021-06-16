@@ -87,18 +87,12 @@
                             }).inject(tr1)
 
 
-                            var th5 = widget.createElement('th',{
-                             
+                            var th5 = widget.createElement('th').inject(tr1)
 
-                            }).inject(tr1)
-
-                            var th6 = widget.createElement('th',{
-                             
-
-                            }).inject(tr1)
+                            var th6 = widget.createElement('th').inject(tr1)
 
 
-                            var i = 0;
+                            
 
                             var td1 = widget.createElement('td', {
                                 id: 'td1'
@@ -118,7 +112,7 @@
                                 id: 'input3_'+i
                             }).inject(td3);
 
-
+                            var i = 0;
                             var add = function addKid() {
                                 console.log("in ADD ================")
                                 if (i < 5) {
@@ -238,17 +232,25 @@
                                     console.log(data)
                                     var jsondata = JSON.parse(data)
                                     console.log(jsondata["data"])
-                                    for(object in jsondata['data']['items']){
-                                        addKid();
-                                        var displayName = document.getElementById('input1_'+i);
+                                    //for(object in jsondata['data']['items']){
+                                      //  addKid();
+                                      //  var displayName = document.getElementById('input1_'+i);
+                                      //  var objectType = document.getElementById('input2_'+i);
+                                      //  var objectId = document.getElementById('input3_'+i);
+                                      //  displayName.value = object['displayName']
+                                      //  objectType.value = object['objectType']
+                                      //  objectId.value = object['objectId']  
+                                   // }
+                                    
+                                    for (var i=0; i<jsondata['data']['items'].lengh ;i++)
+                                    {  addKid();
+                                      var displayName = document.getElementById('input1_'+i);
                                         var objectType = document.getElementById('input2_'+i);
                                         var objectId = document.getElementById('input3_'+i);
                                         displayName.value = object['displayName']
                                         objectType.value = object['objectType']
-                                        objectId.value = object['objectId']
-                                    }
-                                    
-                          
+                                        objectId.value = object['objectId']  
+                                   }                                    
 
 
 
