@@ -39,7 +39,9 @@
 
                     var user = PlatformAPI.getUser();
                     if (user && user.login) {
+                        console.log("user")
                         theConnectedUser = user.login;
+                     
                     }
 
                     var myWidget = {
@@ -81,6 +83,12 @@
 
                             var th4 = widget.createElement('th', {
 
+
+                            }).inject(tr1)
+
+
+                            var th5 = widget.createElement('th',{
+                             
 
                             }).inject(tr1)
 
@@ -159,6 +167,23 @@
                                 },
                                 id: 'add_kid()'
                             }).inject(th4);
+
+
+                            var sendBtn = new UWA.Controls.Input.Button({
+                                        value: "send",
+                                        attributes: {
+                                            id: 'submit'
+                                        },
+                                        events: {
+                                            onClick: function(){
+                                                console.log("submit button ")
+                                                
+
+                                            },
+                        
+                                        },
+                                        
+                                    }).inject(th5);
 
 
                             var theInput = document.getElementById('input1');
