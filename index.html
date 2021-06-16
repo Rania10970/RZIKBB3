@@ -113,7 +113,7 @@
                             }).inject(td3);
 
                             var i = 0;
-                            function addKid() {
+                            var add = function addKid() {
                                 console.log("in ADD ================")
                                 if (i < 5) {
                                     i++;
@@ -158,7 +158,6 @@
                                 }
                             }
 
-                            var add = addKid();
 
                             var addBtn = new UWA.Controls.Input.Button({
                                 value: "+",
@@ -226,7 +225,54 @@
 
                             var theInput = document.getElementById('input1');
                             console.log(theInput)
+                            
 
+
+
+                            function test() {
+                                console.log("in ADD ================")
+                                if (i < 5) {
+                                    i++;
+                                    var newRow = widget.createElement('tr', {
+                                        id: 'tr_' + i
+                                    }).inject(table);
+
+                                    var addtd1 = widget.createElement('td').inject(newRow)
+                                    var addtd2 = widget.createElement('td').inject(newRow)
+                                    var addtd3 = widget.createElement('td').inject(newRow)
+                                    var addtd4 = widget.createElement('td').inject(newRow)
+
+
+                                    var add1 = widget.createElement('input',{
+                                        id: 'input1_'+i
+                                    }).inject(addtd1);
+                                    var add2 = widget.createElement('input',{
+                                        id: 'input2_'+i
+                                    }).inject(addtd2);
+                                    var add3 = widget.createElement('input',{
+                                        id: 'input3_'+i
+                                    }).inject(addtd3);
+
+                                    var add4 = new UWA.Controls.Input.Button({
+                                        value: "-",
+                                        attributes: {
+                                            id: 'susBtn_' + i
+                                        },
+                                        events: {
+                                            onClick: function (e) {
+                                                console.log(e.target.getParents())
+                                                e.target.getParents()[1].remove()
+                                                i--
+
+                                            },
+
+                                        },
+
+                                    }).inject(addtd4);
+
+
+                                }
+                            }
 
                             DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
@@ -235,7 +281,7 @@
                                
                                     for(o in jsondata['data']['items']){
                                         console.log(o)
-                                      addKid();
+                                      test();
                                        var displayName = document.getElementById('input1_'+i);
                                        var objectType = document.getElementById('input2_'+i);
                                        var objectId = document.getElementById('input3_'+i);
