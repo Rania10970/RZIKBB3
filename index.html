@@ -193,26 +193,27 @@
                                 
                             }
 
+                            console.log("heeloo")
+                            UWA.Data.request('http://api.example.org/request', {
+                             
+                                        method: 'GET',
+                                        
+                                
+                                    });
 
-                                 console.log("hello")                       
-                                function askHello() {
-                                    console.log("hello1")
-                                fetch("https://r1132100647472-eu1-ifwe.3dexperience.3ds.com")
-                                .then(function(res) {
-                                    if (res.ok) {
-                                console.log("hekko")
-                                return res.json();
-                            
+                                },
+
+                                dataProcessor: function(data) {
+                                    // do your data processing here
+                                    console.log("process")
+                                },
+
+                                dataError: function(error) {
+                                    console.log("error ")
+                                    // do your data error here
                                 }
-                            })
-                            .then(function(value) {
-                                console.log("value");
-                            })
-                            .catch(function(err) {
-                                cpnsole.log("err")
-                                // Une erreur est survenue
-                            });
-                                }
+                            };
+
 
                          
 
