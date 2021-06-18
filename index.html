@@ -194,7 +194,8 @@
                             }
 
 
-                            function askHello() {
+                                                        
+                                function askHello() {
                                 fetch("https://mockbin.com/request?greetings=salut")
                                 .then(function(res) {
                                     if (res.ok) {
@@ -210,6 +211,10 @@
                                     // Une erreur est survenue
                                 });
                                 }
+
+                                document
+                                .getElementById("ask-hello")
+                                .addEventListener("click", askHello);
 
 
 
@@ -235,7 +240,7 @@
 
 
 
-                                },
+                            },
 
                                 enter: function () {
                                     console.log("drop1")
