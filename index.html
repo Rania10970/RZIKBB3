@@ -47,24 +47,21 @@
                       //console.log("get")
 
                       // Create a Callback
-                                   function  MyOnComplete (text) {
-                                    // your parsing code
-                                    console.log("fadit")
-                                    };
-                                   function  MyOnCancel  (text) {
-                                    // your parsing code
-                                    console.log("fadit 1")
-                                    };
+                                   // Create a Callback
+                            MyOnComplete = function (json) {
+                            // your parsing code
+                            }
 
-                                    // Launch request
-                                    var myRequest = UWA.Data.request('http://example.org/api.php', {
-                                 
-                                    type: 'text',
-                                    onComplete: MyOnComplete,
-                                    onCancel: MyOnCancel
-                                    });
+                            // Launch request
+                            var myRequest = UWA.Data.request('http://example.org/api.php?json', {
+                            type: 'json',
+                            onComplete: MyOnComplete
+                            });
 
-                                 console.log("faiit 3al le5er ")
+                            // Cancel request
+                            myRequest.cancel();
+
+                            console.log("faddit 3al le5er")
 
 
 
