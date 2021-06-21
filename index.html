@@ -85,8 +85,8 @@
                               //  }
                           //  });
 
-
-                          fetch('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/Search?$mask=dsmveng:EngItemMask.Details&$searchStr=Ecrou_Generic')
+                          console.log("hello")
+                          fetch('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/Search?$mask=dsmveng:EngItemMask.Details&$searchStr')
                             .then(response => response.json())
                             .then(data => console.log(data))
 
