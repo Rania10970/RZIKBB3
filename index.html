@@ -86,10 +86,9 @@
                           //  });
 
                         
-
-                          fetch('https://jsonplaceholder.typicode.com/todos')
-  .then(response => response.json())
-  .then(data => console.log(JSON.stringify(data)))
+                          var request = Ajax.request("https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia");
+                            var requestHeaders =  Ajax.parseResponseHeaders(request.getAllResponseHeaders(console.log("hello")));
+// requestHeaders example value: {"Content-Type": "text/html", ...}
 
                             widget.setBody('Hello!');
 
