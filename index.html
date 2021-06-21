@@ -35,6 +35,19 @@
                     var myWidget = {
                         onLoad: function () {
 
+
+        console.log("get")                    
+        UWA.Data.request('http://api.example.org/request', {
+            method: 'GET',
+            type: 'xml',
+            cache: 3600,
+            onComplete: MyWidget.dataProcessor,
+            onFailure: MyWidget.dataError
+        });
+
+
+
+
                             widget.setBody('Hello!');
 
                             // Here we update the content of the widget body.
@@ -233,29 +246,7 @@
 
 
                                                             
-                                    dataInit: function () {
-
-                                UWA.Data.request('http://api.example.org/request', {
                                    
-                                    method: 'GET',
-                                    type: 'xml',
-                                    cache: 3600,
-                                    onComplete: MyWidget.dataProcessor,
-                                    onFailure: MyWidget.dataError
-                                });
-
-                                },
-
-                                dataProcessor: function(data) {
-                                // do your data processing here
-                                console.log("GET")   
-                                },
-
-                                dataError: function(error) {
-                                // do your data error here
-                                }
-
-
 
 
                             });
