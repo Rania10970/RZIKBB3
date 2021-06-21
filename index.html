@@ -25,7 +25,7 @@
                 [
                     'DS/PlatformAPI/PlatformAPI',
                     'DS/DataDragAndDrop/DataDragAndDrop',
-                    "DS/WAFData/WAFData",
+                  //  "DS/WAFData/WAFData",
                 ],
                 function (PlatformAPI, DataDragAndDrop) {
 
@@ -47,43 +47,48 @@
 
                       //console.log("get")
 
-                      var document = myWidget._containerBody;
+                
 
-                      var pathProc = myWidget._3dspace_url + myWidget._applicativesRestURI +  "/resources/v1/modeler/dseng/dseng:EngItem/Search?$mask=dsmveng:EngItemMask.Details&$searchStr=Ecrou_Generic" ;
+                      //var pathProc = myWidget._3dspace_url + myWidget._applicativesRestURI +  "/resources/v1/modeler/dseng/dseng:EngItem/Search?$mask=dsmveng:EngItemMask.Details&$searchStr=Ecrou_Generic" ;
 
                 
 
-                            WAFWAF.authenticatedRequest(pathProc, {
-                                method: "GET",
-                                headers: {
-                                    'Accept': '*/*',
-                                    'Content-Type': 'application/json',
+                          //  WAFWAF.authenticatedRequest(pathProc, {
+                            //    method: "GET",
+                             //   headers: {
+                               //     'Accept': '*/*',
+                               //     'Content-Type': 'application/json',
                                     //'SecurityContext': 'ctx:' + myWidget._SecurityContext
-                                },
-                                timeout: 0,
-                                onComplete: function (backendresponse, responseheaders) {
-                                    Mask.unmask(document);
+                              //  },
+                              //  timeout: 0,
+                              //  onComplete: function (backendresponse, responseheaders) {
+                              //      Mask.unmask(document);
 
-                                    var bckResp = "";
-                                    if (backendresponse) {
-                                        bckResp = JSON.parse(backendresponse);
-                                    }
+                                //    var bckResp = "";
+                                  //  if (backendresponse) {
+                                   //     bckResp = JSON.parse(backendresponse);
+                                  //  }
 
-                                    cb(null, bckResp, responseheaders);
+                                 //   cb(null, bckResp, responseheaders);
 
-                                },
-                                onFailure: function (error, backendresponse, response_hdrs) {
-                                    Mask.unmask(document);
-                                    console.log("sessionModel searchModule Error :" + error);
+                              //  },
+                               // onFailure: function (error, backendresponse, response_hdrs) {
+                                //    Mask.unmask(document);
+                                 //   console.log("sessionModel searchModule Error :" + error);
 
-                                    var bckResp = "server error";
-                                    if (backendresponse && response_hdrs && response_hdrs["content-type"] && response_hdrs["content-type"].indexOf("json") >= 0 ) {
-                                        bckResp = JSON.parse(backendresponse);
-                                    }
+                                 //   var bckResp = "server error";
+                                  //  if (backendresponse && response_hdrs && response_hdrs["content-type"] && response_hdrs["content-type"].indexOf("json") >= 0 ) {
+                                 //       bckResp = JSON.parse(backendresponse);
+                                   // }
 
-                                    cb(error, bckResp, response_hdrs);
-                                }
-                            });
+                              //   //   cb(error, bckResp, response_hdrs);
+                              //  }
+                          //  });
+
+
+                          fetch('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/Search?$mask=dsmveng:EngItemMask.Details&$searchStr=Ecrou_Generic')
+                            .then(response => response.json())
+                            .then(data => console.log(data))
 
                             console.log("hello")
 
