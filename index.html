@@ -34,14 +34,17 @@
 
                     var myWidget = {
                         onLoad: function () {
-                            UWA.Data.request(//r1132100565133-eu1-ifwe.3dexperience.3ds.com/#dashboard:e85a633e-bd99-4c21-98ad-bf8e787d043f/tab:App%20SB, request) 
-                            console.log("get"),
-                             request = { method:'get', 
-                             proxy:'ajax', 
-                             cache:3600, 
-                             
-                            // parameters:'lastname=Bond&id=007',
-                              onComplete:MyWidget.display }; 
+                           
+                           
+                            UWA.Data.request('http://api.example.org/request', {
+                            method: 'GET',
+                            type: 'xml',
+                            cache: 3600,
+                            onComplete: MyWidget.dataProcessor,
+                            onFailure: MyWidget.dataError
+                        });
+
+                        console.log("get")
 
 
 
