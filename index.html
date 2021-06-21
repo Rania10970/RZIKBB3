@@ -28,9 +28,9 @@
                 ],
                 function (PlatformAPI, DataDragAndDrop) {
 
-                    
 
-                   
+
+
 
                     var myWidget = {
                         onLoad: function () {
@@ -72,18 +72,18 @@
                             var th6 = widget.createElement('td').inject(tr1)
 
 
-                            
 
-                          
-                          
+
+
+
                             var i = 0;
-                            
+
 
 
                             var addBtn = new UWA.Controls.Input.Button({
                                 value: "+",
                                 events: {
-                                    onClick: function(){
+                                    onClick: function () {
                                         createNewEntry();
                                     },
                                 },
@@ -92,24 +92,24 @@
 
 
                             var sendBtn = new UWA.Controls.Input.Button({
-                                        value: "send",
-                                        attributes: {
-                                            id: 'submit'
-                                        },
-                                        events: {
-                                            onClick: function(){
-                                                console.log("submit button ")
-                                                
+                                value: "send",
+                                attributes: {
+                                    id: 'submit'
+                                },
+                                events: {
+                                    onClick: function () {
+                                        console.log("submit button ")
 
-                                            },
-                        
-                                        },
-                                        
-                                    }).inject(th5);
+
+                                    },
+
+                                },
+
+                            }).inject(th5);
 
 
                             var prefs = new UWA.Controls.Form({
-                                    fields: [
+                                fields: [
 
                                     {
                                         type: "list",
@@ -125,96 +125,96 @@
                                                 label: "Tenant 2",
                                                 value: "Value2"
                                             },
-                                           
+
                                         ],
                                         value: "-Other- "
                                     }
-                                    ],
-                                   events: {
-                                        onChange: function(callback, name, value) {
+                                ],
+                                events: {
+                                    onChange: function (callback, name, value) {
 
-                                        },
+                                    },
 
-                                        onSubmit: function(event, values) {
-                                            cosole.log("send evnet")
+                                    onSubmit: function (event, values) {
+                                        cosole.log("send evnet")
 
-                                        }
                                     }
-                                    }) .inject(th6);
+                                }
+                            }).inject(th6);
 
 
                             var theInput = document.getElementById('input1');
                             console.log(theInput)
-                            
+
 
 
 
                             function createNewEntry() {
                                 console.log("in ADD ================")
-                                    i++;
-                                    var newRow = widget.createElement('tr', {
-                                        id: 'tr_' + i
-                                    }).inject(table);
+                                i++;
+                                var newRow = widget.createElement('tr', {
+                                    id: 'tr_' + i
+                                }).inject(table);
 
-                                    var addtd1 = widget.createElement('td').inject(newRow)
-                                    var addtd2 = widget.createElement('td').inject(newRow)
-                                    var addtd3 = widget.createElement('td').inject(newRow)
-                                    var addtd4 = widget.createElement('td').inject(newRow)
+                                var addtd1 = widget.createElement('td').inject(newRow)
+                                var addtd2 = widget.createElement('td').inject(newRow)
+                                var addtd3 = widget.createElement('td').inject(newRow)
+                                var addtd4 = widget.createElement('td').inject(newRow)
 
 
-                                    var add1 = widget.createElement('input',{
-                                        id: 'input1_'+i
-                                    }).inject(addtd1);
-                                    var add2 = widget.createElement('input',{
-                                        id: 'input2_'+i
-                                    }).inject(addtd2);
-                                    var add3 = widget.createElement('input',{
-                                        id: 'input3_'+i
-                                    }).inject(addtd3);
+                                var add1 = widget.createElement('input', {
+                                    id: 'input1_' + i
+                                }).inject(addtd1);
+                                var add2 = widget.createElement('input', {
+                                    id: 'input2_' + i
+                                }).inject(addtd2);
+                                var add3 = widget.createElement('input', {
+                                    id: 'input3_' + i
+                                }).inject(addtd3);
 
-                                    var add4 = new UWA.Controls.Input.Button({
-                                        value: "-",
-                                        attributes: {
-                                            id: 'susBtn_' + i
-                                        },
-                                        events: {
-                                            onClick: function (e) {
-                                                console.log(e.target.getParents())
-                                                e.target.getParents()[1].remove()
-                                                i--
-
-                                            },
+                                var add4 = new UWA.Controls.Input.Button({
+                                    value: "-",
+                                    attributes: {
+                                        id: 'susBtn_' + i
+                                    },
+                                    events: {
+                                        onClick: function (e) {
+                                            console.log(e.target.getParents())
+                                            e.target.getParents()[1].remove()
+                                            i--
 
                                         },
 
-                                    }).inject(addtd4);
+                                    },
+
+                                }).inject(addtd4);
 
 
-                                
+
                             }
 
 
-                            
+
 
 
 
                             DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
-                                
+
                                     var jsondata = JSON.parse(data)
                                     var objects = jsondata['data']['items']
-                                    for(var j=0;j<objects.length;j++ ){
+                                    for (var j = 0; j < objects.length; j++) {
                                         createNewEntry();
-                                       var displayName = document.getElementById('input1_'+i);
-                                       var objectType = document.getElementById('input2_'+i);
-                                       var objectId = document.getElementById('input3_'+i);
-                                       displayName.value = objects[j]['displayName']
-                                    objectType.value = objects[j]['objectType']
-                                       objectId.value = objects[j]['objectId']
+                                        var displayName = document.getElementById('input1_' + i);
+                                        var objectType = document.getElementById('input2_' + i);
+                                        var objectId = document.getElementById('input3_' + i);
+                                        displayName.value = objects[j]['displayName']
+                                        objectType.value = objects[j]['objectType']
+                                        objectId.value = objects[j]['objectId']
                                     }
-                                    
 
-                                                                    
+
+
 
 
 
@@ -230,14 +230,37 @@
                                 leave: function () {
                                     console.log("drop3")
                                 },
+
+
+                                                            
+                                    dataInit: function () {
+
+                                UWA.Data.request('http://api.example.org/request', {
+                                   
+                                    method: 'GET',
+                                    type: 'xml',
+                                    cache: 3600,
+                                    onComplete: MyWidget.dataProcessor,
+                                    onFailure: MyWidget.dataError
+                                });
+
+                                },
+
+                                dataProcessor: function(data) {
+                                // do your data processing here
+                                console.log("GET")   
+                                },
+
+                                dataError: function(error) {
+                                // do your data error here
+                                }
+
+
+
+
+                            });
+
                             
-                  
-                           
-
-
-
-                                                        
-                                                        });
 
                         },
                     };
