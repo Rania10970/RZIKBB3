@@ -25,6 +25,7 @@
                 [
                     'DS/PlatformAPI/PlatformAPI',
                     'DS/DataDragAndDrop/DataDragAndDrop',
+                    "DS/WAFData/WAFData",
                 ],
                 function (PlatformAPI, DataDragAndDrop) {
 
@@ -46,6 +47,8 @@
 
                       //console.log("get")
 
+                      var document = myWidget._containerBody;
+
                       var pathProc = myWidget._URL3DSpace + myWidget._applicativesRestURI +  "/sandbox/"+sandbox+"?" ;
 
                 
@@ -53,7 +56,7 @@
                             WAFWAF.authenticatedRequest(pathProc, {
                                 method: "GET",
                                 headers: {
-                                    'Accept': 'application/json',
+                                    'Accept': '*/*',
                                     'Content-Type': 'application/json',
                                     //'SecurityContext': 'ctx:' + myWidget._SecurityContext
                                 },
