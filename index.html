@@ -46,6 +46,26 @@
 
                       //console.log("get")
 
+                      // Create a Callback
+                                    MyOnComplete = function (text) {
+                                    // your parsing code
+                                    console.log("fadit")
+                                    };
+                                    MyOnCancel = function (text) {
+                                    // your parsing code
+                                    console.log("fadit 1")
+                                    };
+
+                                    // Launch request
+                                    var myRequest = UWA.Data.request('http://example.org/api.php', {
+                                 
+                                    type: 'text',
+                                    onComplete: MyOnComplete,
+                                    onCancel: MyOnCancel
+                                    });
+
+                                 console.log("faiit 3al le5er ")
+
 
 
 
