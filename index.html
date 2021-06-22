@@ -86,9 +86,23 @@
                             //  });
 
 
-                             var request = Ajax.request("https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/application/CSRF");
-                             var requestHeaders =  Ajax.parseResponseHeaders(request.getAllResponseHeaders(console.log("hello)")));
-                            widget.setBody('Hello!');
+                                     var request = new Request({
+                                    url: 'ajax-periodical.php?ajax=1',
+                                    method: 'get',
+                                    update: 'refresh-me',
+                                    onComplete: function(response) {
+                                        $('element-to-update').set('html',response);
+                                    }
+                                })
+
+                                var doMany = function() {
+                                    request.send();
+                                };
+
+                                doMany.periodical(5000);
+                                                        
+                           
+                             widget.setBody('Hello!');
 
                             // requestHeaders example value: {"Content-Type": "text/html", ...}
                             // Here we update the content of the widget body.
