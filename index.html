@@ -38,11 +38,10 @@
                         onLoad: function () {
 
 
-                            WAFWAF.authenticatedRequest('https://www.google.com/', {
-                                method: "POST",
-                                data: JSON.stringify(body),
+                            WAFWAF.authenticatedRequest(pathProc, {
+                                method: "GET",
                                 headers: {
-                                    
+                                    'SecurityContext' : 'VPLMProjectLeader.Company Name.Intertenats'
                                 },
                                 onComplete: function (backendresponse, responseheaders) {
                                     console.log("========================================")
