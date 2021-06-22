@@ -27,59 +27,36 @@
                     'DS/DataDragAndDrop/DataDragAndDrop',
                     "DS/WAFData/WAFData",
                 ],
-                function (PlatformAPI, DataDragAndDrop) {
+                function (PlatformAPI, DataDragAndDrop, WAFWAF) {
 
 
 
-
+                    var pathProc = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/92B4D343FB2D000060673AB40010173C?$mask=dsmveng:EngItemMask.Common'
 
                     var myWidget = {
                         onLoad: function () {
 
 
+                            WAFWAF.authenticatedRequest(pathProc, {
+                                method: "POST",
+                                data: JSON.stringify(body),
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json',
+                                    'SecurityContext': 'ctx:' + myWidget._SecurityContext
+                                },
+                                timeout: 0,
+                                onComplete: function (backendresponse, responseheaders) {
+                                    console.log("========================================")
+                                    console.log(backendresponse)
+                                },
+                                onFailure: function (error, backendresponse, response_hdrs) {
+                                    
+                                }
+                            });
+                        
 
 
-
-
-                            //console.log("get")
-
-
-
-                            //var pathProc = myWidget._3dspace_url + myWidget._applicativesRestURI +  "/resources/v1/modeler/dseng/dseng:EngItem/Search?$mask=dsmveng:EngItemMask.Details&$searchStr=Ecrou_Generic" ;
-
-
-
-                            //  WAFWAF.authenticatedRequest(pathProc, {
-                            //    method: "GET",
-                            //   headers: {
-                            //     'Accept': '*/*',
-                            //     'Content-Type': 'application/json',
-                            //'SecurityContext': 'ctx:' + myWidget._SecurityContext
-                            //  },
-                            //  timeout: 0,
-                            //  onComplete: function (backendresponse, responseheaders) {
-                            //      Mask.unmask(document);
-
-                            //    var bckResp = "";
-                            //  if (backendresponse) {
-                            //     bckResp = JSON.parse(backendresponse);
-                            //  }
-
-                            //   cb(null, bckResp, responseheaders);
-
-                            //  },
-                            // onFailure: function (error, backendresponse, response_hdrs) {
-                            //    Mask.unmask(document);
-                            //   console.log("sessionModel searchModule Error :" + error);
-
-                            //   var bckResp = "server error";
-                            //  if (backendresponse && response_hdrs && response_hdrs["content-type"] && response_hdrs["content-type"].indexOf("json") >= 0 ) {
-                            //       bckResp = JSON.parse(backendresponse);
-                            // }
-
-                            //   //   cb(error, bckResp, response_hdrs);
-                            //  }
-                            //  });
 
 
 
@@ -87,31 +64,31 @@
                             // Here we update the content of the widget body.
 
                             var maindiv = widget.createElement('div', {
-                                id: 'mainDiv'
-                            }).inject(widget.body)
+                            id: 'mainDiv'
+                        }).inject(widget.body)
 
                             var table = widget.createElement('table', {
-                                border: "1",
-                                id: 'kids'
-                            }).inject(maindiv)
+                            border: "1",
+                            id: 'kids'
+                        }).inject(maindiv)
                             var tr1 = widget.createElement('tr').inject(table)
 
                             var th1 = widget.createElement('td', {
-                                html: 'displayName'
-                            }).inject(tr1)
+                            html: 'displayName'
+                        }).inject(tr1)
 
                             var th2 = widget.createElement('td', {
-                                html: 'objectType'
-                            }).inject(tr1)
+                            html: 'objectType'
+                        }).inject(tr1)
 
                             var th3 = widget.createElement('td', {
-                                html: 'objectId'
-                            }).inject(tr1)
+                            html: 'objectId'
+                        }).inject(tr1)
 
                             var th4 = widget.createElement('td', {
 
 
-                            }).inject(tr1)
+                        }).inject(tr1)
 
 
                             var th5 = widget.createElement('td').inject(tr1)
@@ -127,118 +104,118 @@
 
 
 
-                            var addBtn = new UWA.Controls.Input.Button({
-                                value: "+",
-                                events: {
-                                    onClick: function () {
-                                        createNewEntry();
-                                    },
+                        var addBtn = new UWA.Controls.Input.Button({
+                            value: "+",
+                            events: {
+                                onClick: function () {
+                                    createNewEntry();
                                 },
-                                id: 'add_kid()'
-                            }).inject(th4);
+                            },
+                            id: 'add_kid()'
+                        }).inject(th4);
 
 
-                            var sendBtn = new UWA.Controls.Input.Button({
-                                value: "send",
-                                attributes: {
-                                    id: 'submit'
-                                },
-                                events: {
-                                    onClick: function () {
-                                        console.log("submit button ")
+                        var sendBtn = new UWA.Controls.Input.Button({
+                            value: "send",
+                            attributes: {
+                                id: 'submit'
+                            },
+                            events: {
+                                onClick: function () {
+                                    console.log("submit button ")
 
-
-                                    },
 
                                 },
 
-                            }).inject(th5);
+                            },
+
+                        }).inject(th5);
 
 
-                            var prefs = new UWA.Controls.Form({
-                                fields: [
+                        var prefs = new UWA.Controls.Form({
+                            fields: [
 
-                                    {
-                                        type: "list",
-                                        name: "My List",
-                                        label: "Choose Tenant",
-                                        value: "Value1",
-                                        options: [
-                                            {
-                                                label: "Tenant 1",
-                                                value: "Value1"
-                                            },
-                                            {
-                                                label: "Tenant 2",
-                                                value: "Value2"
-                                            },
+                                {
+                                    type: "list",
+                                    name: "My List",
+                                    label: "Choose Tenant",
+                                    value: "Value1",
+                                    options: [
+                                        {
+                                            label: "Tenant 1",
+                                            value: "Value1"
+                                        },
+                                        {
+                                            label: "Tenant 2",
+                                            value: "Value2"
+                                        },
 
-                                        ],
-                                        value: "-Other- "
-                                    }
-                                ],
-                                events: {
-                                    onChange: function (callback, name, value) {
-
-                                    },
-
-                                    onSubmit: function (event, values) {
-                                        cosole.log("send evnet")
-
-                                    }
+                                    ],
+                                    value: "-Other- "
                                 }
-                            }).inject(th6);
+                            ],
+                            events: {
+                                onChange: function (callback, name, value) {
+
+                                },
+
+                                onSubmit: function (event, values) {
+                                    cosole.log("send evnet")
+
+                                }
+                            }
+                        }).inject(th6);
 
 
-                            var theInput = document.getElementById('input1');
-                            console.log(theInput)
+                        var theInput = document.getElementById('input1');
+                        console.log(theInput)
 
 
 
 
                             function createNewEntry() {
-                                console.log("in ADD ================")
-                                i++;
-                                var newRow = widget.createElement('tr', {
-                                    id: 'tr_' + i
-                                }).inject(table);
+                            console.log("in ADD ================")
+                    i++;
+                    var newRow = widget.createElement('tr', {
+                        id: 'tr_' + i
+                    }).inject(table);
 
-                                var addtd1 = widget.createElement('td').inject(newRow)
-                                var addtd2 = widget.createElement('td').inject(newRow)
-                                var addtd3 = widget.createElement('td').inject(newRow)
-                                var addtd4 = widget.createElement('td').inject(newRow)
-
-
-                                var add1 = widget.createElement('input', {
-                                    id: 'input1_' + i
-                                }).inject(addtd1);
-                                var add2 = widget.createElement('input', {
-                                    id: 'input2_' + i
-                                }).inject(addtd2);
-                                var add3 = widget.createElement('input', {
-                                    id: 'input3_' + i
-                                }).inject(addtd3);
-
-                                var add4 = new UWA.Controls.Input.Button({
-                                    value: "-",
-                                    attributes: {
-                                        id: 'susBtn_' + i
-                                    },
-                                    events: {
-                                        onClick: function (e) {
-                                            console.log(e.target.getParents())
-                                            e.target.getParents()[1].remove()
-                                            i--
-
-                                        },
-
-                                    },
-
-                                }).inject(addtd4);
+                    var addtd1 = widget.createElement('td').inject(newRow)
+                    var addtd2 = widget.createElement('td').inject(newRow)
+                    var addtd3 = widget.createElement('td').inject(newRow)
+                    var addtd4 = widget.createElement('td').inject(newRow)
 
 
+                    var add1 = widget.createElement('input', {
+                        id: 'input1_' + i
+                    }).inject(addtd1);
+                    var add2 = widget.createElement('input', {
+                        id: 'input2_' + i
+                    }).inject(addtd2);
+                    var add3 = widget.createElement('input', {
+                        id: 'input3_' + i
+                    }).inject(addtd3);
 
-                            }
+                    var add4 = new UWA.Controls.Input.Button({
+                        value: "-",
+                        attributes: {
+                            id: 'susBtn_' + i
+                        },
+                        events: {
+                            onClick: function (e) {
+                                console.log(e.target.getParents())
+                                e.target.getParents()[1].remove()
+                                i--
+
+                            },
+
+                        },
+
+                    }).inject(addtd4);
+
+
+
+                }
 
 
 
@@ -246,55 +223,55 @@
 
 
                             DataDragAndDrop.droppable(maindiv, {
-                                drop: function (data) {
+                    drop: function (data) {
 
-                                    var jsondata = JSON.parse(data)
-                                    var objects = jsondata['data']['items']
-                                    for (var j = 0; j < objects.length; j++) {
-                                        createNewEntry();
-                                        var displayName = document.getElementById('input1_' + i);
-                                        var objectType = document.getElementById('input2_' + i);
-                                        var objectId = document.getElementById('input3_' + i);
-                                        displayName.value = objects[j]['displayName']
-                                        objectType.value = objects[j]['objectType']
-                                        objectId.value = objects[j]['objectId']
-                                    }
-
-
-
-
-
-
-
-                                },
-
-                                enter: function () {
-                                    console.log("drop1")
-                                },
-                                over: function () {
-                                    console.log("drop2")
-                                },
-                                leave: function () {
-                                    console.log("drop3")
-                                },
+                        var jsondata = JSON.parse(data)
+                        var objects = jsondata['data']['items']
+                        for (var j = 0; j < objects.length; j++) {
+                            createNewEntry();
+                            var displayName = document.getElementById('input1_' + i);
+                            var objectType = document.getElementById('input2_' + i);
+                            var objectId = document.getElementById('input3_' + i);
+                            displayName.value = objects[j]['displayName']
+                            objectType.value = objects[j]['objectType']
+                            objectId.value = objects[j]['objectId']
+                        }
 
 
 
 
 
 
-                            });
+
+                    },
+
+                    enter: function () {
+                        console.log("drop1")
+                    },
+                    over: function () {
+                        console.log("drop2")
+                    },
+                    leave: function () {
+                        console.log("drop3")
+                    },
 
 
-                          //  UWA.Data.request('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/857FEB800000409060240CB90000C5DF', {
-                                //method: 'GET',
-                               // type: 'Json',
-                                //cache: 3600,
-                               // onComplete: MyWidget.dataProcessor,
-                               // onFailure: MyWidget.dataError
-                          //  });
 
-                        },
+
+
+
+                });
+
+
+            //  UWA.Data.request('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/857FEB800000409060240CB90000C5DF', {
+            //method: 'GET',
+            // type: 'Json',
+            //cache: 3600,
+            // onComplete: MyWidget.dataProcessor,
+            // onFailure: MyWidget.dataError
+            //  });
+
+        },
 
                        // dataProcessor: function (data) {
                             // do your data processing here
@@ -313,9 +290,9 @@
 
 
                     };
-                    widget.addEvent('onLoad', myWidget.onLoad);
-                    widget.addEvent('onRefresh', myWidget.onRefresh);
-                    widget.addEvent('onResize', myWidget.onResize);
+        widget.addEvent('onLoad', myWidget.onLoad);
+        widget.addEvent('onRefresh', myWidget.onRefresh);
+        widget.addEvent('onResize', myWidget.onResize);
                 });
 
         }());
