@@ -26,8 +26,9 @@
                     'DS/PlatformAPI/PlatformAPI',
                     'DS/DataDragAndDrop/DataDragAndDrop',
                     "DS/WAFData/WAFData",
+                    "DS/UWPClientCode/Navigation"
                 ],
-                function (PlatformAPI, DataDragAndDrop, WAFWAF) {
+                function (PlatformAPI, DataDragAndDrop, WAFWAF,navigation) {
 
 
 
@@ -37,20 +38,18 @@
                         onLoad: function () {
 
 
-                            $.ajax({
-                                url: 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/92B4D343FB2D000060673AB40010173C?$mask=dsmveng:EngItemMask.Common',
+                            WAFWAF.authenticatedRequest('https://www.google.com/', {
+                                method: "POST",
+                                data: JSON.stringify(body),
                                 headers: {
-                                    'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats',
-                                    'ENO_CSRF_TOKEN': 'T8UH-WHL2-E0T5-C0NI-7XF6-UM3K-MVQN-VUX4'
+                                    
                                 },
-                                method: 'GET',
-                                cache: false,
-                                success: function (data) {
+                                onComplete: function (backendresponse, responseheaders) {
                                     console.log("========================================")
-                                    console.log(data)
+                                    console.log(backendresponse)
                                 },
-                                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                                   console.log('error')
+                                onFailure: function (error, backendresponse, response_hdrs) {
+                                    
                                 }
                             });
                         
