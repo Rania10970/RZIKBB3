@@ -26,45 +26,19 @@
                     'DS/PlatformAPI/PlatformAPI',
                     'DS/DataDragAndDrop/DataDragAndDrop',
                     "DS/WAFData/WAFData",
-                    'module', 
-                    'DS/CAADemoToDo2UIBasic/CAADemoToDo2Tools',
-
                 ],
-                function (WAFData,module, PlatformAPI, DataDragAndDrop, CAADemoToDo2Tools) {
+                function (PlatformAPI, DataDragAndDrop) {
 
 
 
 
 
                     var myWidget = {
-
-
-
-
-
-                      //  exports : function () {
-                       //   function expand(){
-                             //   var pathWS = "https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/857FEB800000409060240CB90000C5DF"
-                             //   WAFData.authenticatedRequest(pathWS, {
-                               //     method: 'GET',
-                                //    type: 'json',
-                                //    headers: {
-                                    //   'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
-                                  //  },
-                                  //  onComplete: function () {
-                                  //      console.log("rayen ");
-                                  //  },
-                                  //  onFailure: function () {
-                                  //      console.log("soumaya");
-                                  //  }
-                               // });
-                              //  console.log(expand)
-                            //}},
-                   
                         onLoad: function () {
 
 
-                           
+
+
 
 
                             //console.log("get")
@@ -312,25 +286,25 @@
                             });
 
 
-                            //  UWA.Data.request('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/857FEB800000409060240CB90000C5DF', {
-                            //method: 'GET',
-                            // type: 'Json',
-                            //cache: 3600,
-                            // onComplete: MyWidget.dataProcessor,
-                            // onFailure: MyWidget.dataError
-                            //  });
+                          //  UWA.Data.request('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/857FEB800000409060240CB90000C5DF', {
+                                //method: 'GET',
+                               // type: 'Json',
+                                //cache: 3600,
+                               // onComplete: MyWidget.dataProcessor,
+                               // onFailure: MyWidget.dataError
+                          //  });
 
                         },
 
-                        // dataProcessor: function (data) {
-                        // do your data processing here
-                        // console.log("bonour")
-                        // },
+                       // dataProcessor: function (data) {
+                            // do your data processing here
+                           // console.log("bonour")
+                       // },
 
-                        //  dataError: function (error) {
-                        // console.log("fadiit")
-                        // do your data error here
-                        // }
+                      //  dataError: function (error) {
+                           // console.log("fadiit")
+                            // do your data error here
+                       // }
 
 
 
@@ -340,7 +314,6 @@
 
                     };
                     widget.addEvent('onLoad', myWidget.onLoad);
-                
                     widget.addEvent('onRefresh', myWidget.onRefresh);
                     widget.addEvent('onResize', myWidget.onResize);
                 });
