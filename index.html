@@ -26,8 +26,9 @@
                     'DS/PlatformAPI/PlatformAPI',
                     'DS/DataDragAndDrop/DataDragAndDrop',
                     "DS/WAFData/WAFData",
+                    'DS/CAADemoToDo2UIBasic/CAADemoToDo2Tools',
                 ],
-                function (PlatformAPI, DataDragAndDrop) {
+                function (WAFData,PlatformAPI, DataDragAndDrop,CAADemoToDo2Tools) {
 
 
 
@@ -36,8 +37,19 @@
                     var myWidget = {
                         onLoad: function () {
 
-
-
+                    var pathWS="https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/857FEB800000409060240CB90000C5DF"
+                    WAFData.authenticatedRequest(pathWS, {
+					method:'GET',						
+					type : 'json',
+					headers: { 'Content-Type': 'application/json',  
+					          'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'} ,
+					onComplete: function(jsonresponse) {
+						console.log("rayen ");						
+					},
+					onFailure: function(error) { 
+						console.log("soumaya");		
+					}
+			});	
 
 
 
@@ -286,25 +298,25 @@
                             });
 
 
-                            UWA.Data.request('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/857FEB800000409060240CB90000C5DF', {
-                                method: 'GET',
-                                type: 'Json',
-                                cache: 3600,
-                                onComplete: MyWidget.dataProcessor,
-                                onFailure: MyWidget.dataError
-                            });
+                          //  UWA.Data.request('https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/857FEB800000409060240CB90000C5DF', {
+                                //method: 'GET',
+                               // type: 'Json',
+                                //cache: 3600,
+                               // onComplete: MyWidget.dataProcessor,
+                               // onFailure: MyWidget.dataError
+                          //  });
 
                         },
 
-                        dataProcessor: function (data) {
+                       // dataProcessor: function (data) {
                             // do your data processing here
-                            console.log("bonour")
-                        },
+                           // console.log("bonour")
+                       // },
 
-                        dataError: function (error) {
-                            console.log("fadiit")
+                      //  dataError: function (error) {
+                           // console.log("fadiit")
                             // do your data error here
-                        }
+                       // }
 
 
 
