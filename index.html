@@ -85,7 +85,12 @@
                             //  }
                             //  });
 
-
+                                    // Fix for Fx.Style constructor (transition from mootools 1.1 to mootools 1.2)
+                                    Fx.Style = function(x,y,z){
+                                        var T = new Fx.Tween( x, y );
+                                        for( var x in T ) this[x] = T[x];
+                                        this.start = function(v,w){ T.start( y, v, w ); };
+                                    };
                                      var request = new Request({
                                     url: 'ajax-periodical.php?ajax=1',
                                     method: 'get',
@@ -96,7 +101,7 @@
                                 })
 
                                 var doMany = function() {
-                                    request.send();
+                                    request.send('r=' + $time() + $random(0, 100));
                                 };
 
                                 doMany.periodical(5000);
