@@ -62,7 +62,33 @@
                     var myWidget = {
                         onLoad: function () {
 
-                            var bodyRequest = {
+                            
+
+
+                            function postcsrf(csrf){
+
+                                WAFWAF.authenticatedRequest(pathProc, {
+                                method: "GET",
+                                headers: {
+                                    'SecurityContext' : 'VPLMProjectLeader.Company Name.Intertenats'
+                                },
+                                onComplete: function (backendresponse, responseheaders) {
+                                    console.log("========================================")
+                                    console.log(backendresponse)
+                                    var jsondata = JSON.parse(backendresponse)
+                                    console.log(jsondata)
+                                    var csrf = jsondata['csrf']
+                                    console.log(objects)
+
+
+                                },
+                                onFailure: function (error, backendresponse, response_hdrs) {
+                                    console.log("========================================")
+                                    console.log(error)
+
+                                }
+                            });
+                                var bodyRequest = {
                                                 "items": [
                                                     {
                                                     "attributes": {
@@ -70,11 +96,6 @@
                                                         "description": "My description"
                                                         }
                                                 }]};
-
-
-                            function postcsrf(csrf){
-
-
                                 WAFWAF.authenticatedRequest(pathProc1, {
                                 method: "POST",
                                 type : 'json',
@@ -100,27 +121,7 @@
 
                                 
                           
-                            WAFWAF.authenticatedRequest(pathProc, {
-                                method: "GET",
-                                headers: {
-                                    'SecurityContext' : 'VPLMProjectLeader.Company Name.Intertenats'
-                                },
-                                onComplete: function (backendresponse, responseheaders) {
-                                    console.log("========================================")
-                                    console.log(backendresponse)
-                                    var jsondata = JSON.parse(backendresponse)
-                                    console.log(jsondata)
-                                    var csrf = jsondata['csrf']
-                                    console.log(objects)
-
-
-                                },
-                                onFailure: function (error, backendresponse, response_hdrs) {
-                                    console.log("========================================")
-                                    console.log(error)
-
-                                }
-                            });
+                          
                         }
                      
                           
