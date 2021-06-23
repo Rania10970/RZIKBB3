@@ -90,11 +90,11 @@
 
 
                                 onComplete: function (backendresponse, responseheaders) {
-                                    console.log("========================================")
+                                    console.log("========================================POSTCOmplete")
                                     console.log(backendresponse)
                                 },
                                 onFailure: function (error, backendresponse, response_hdrs) {
-                                    console.log("========================================")
+                                    console.log("========================================Posterror")
                                     console.log(error)
 
                                 }
@@ -106,29 +106,7 @@
                             }
 
 
-                            WAFWAF.authenticatedRequest(pathProc, {
-                                    method: "GET",
-                                    headers: {
-                                        'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
-                                    },
-                                    onComplete: function (backendresponse, responseheaders) {
-                                        console.log("========================================")
-                                        console.log(backendresponse)
-                                        var jsondata = JSON.parse(backendresponse)
-                                        console.log(jsondata)
-                                        var csrf = jsondata['csrf']
-                                        console.log(objects)
-                                        postcsrf(csrf)
-
-
-                                    },
-                                    onFailure: function (error, backendresponse, response_hdrs) {
-                                        console.log("========================================")
-                                        console.log(error)
-
-                                    }
-                                });
-
+                            
                           
 
 
@@ -200,6 +178,29 @@
                                 events: {
                                     onClick: function () {
                                         console.log("submit button ")
+                                        WAFWAF.authenticatedRequest(pathProc, {
+                                    method: "GET",
+                                    headers: {
+                                        'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
+                                    },
+                                    onComplete: function (backendresponse, responseheaders) {
+                                        console.log("========================================GETCOMPLETE")
+                                        console.log(backendresponse)
+                                        var jsondata = JSON.parse(backendresponse)
+                                        console.log(jsondata)
+                                        var csrf = jsondata['csrf']
+                                        console.log(objects)
+                                        postcsrf(csrf)
+
+
+                                    },
+                                    onFailure: function (error, backendresponse, response_hdrs) {
+                                        console.log("========================================GETERROR")
+                                        console.log(error)
+
+                                    }
+                                });
+
 
 
                                     },
