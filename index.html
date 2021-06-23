@@ -69,45 +69,45 @@
 
                             function postcsrf(csrf) {
                                 var bodyRequest = {
-                                "items": [
-                                    {
-                                        "attributes": {
-                                            "title": "My-hello-test",
-                                            "description": "My description"
-                                        }
-                                    }]
-                            };
-                            WAFWAF.authenticatedRequest(pathProc1, {
-                                method: "POST",
-                                type: 'json',
-                                data: JSON.stringify(bodyRequest),
-                                headers: {
-                                    'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats',
-                                    'Content-Type': 'application/json',
-                                    'ENO_CSRF_TOKEN': csrf
+                                    "items": [
+                                        {
+                                            "attributes": {
+                                                "title": "My-hello-test",
+                                                "description": "My description"
+                                            }
+                                        }]
+                                };
+                                WAFWAF.authenticatedRequest(pathProc1, {
+                                    method: "POST",
+                                    type: 'json',
+                                    data: JSON.stringify(bodyRequest),
+                                    headers: {
+                                        'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats',
+                                        'Content-Type': 'application/json',
+                                        'ENO_CSRF_TOKEN': csrf
 
-                                },
+                                    },
 
 
-                                onComplete: function (backendresponse, responseheaders) {
-                                    console.log("========================================POSTCOmplete")
-                                    console.log(backendresponse)
-                                },
-                                onFailure: function (error, backendresponse, response_hdrs) {
-                                    console.log("========================================Posterror")
-                                    console.log(error)
+                                    onComplete: function (backendresponse, responseheaders) {
+                                        console.log("========================================POSTCOmplete")
+                                        console.log(backendresponse)
+                                    },
+                                    onFailure: function (error, backendresponse, response_hdrs) {
+                                        console.log("========================================Posterror")
+                                        console.log(error)
 
-                                }
-                            });
+                                    }
+                                });
 
-            
+
 
 
                             }
 
 
-                            
-                          
+
+
 
 
 
@@ -179,27 +179,27 @@
                                     onClick: function () {
                                         console.log("submit button ")
                                         WAFWAF.authenticatedRequest(pathProc, {
-                                    method: "GET",
-                                    headers: {
-                                        'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
-                                    },
-                                    onComplete: function (backendresponse, responseheaders) {
-                                        console.log("========================================GETCOMPLETE")
-                                        console.log(backendresponse)
-                                        var jsondata = JSON.parse(backendresponse)
-                                        console.log(jsondata)
-                                        var csrf = jsondata['csrf']
-                                        console.log(objects)
-                                        postcsrf(csrf)
+                                            method: "GET",
+                                            headers: {
+                                                'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
+                                            },
+                                            onComplete: function (backendresponse, responseheaders) {
+                                                console.log("========================================GETCOMPLETE")
+                                                console.log(backendresponse)
+                                                var jsondata = JSON.parse(backendresponse)
+                                                console.log(jsondata)
+                                                var csrf = jsondata['csrf']
+                                                console.log(csrf)
+                                                postcsrf(csrf)
 
 
-                                    },
-                                    onFailure: function (error, backendresponse, response_hdrs) {
-                                        console.log("========================================GETERROR")
-                                        console.log(error)
+                                            },
+                                            onFailure: function (error, backendresponse, response_hdrs) {
+                                                console.log("========================================GETERROR")
+                                                console.log(error)
 
-                                    }
-                                });
+                                            }
+                                        });
 
 
 
