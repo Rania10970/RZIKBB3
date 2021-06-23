@@ -73,6 +73,9 @@
                                     console.log(backendresponse)
                                     var jsondata = JSON.parse(backendresponse)
                                     console.log(jsondata)
+                                    var objects = jsondata['csrf']
+                                    console.log(objects)
+
 
                                 },
                                 onFailure: function (error, backendresponse, response_hdrs) {
