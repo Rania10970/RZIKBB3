@@ -56,7 +56,7 @@
            
                 //var pathProc = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/ADF53C23000009F86052259100036C47?$mask=dsmveng:EngItemMask.Common'
                 var pathProc='https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/application/CSRF';
-                var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem'
+                var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/CSRF'
                 
 
                     var myWidget = {
@@ -87,6 +87,8 @@
                                                         "description": "My description"
                                                         }
                                                 }]};
+
+                            
                             WAFWAF.authenticatedRequest(pathProc1, {
                                 method: "POST",
                                 type : 'json',
@@ -94,7 +96,7 @@
                                 headers: {
                                     'SecurityContext' : 'VPLMProjectLeader.Company Name.Intertenats',
                                     'Content-Type': 'application/json',
-                                    'ENO_CSRF_TOKEN':'C3F1-BH5L-VE7Z-DO2S-P7PY-UQTT-DVTJ-PL0M'
+                                 
                                 },
 
                                
