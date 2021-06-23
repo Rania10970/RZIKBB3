@@ -17,6 +17,25 @@
     <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
     <script type="text/javascript" src="http://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
 
+    <widget:preferences>
+	    <widget:preference type="text" name="taskID"          label="Task ID"  defaultValue="" ></widget:preference>
+		<widget:preference type="text" name="taskName"          label="Name Task (create action)"  defaultValue="" ></widget:preference>
+        <widget:preference type="list" name="action"  label="Possible actions"  defaultValue="list"  >  
+			<widget:option value="create" label="Create a Task"></widget:option>
+			<widget:option value="expand" label="Expand a Task"></widget:option>
+			<widget:option value="delete" label="Delete a Task"></widget:option>
+			<widget:option value="update" label="Update a Task"></widget:option>
+			<widget:option value="deleteall" label="Delete Tasks"></widget:option>
+			<widget:option value="promote" label="Promote a Task"></widget:option>	
+            <widget:option value="demote" label="Demote a Task"></widget:option>			
+			<widget:option value="root" label="List Root Tasks"></widget:option>
+			<widget:option value="list" label="List Tasks"></widget:option>
+			<widget:option value="listowner" label="List Tasks for Connected Person as Owner"></widget:option>
+			<widget:option value="expandall" label="Expand Tasks"></widget:option>			
+		</widget:preference>
+        <widget:preference type="text" name="ctx"  label="Role.Organization.Collaborative Space"    defaultValue="VPLMProjectLeader.MyCompany.3DS Private Collab Space" ></widget:preference>		
+    </widget:preferences>
+
     <!-- Application JavaScript Source -->
     <script type="text/javascript">
         (function () {
