@@ -71,6 +71,9 @@
                                 onComplete: function (backendresponse, responseheaders) {
                                     console.log("========================================")
                                     console.log(backendresponse)
+                                    var jsondata = JSON.parse(backendresponse)
+                                    console.log(jsondata)
+
                                 },
                                 onFailure: function (error, backendresponse, response_hdrs) {
                                     console.log("========================================")
