@@ -73,7 +73,8 @@
                                     console.log(backendresponse)
                                     var jsondata = JSON.parse(backendresponse)
                                     console.log(jsondata)
-                                    
+                                    var objects = jsondata['csrf']
+                                    console.log(objects)
 
 
                                 },
@@ -83,8 +84,9 @@
 
                                 }
                             });
-                            var objects = jsondata['csrf']
-                                    console.log(objects)
+
+                            var test =   WAFWAF.authenticatedRequest.onComplete.objets;
+                            console.log(test)
 
                             var bodyRequest = {
                                                 "items": [
