@@ -78,15 +78,17 @@
                             });
                             WAFWAF.authenticatedRequest(pathProc1, {
                                 method: "POST",
+                                type : 'json',
+                                data: {
+                                    'title': 'post-test',
+                                    'description': 'My description'
+                                },
                                 headers: {
                                     'SecurityContext' : 'VPLMProjectLeader.Company Name.Intertenats',
                                     'Content-Type': 'application/json'
                                 },
 
-                                body: {
-                                    'title': 'post-test',
-                                    'description': 'My description'
-                                },
+                               
                                 onComplete: function (backendresponse, responseheaders) {
                                     console.log("========================================")
                                     console.log(backendresponse)
