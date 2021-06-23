@@ -188,7 +188,7 @@
                                                 console.log(backendresponse)
                                                 var jsondata = JSON.parse(backendresponse)
                                                 console.log(jsondata)
-                                                var csrf = jsondata['csrf']
+                                                var csrf = jsondata['csrf']['value']
                                                 console.log(csrf)
                                                 postcsrf(csrf)
 
