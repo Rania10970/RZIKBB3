@@ -132,15 +132,15 @@
                             var tr1 = widget.createElement('tr').inject(table)
 
                              var th1 = widget.createElement('td', {
-                                html: ''
+                                html: 'displayName'
                             }).inject(tr1)
 
                             var th2 = widget.createElement('td', {
-                                html: ''
+                                html: 'objectType'
                             }).inject(tr1)
 
                             var th3 = widget.createElement('td', {
-                                html: ''
+                                html: 'objectId'
                             }).inject(tr1)
  
                             var th4 = widget.createElement('td', {
@@ -375,7 +375,8 @@
                             }
 
 
-
+                            var a = table[i][addtd3]
+                            console.log(a) 
 
                             DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
@@ -404,7 +405,7 @@
                                     console.log("drop3")
                                 },
 
-
+                             
 
 
 
