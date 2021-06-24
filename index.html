@@ -307,8 +307,9 @@
                                 drop: function (data) {
 
                                     var jsondata = JSON.parse(data)
-                                    var objects = jsondata['data']['items'] ['objectId']
-                                    console.log(objects)
+                                    var objects = jsondata['data']['items'] 
+                                    var objectId = objects['objectId']
+                                    console.log(objectId)
                                 
 
 
