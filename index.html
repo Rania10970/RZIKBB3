@@ -337,10 +337,10 @@
                                         console.log(jsondata)
                                         var objects = jsondata['member']
                                         console.log(objects)
-                                      
+                                       
                                             for (var j = 0; j < objects.length; j++) {
                                                 
-
+                                                if (objects['id'] !== objectId ){
                                               createNewEntry();
                                                 var name = document.getElementById('input1_' + i);
                                                 var type = document.getElementById('input2_' + i);
@@ -357,7 +357,7 @@
                                                 collabspace.value = objects[j]['collabspace'];
                                                 owner.value = objects[j]['owner']
 
-
+                                                }
 
                                             }
 
@@ -384,17 +384,19 @@
 
                                     var jsondata = JSON.parse(data)
                                     var objects = jsondata['data']['items']
+                                    
                                     for (var j = 0; j < objects.length; j++) {
-                                        var objectId = objects[j]['objectId']
+                                      
+
+                                       var objectId = objects[j]['objectId']
+                                
                                         getdrop(objectId)
 
 
 
 
                                     }
-                                    console.log ("hello s")
-                                    var s=objectId;
-                                    console.log(s);
+                                   
 
 
                                 },
