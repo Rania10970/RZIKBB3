@@ -340,7 +340,8 @@
                                        
                                             for (var j = 0; j < objects.length; j++) {
                                                 
-                                                if (objects[j]['id']!== objectId ){
+                                                if (objects[j]['id'] == objectId ){console.log ("eror");}
+                                                else {
                                               createNewEntry();
                                                 var name = document.getElementById('input1_' + i);
                                                 var type = document.getElementById('input2_' + i);
@@ -355,9 +356,9 @@
                                                 revision.value = objects[j]['revision'];
                                                 state.value = objects[j]['state'];
                                                 collabspace.value = objects[j]['collabspace'];
-                                                owner.value = objects[j]['owner']
+                                                owner.value = objects[j]['owner'] }
 
-                                                }
+                                               
 
                                             }
 
