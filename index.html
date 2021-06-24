@@ -321,55 +321,36 @@
 
                             }
 
-            
-                            
-                        function getdrop(objectId){
-                        var pathProcdrop = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/'+objectId;
-                            WAFWAF.authenticatedRequest(pathProcdrop, {
-                                            method: "GET",
-                                            headers: {
-                                                'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
-                                            },
-                                            onComplete: function (backendresponse, responseheaders) {
-                                                console.log("====GETDROP COMPLETE")
-                                                console.log(backendresponse)
-                                                var jsondata = JSON.parse(backendresponse)
-                                                var objects = jsondata['member']
-                                                for (var j = 0; j < objects.length; j++) {
-                                              var objectId = objects[j]['objectId']  
-                                     
-                                                    createNewEntry();
-                                                    var displayName = document.getElementById('input1_' + i);
-                                                    var objectType = document.getElementById('input2_' + i);
-                                                    var objectId = document.getElementById('input3_' + i);
-                                                    var revision = document.getElementById('input4_' + i);
-                                                    var state = document.getElementById('input5_' + i);
-                                                    var collabspace= document.getElementById('input6_' + i);
-                                                    var owner= document.getElementById('input_' + i);
-                                                    displayName.value = objects[j]['displayName'];
-                                                    objectType.value = objects[j]['objectType'];
-                                                    objectId.value = objects[j]['objectId'];
-                                                    revision.value = objects[j]['revision'];
-                                                    state.value = objects[j]['state'];
-                                                    collabspace.value = objects[j]['collabspace'];
-                                                    owner.value = objects[j]['owner']
-                                        
-                                        
-                                
-                                }
-
-                                        
 
 
-                                            },
-                                            onFailure: function (error, backendresponse, response_hdrs) {
-                                                console.log("====GETDROP ERROR")
-                                                console.log(error)
+                            function getdrop(objectId) {
+                                var pathProcdrop = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/' + objectId;
+                                WAFWAF.authenticatedRequest(pathProcdrop, {
+                                    method: "GET",
+                                    headers: {
+                                        'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
+                                    },
+                                    onComplete: function (backendresponse, responseheaders) {
+                                        console.log("====GETDROP COMPLETE")
+                                        console.log(backendresponse)
+                                        var jsondata = JSON.parse(backendresponse)
+                                        console.log(jsondata)
+                                        var objects = jsondata['member']
+                                        console.log(objects)
+                                      
 
-                                            }
-                                        });
+
+
+
+                                    },
+                                    onFailure: function (error, backendresponse, response_hdrs) {
+                                        console.log("====GETDROP ERROR")
+                                        console.log(error)
 
                                     }
+                                });
+
+                            }
 
 
 
@@ -380,13 +361,13 @@
                                     var jsondata = JSON.parse(data)
                                     var objects = jsondata['data']['items']
                                     for (var j = 0; j < objects.length; j++) {
-                                    var objectId = objects[j]['objectId']  
-                                    getdrop(objectId) 
-                                
-                                        
-                                        
-                                
-                                }
+                                        var objectId = objects[j]['objectId']
+                                        getdrop(objectId)
+
+
+
+
+                                    }
 
 
                                 },
