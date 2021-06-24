@@ -332,9 +332,12 @@
                                     var jsondata = JSON.parse(data)
                                     var objects = jsondata['data']['items']
                                     for (var j = 0; j < objects.length; j++) {
-                                    var objectId = objects[j]['objectId']   }
+                                    var objectId = objects[j]['objectId']  
+                                    getdrop(objectId) 
+                                
+                                }
    
-                                    getdrop(objectId)
+                                   
 
                                     
                                   
