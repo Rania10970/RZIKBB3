@@ -376,7 +376,7 @@
                             }
 
                       
-
+                      
                             DataDragAndDrop.droppable(maindiv, {
                                 drop: function (data) {
 
@@ -387,6 +387,8 @@
                                       
 
                                        var objectId = objects[j]['objectId']
+                                     
+                                       
                                 
                                         getdrop(objectId)
 
@@ -394,8 +396,10 @@
 
 
                                     }
-                                  return (objectId)
-                                   
+                                 
+                                    var x=objectId;
+                                    console.log(x);
+
 
 
                                 },
