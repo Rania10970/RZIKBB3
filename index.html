@@ -308,9 +308,13 @@
 
                                     var jsondata = JSON.parse(data)
                                     console.log(jsondata)
-                                    var objects = jsondata['data']['items']['objectId']
-                                    console.log(objects)
+                                    var objects = jsondata['data']['items']
+                                    for (var j = 0; j < objects.length; j++) {
+                                    var objectId = objects[j]['objectId']
+                                    console.log (objectId)
 
+                                    }
+                                  
                                    
                             
 
