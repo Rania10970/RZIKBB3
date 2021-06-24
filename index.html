@@ -265,19 +265,42 @@
                                 var addtd2 = widget.createElement('td').inject(newRow)
                                 var addtd3 = widget.createElement('td').inject(newRow)
                                 var addtd4 = widget.createElement('td').inject(newRow)
+                                var addtd5 = widget.createElement('td').inject(newRow)
+                                var addtd6 = widget.createElement('td').inject(newRow)
+                                var addtd7 = widget.createElement('td').inject(newRow)
+                                var addtd8 = widget.createElement('td').inject(newRow)
 
 
                                 var add1 = widget.createElement('input', {
                                     id: 'input1_' + i
                                 }).inject(addtd1);
+
                                 var add2 = widget.createElement('input', {
                                     id: 'input2_' + i
                                 }).inject(addtd2);
+
                                 var add3 = widget.createElement('input', {
                                     id: 'input3_' + i
                                 }).inject(addtd3);
 
-                                var add4 = new UWA.Controls.Input.Button({
+                                var add4 = widget.createElement('input', {
+                                    id: 'input4_' + i
+                                }).inject(addtd4);
+
+                                var add5 = widget.createElement('input', {
+                                    id: 'input5_' + i
+                                }).inject(addtd5);
+
+
+                                var add6 = widget.createElement('input', {
+                                    id: 'input6_' + i
+                                }).inject(addtd6);
+
+                                var add7 = widget.createElement('input', {
+                                    id: 'input7_' + i
+                                }).inject(addtd7);
+
+                                var add8 = new UWA.Controls.Input.Button({
                                     value: "-",
                                     attributes: {
                                         id: 'susBtn_' + i
@@ -292,13 +315,13 @@
 
                                     },
 
-                                }).inject(addtd4);
+                                }).inject(addtd8);
 
 
 
                             }
 
-                            https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/application/CSRF
+            
                             
                         function getdrop(objectId){
                         var pathProcdrop = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/'+objectId;
@@ -310,6 +333,31 @@
                                             onComplete: function (backendresponse, responseheaders) {
                                                 console.log("====GETDROP COMPLETE")
                                                 console.log(backendresponse)
+                                                var jsondata = JSON.parse(backendresponse)
+                                                var objects = jsondata['member']
+                                                for (var j = 0; j < objects.length; j++) {
+                                              var objectId = objects[j]['objectId']  
+                                     
+                                                    createNewEntry();
+                                                    var displayName = document.getElementById('input1_' + i);
+                                                    var objectType = document.getElementById('input2_' + i);
+                                                    var objectId = document.getElementById('input3_' + i);
+                                                    var revision = document.getElementById('input4_' + i);
+                                                    var state = document.getElementById('input5_' + i);
+                                                    var collabspace= document.getElementById('input6_' + i);
+                                                    var owner= document.getElementById('input_' + i);
+                                                    displayName.value = objects[j]['displayName'];
+                                                    objectType.value = objects[j]['objectType'];
+                                                    objectId.value = objects[j]['objectId'];
+                                                    revision.value = objects[j]['revision'];
+                                                    state.value = objects[j]['state'];
+                                                    collabspace.value = objects[j]['collabspace'];
+                                                    owner.value = objects[j]['owner']
+                                        
+                                        
+                                
+                                }
+
                                         
 
 
@@ -335,15 +383,10 @@
                                     var objectId = objects[j]['objectId']  
                                     getdrop(objectId) 
                                 
+                                        
+                                        
+                                
                                 }
-   
-                                   
-
-                                    
-                                  
-                                   
-                            
-
 
 
                                 },
