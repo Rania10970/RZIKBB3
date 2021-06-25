@@ -15,9 +15,9 @@
     <meta name="description" content="A descriptive description" />
     <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Application Standalone emulation files -->
-   <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
+   <!-- <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />-->
    
-    <!--<link rel="stylesheet"  type="text/css" href="https://github.com/Rania10970/RZIKBB3/index_style.css"/>-->
+    <link rel="stylesheet"  type="text/css" href="https://raw.githubusercontent.com/Rania10970/RZIKBB3/main/index_style.css"/>
     <script type="text/javascript" src="http://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
 
     <widget:preferences>
@@ -72,13 +72,8 @@
 
                             var btn = new UWA.Controls.Input.Button({
                                     value: 'Add new',
-                                    emphasize: "success",
-                                    disabled: true ,
-                                    styles: {
-                                        'position':'absolute',
-                                        'right':'20px',
-                                    
-                                    }
+                                   
+                                   
                                 }).inject(widget.body);
                     
                             function postcsrf(csrf) {
