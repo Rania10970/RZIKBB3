@@ -73,10 +73,11 @@
                             var btn = new UWA.Controls.Input.Button({
                                     value: 'Add new',
                                     emphasize: "success",
+                                    disabled: true ,
                                     styles: {
                                         'position':'absolute',
                                         'right':'20px',
-                                        'background-color':'orange'
+                                    
                                     }
                                 }).inject(widget.body);
                     
@@ -186,10 +187,11 @@
                             var sendBtn = new UWA.Controls.Input.Button({
                                 value: "send",
                                 emphasize: "success",
+                                disabled: true ,
                                 styles: {
                                     'position':'absolute',
                                     'right':'20px',
-                                    'color':'orange'
+                                
                                 },
                                 attributes: {
                                     id: 'submit'
