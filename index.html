@@ -16,7 +16,21 @@
     <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Application Standalone emulation files -->
     <!--  <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />-->
-    <link rel="stylesheet" href="index_style.css"/> 
+    <style type="text/css"> 
+        html { background: #FFFFFF url(http://eco.netvibes.com/img/bg.gif) repeat scroll 0%; color: #796649}
+        body { width: 600px; margin: 20px auto; border: 2px solid #CCC; background-color: #FFF; }
+        h2,h3 { text-align: center; color: #FF6600}
+        img { border: 0px; vertical-align: middle; }
+        a:hover {
+          color:#FF6600;
+          text-decoration: underline;
+        }
+        a {
+          color:#333333;
+          text-decoration:none;
+        }
+        p { margin: 0 0 10px 10px; }
+      </style>
     <script type="text/javascript" src="http://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
 
     <widget:preferences>
@@ -68,6 +82,11 @@
                     var myWidget = {
                         onLoad: function () {
 
+
+                            widget.body.setStyles({
+                            height: viewport.height + 'px',
+                            width: viewport.width + 'px'
+                            });
 
 
 
