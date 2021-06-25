@@ -48,13 +48,15 @@
                     'DS/DataDragAndDrop/DataDragAndDrop',
                     "DS/WAFData/WAFData",
                     "DS/UWPClientCode/Navigation",
-                    "DS/UWPClientCode/Bootstrap"
+                    "DS/UWPClientCode/Bootstrap",
+                    "DS/Class/Collection"
 
                 ],
-                function (PlatformAPI, DataDragAndDrop, WAFWAF, navigation, Bootstrap) {
+                function (PlatformAPI, DataDragAndDrop, WAFWAF, navigation, Bootstrap,Collection) {
 
 
 
+                      var list= new Array();
 
                     //var pathProc = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/ADF53C23000009F86052259100036C47?$mask=dsmveng:EngItemMask.Common'
                     var pathProc = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/application/CSRF';
@@ -374,36 +376,50 @@
                                 });
 
                             }
-
+                        
                       
                       
                             DataDragAndDrop.droppable(maindiv, {
+                              
                                 drop: function (data) {
 
                                     var jsondata = JSON.parse(data)
                                     var objects = jsondata['data']['items']
                                     
+                                
                                     for (var j = 0; j < objects.length; j++) {
                                       
-
+                                    
                                        var objectId = objects[j]['objectId']
-                                     
-                                       if (x !== objectId){
+            
+                                     var result =  UWA.Array.detect(list,function(value,index){
+                                        
+                                           return value==objectId;
+                                        
+                                       })
+                                       if (!result){
+                                           list.push (objectId);
+                                           getdrop(objectId) 
+
+                                       }
+                                      
+                               
+                                       
                                 
-                                        getdrop(objectId) 
-                                    }
+                                       
+                                    
 
 
 
 
                                     }
                                   
-                                    var x=objectId;
-                                    console.log(x);
+                                   
 
 
 
                                 },
+                                
 
                                 enter: function () {
                                     console.log("drop1")
@@ -416,8 +432,9 @@
                                 },
 
                              
+                          
 
-
+                                
 
 
                             });
