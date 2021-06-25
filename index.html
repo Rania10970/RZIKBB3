@@ -70,7 +70,13 @@
                         onLoad: function () {
 
 
-
+                            var btn = new UWA.Controls.Input.Button({
+                                    value: 'Add new',
+                                    styles: {
+                                        'position':'absolute',
+                                        'right':'20px'
+                                    }
+                                }).inject(widget.body);
                     
                             function postcsrf(csrf) {
                                 var bodyRequest = {
