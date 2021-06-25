@@ -1,7 +1,7 @@
 
  .sendBtn{
     background: transparent url(./assets/Dollar.png) no-repeat center;
-	margin: 0 4px 0 4px;
+	margin: 4px 8px 4px 8px;
 	vertical-align: middle;
 	background-size: auto;
 	cursor: pointer;
@@ -10,4 +10,3 @@
 	border: 0px;
   }
 
-  
