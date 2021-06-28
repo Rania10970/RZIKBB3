@@ -64,27 +64,7 @@
                     var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem'
                     var myWidget = {
                         onLoad: function () {
-                            var dataGrid = new UWA.Controls.DataGrid({
-                                className: 'table',
-                                columns: [
-                                    {
-                                        text: 'Birthday',
-                                        dataIndex: 'date',
-
-                                    },
-                                    {
-                                        text: 'Name',
-                                        dataIndex: 'name',
-
-                                    }
-                                ],
-                                data: [
-                                    { 'date': 'XXX', 'users': 'Foo Bar' }
-                                ],
-                                sortable: 'true'
-                            }).inject(widget.body);
-
-                            
+                         console.log   ("=========================5"+UWA.Controls)                        
                             var btn = new UWA.Controls.Input.Button({
                                 value: 'Add new',
                             }).inject(widget.body);
