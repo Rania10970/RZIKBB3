@@ -6,6 +6,17 @@
 
 }
 
+#kids {
+    border-collapse: collapse;
+    min-width: 400px;
+    width: auto;
+    box-shadow: 0 5px 50px rgba(0,0,0,0.15);
+    cursor: pointer;
+    margin: 100px auto;
+    border: 2px solid midnightblue;
+    /* border: 1px solid #ddd;  */
+}
+
 
 
 
