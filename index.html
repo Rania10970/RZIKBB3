@@ -63,8 +63,20 @@
                         onLoad: function () {
                             console.log("=========================5" + JSON.stringify(UWA.Controls))
                             var btn = new UWA.Controls.Input.Button({
-                                value: 'Add new',
+                                value: 'Export',
+                                id: 'btn'
                             }).inject(widget.body);
+
+                            btn.setStyles({
+                                "background-color": "#4CAF50",
+                                " border": "none",
+                                "color": "white",
+                                "padding": "15px 32px",
+                                "text-align": "center",
+                                "text-decoration": "none",
+                                "display": "inline-block",
+                                "font-size": "16px",
+                            })
 
                             function postcsrf(csrf) {
                                 var bodyRequest = {
@@ -220,51 +232,51 @@
 
 
 
-                            var sendBtn = new UWA.Controls.Input.Button({
-                                value: "send",
-                                emphasize: "success",
-                                disabled: true,
-                                styles: {
-                                    'position': 'absolute',
-                                    'right': '20px',
+                            //var sendBtn = new UWA.Controls.Input.Button({
+                            //  value: "send",
+                            //  emphasize: "success",
+                            // disabled: true,
+                            // styles: {
+                            //  'position': 'absolute',
+                            // 'right': '20px',
 
-                                },
-                                attributes: {
-                                    id: 'submit'
-                                },
-                                events: {
-                                    onClick: function () {
-                                        console.log("submit button ")
-                                        WAFWAF.authenticatedRequest(pathProc, {
-                                            method: "GET",
-                                            headers: {
-                                                'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
-                                            },
-                                            onComplete: function (backendresponse, responseheaders) {
-                                                console.log("========================================GETCOMPLETE")
-                                                console.log(backendresponse)
-                                                var jsondata = JSON.parse(backendresponse)
-                                                console.log(jsondata)
-                                                var csrf = jsondata['csrf']['value']
-                                                console.log(csrf)
-                                                postcsrf(csrf)
-
-
-                                            },
-                                            onFailure: function (error, backendresponse, response_hdrs) {
-                                                console.log("========================================GETERROR")
-                                                console.log(error)
-
-                                            }
-                                        });
+                            //  },
+                            // attributes: {
+                            //    id: 'submit'
+                            // },
+                            //events: {
+                            // onClick: function () {
+                            //  console.log("submit button ")
+                            //  WAFWAF.authenticatedRequest(pathProc, {
+                            //    method: "GET",
+                            //  headers: {
+                            //    'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
+                            //  },
+                            // onComplete: function (backendresponse, responseheaders) {
+                            //  console.log("========================================GETCOMPLETE")
+                            // console.log(backendresponse)
+                            // var jsondata = JSON.parse(backendresponse)
+                            // console.log(jsondata)
+                            // var csrf = jsondata['csrf']['value']
+                            //  console.log(csrf)
+                            //  postcsrf(csrf)
 
 
+                            //   },
+                            // onFailure: function (error, backendresponse, response_hdrs) {
+                            //   console.log("========================================GETERROR")
+                            //  console.log(error)
 
-                                    },
+                            // }
+                            //  });
 
-                                },
 
-                            }).inject(th5);
+
+                            // },
+
+                            //},
+
+                            // }).inject(th5);
 
 
 
@@ -329,27 +341,27 @@
                                 var add2 = widget.createElement('input', {
                                     id: 'input2_' + i
                                 }).inject(addtd2);
-                             
+
 
                                 var add3 = widget.createElement('input', {
                                     id: 'input3_' + i
                                 }).inject(addtd3);
-                               
+
                                 var add4 = widget.createElement('input', {
                                     id: 'input4_' + i
                                 }).inject(addtd4);
-                               
+
 
                                 var add5 = widget.createElement('input', {
                                     id: 'input5_' + i
                                 }).inject(addtd5);
-                               
+
 
 
                                 var add6 = widget.createElement('input', {
                                     id: 'input6_' + i
                                 }).inject(addtd6);
-                               
+
 
                                 var add7 = widget.createElement('input', {
                                     id: 'input7_' + i
@@ -397,46 +409,46 @@
                                             //else {
                                             createNewEntry();
                                             var name = document.getElementById('input1_' + i)
-                                          
+
                                             var type = document.getElementById('input2_' + i)
-                                            
+
                                             var id = document.getElementById('input3_' + i)
-                                           
+
                                             var revision = document.getElementById('input4_' + i)
-                                          
+
                                             var state = document.getElementById('input5_' + i)
-                                          
+
                                             var collabspace = document.getElementById('input6_' + i)
-                                           
+
 
                                             name.value = objects[j]['name'];
                                             input1_1.setStyles({
-                                                "border": "1px solid #ddd","padding": "15px 20px","background-color": "#f3f3f3"
+                                                "padding": "15px 20px", "background-color": "#f3f3f3"
 
                                             })
                                             type.value = objects[j]['type'];
                                             input2_1.setStyles({
-                                                "border": "1px solid #ddd","padding": "15px 20px","background-color": "#f3f3f3"
+                                                "padding": "15px 20px", "background-color": "#f3f3f3"
 
                                             })
                                             id.value = objects[j]['id'];
                                             input3_1.setStyles({
-                                                "border": "1px solid #ddd","padding": "15px 20px","background-color": "#f3f3f3"
+                                                "padding": "15px 20px", "background-color": "#f3f3f3"
 
                                             })
                                             revision.value = objects[j]['revision'];
                                             input4_1.setStyles({
-                                                "border": "1px solid #ddd","padding": "15px 20px","background-color": "#f3f3f3"
+                                                "padding": "15px 20px", "background-color": "#f3f3f3"
 
                                             })
                                             state.value = objects[j]['state'];
                                             input5_1.setStyles({
-                                                "border": "1px solid #ddd","padding": "15px 20px","background-color": "#f3f3f3"
+                                                "padding": "15px 20px", "background-color": "#f3f3f3"
 
                                             })
                                             collabspace.value = objects[j]['collabspace'];
                                             input6_1.setStyles({
-                                                "border": "1px solid #ddd","padding": "15px 20px","background-color": "#f3f3f3"
+                                                "padding": "15px 20px", "background-color": "#f3f3f3"
 
                                             })
 
