@@ -1,14 +1,5 @@
 
- .btn{
-    background: transparent url(./assets/Dollar.png) no-repeat center;
-	margin: 4px 8px 4px 8px;
-	vertical-align: middle;
-	background-size: auto;
-	cursor: pointer;
-	height: 28px;
-	width: 32px;
-	border: 0px;
-  }
+
  
 #mainDiv{
     background-color: aqua;
@@ -23,7 +14,3 @@
 
 
  
-.mainDiv{
-    background-color: aqua;
-
-}
