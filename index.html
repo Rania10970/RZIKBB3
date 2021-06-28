@@ -13,14 +13,19 @@
     <title>Title of the App</title>
     <meta name="author" content="John Doe" />
     <meta name="description" content="A descriptive description" />
-    <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Applicatfion Standalone emulation files -->
     <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
     <link rel="stylesheet" href="https: //raw.githubusercontent.com/Rania10970/RZIKBB3/main/index_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <widget:preferences>
         <widget:preference type="text" name="taskID" label="Task ID" defaultValue=""></widget:preference>
         <widget:preference type="text" name="taskName" label="Name Task (create action)" defaultValue="">
@@ -127,7 +132,7 @@
                             var table = widget.createElement('table', {
                                 border: "1",
                                 id: 'kids',
-                                'class': ".table-striped"
+                                'class': "table table-striped"
                             }).inject(maindiv)
 
                             
