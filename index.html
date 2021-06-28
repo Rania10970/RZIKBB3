@@ -14,8 +14,8 @@
     <meta name="author" content="John Doe" />
     <meta name="description" content="A descriptive description" />
     <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <script type="text/javascript" src="../AmdLoader/AmdLoader.js"></script> 
+
+    <script type="text /javascript" src="../AmdLoader/AmdLoader.js"></script>
     <!-- Application Standalone emulation files -->
     <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
     <link rel="stylesheet" href="https: //raw.githubusercontent.com/Rania10970/RZIKBB3/main/index_style.css">
@@ -48,60 +48,18 @@
         (function () {
             'use strict';
             require(
-                [    "DS/DataGridView/DataGridView",
-                    "DS/Windows/ImmersiveFrame",
-                    "DS/Tests_DataGridView/spec/Tests_DataGridView_Utils",
+                [
 
                     'DS/PlatformAPI/PlatformAPI',
                     'DS/DataDragAndDrop/DataDragAndDrop',
                     "DS/WAFData/WAFData",
                     "DS/UWPClientCode/Navigation",
                     "DS/UWPClientCode/Bootstrap",
-                   
+
 
                 ],
-                function (WUXDataGridView,  WUXImmersiveFrame, DataGridViewUtils,PlatformAPI, DataDragAndDrop, WAFWAF,Navigation,Bootstrap) {
-                    "use strict";
-                    var mainObject = {
-                                data: undefined, // Will contains raw data of nodes
-                                model: undefined, // Will contains the TreeDocument object
-                                view: undefined, // Will contains the DataGridView object
-                                columns: undefined, // Will contains the columns definition
-                            };
+                function (PlatformAPI, DataDragAndDrop, WAFWAF, Navigation, Bootstrap) {
 
-                            var options = {
-                                dataTypeRepresentation: "string",
-                                rowNumberByLeafNode: 50,
-                                columnNumber: 10,
-                                leftPinnedColumnNumber: 1,
-                                rightPinnedColumnNumber: 1,
-                                treeDepth: 2,
-                                numberOfNodesByDepthLevel: 4
-                            };
-
-                            DataGridViewUtils.generateTreeDocument(mainObject, options);
-
-                            // Create the DataGridView
-                            var myDataGridView = new WUXDataGridView({
-                                identifier: "myDataGridViewId",
-                                treeDocument: mainObject.model,
-                                columns: mainObject.columns,
-                                defaultColumnDef: { //Set default settings for columns
-                                    width: 150,
-                                    minWidth: 40,
-                                    editableFlag: true
-                                },
-                            });
-
-                            var immersiveFrame = new WUXImmersiveFrame({
-                                reactToPointerEventsFlag: false
-                            });
-                            immersiveFrame.setContentInBackgroundLayer(myDataGridView.getContent());
-
-                            immersiveFrame.inject(document.body);
-                            myDataGridView.onReady(function () {
-                                myDataGridView.ensureNodeModelVisible(myDataGridView.model[100]);
-                            });
 
 
                     var list = new Array();
@@ -461,7 +419,36 @@
 
 
                             // ===============================    // DATAGRIDVIEW
-                           
+
+                            var dataGrid = new UWA.Controls.DataGrid({
+                                className: 'table',
+                                columns: [
+                                    {
+                                        text: 'Birthday',
+                                        dataIndex: 'date',
+                                        format: function (value) {
+                                            return UWADate.strftime(value, '%X');
+                                        },
+                                        sortKey: function (value) {
+                                            return value.getTime();
+                                        }
+                                    },
+                                    {
+                                        text: 'Name',
+                                        dataIndex: 'name',
+                                        sortKey: function (value) {
+                                            return value.split(' ').slice(1).join(' ');
+                                        }
+                                    }
+                                ],
+                                data: [
+                                    { 'date': new Date(), 'users': 'Foo Bar' }
+                                ],
+                                sortable: `true`
+                            }).inject(widget.body);
+
+
+
 
 
                         },
