@@ -41,7 +41,7 @@
         <widget:preference type="text" name="ctx" label="Role.Organization.Collaborative Space"
             defaultValue="VPLMProjectLeader.MyCompany.3DS Private Collab Space"></widget:preference>
     </widget:preferences>
-    
+
     <!-- Application JavaScript Source -->
     <script type="text/javascript">
         (function () {
@@ -61,7 +61,7 @@
                     var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem'
                     var myWidget = {
                         onLoad: function () {
-                         console.log   ("=========================5"+JSON.stringify(UWA.Controls) )                      
+                            console.log("=========================5" + JSON.stringify(UWA.Controls))
                             var btn = new UWA.Controls.Input.Button({
                                 value: 'Add new',
                             }).inject(widget.body);
@@ -121,7 +121,12 @@
 
                             }).inject(widget.body)
 
-                         //   mainDiv.setStyles({ "display": "flex", "flex-wrap": "wrap", "background-color": "aqua" })
+                            mainDiv.setStyles({
+                                " border-collapse": "collapse", "min-width": "400px", "box-shadow": "0 5px 50px rgba(0,0,0,0.15)",
+                                "cursor": "pointer", "margin": "100px auto", "border": "2px solid midnightblue"
+                            })
+
+                            // mainDiv.setStyles({ "display": "flex", "flex-wrap": "wrap", "background-color": "aqua" })
 
 
                             var table = widget.createElement('table', {
@@ -130,11 +135,12 @@
                                 'class': ".table-striped"
                             }).inject(maindiv)
 
-                            
-                            
+
+
                             var tr1 = widget.createElement('tr', {
-                              
-                                id: 'kids1', }).inject(table)
+
+                                id: 'kids1',
+                            }).inject(table)
 
                             var th1 = widget.createElement('td', {
                                 html: 'displayName'
