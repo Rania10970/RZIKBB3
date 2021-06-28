@@ -64,7 +64,7 @@
                     var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem'
                     var myWidget = {
                         onLoad: function () {
-                         console.log   ("=========================5"+UWA.Controls)                        
+                         console.log   ("=========================5"+JSON.stringify(UWA.Controls) )                      
                             var btn = new UWA.Controls.Input.Button({
                                 value: 'Add new',
                             }).inject(widget.body);
