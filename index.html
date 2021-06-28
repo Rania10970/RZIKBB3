@@ -46,19 +46,19 @@
         (function () {
             'use strict';
             require(
-                [
+                [    "DS/DataGridView/DataGridView",
+                    "DS/Windows/ImmersiveFrame",
+                    "DS/Tests_DataGridView/spec/Tests_DataGridView_Utils",
+
                     'DS/PlatformAPI/PlatformAPI',
                     'DS/DataDragAndDrop/DataDragAndDrop',
                     "DS/WAFData/WAFData",
-                    //"DS/UWPClientCode/Navigation",
-                   // "DS/UWPClientCode/Bootstrap",
-                    "DS/DataGridView/DataGridView",
-                    "DS/Windows/ImmersiveFrame",
-                    "DS/Tests_DataGridView/spec/Tests_DataGridView_Utils"
-
+                    "DS/UWPClientCode/Navigation",
+                    "DS/UWPClientCode/Bootstrap",
+                   
 
                 ],
-                function (PlatformAPI, DataDragAndDrop, WAFWAF, WUXDataGridView, WUXImmersiveFrame, DataGridViewUtils, WUXDataGridView, WUXImmersiveFrame, DataGridViewUtils) {
+                function (WUXDataGridView,  WUXImmersiveFrame, DataGridViewUtils,PlatformAPI, DataDragAndDrop, WAFWAF,Navigation,Bootstrap) {
                     "use strict";
                     var mainObject = {
                                 data: undefined, // Will contains raw data of nodes
