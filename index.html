@@ -71,32 +71,7 @@
 
                     var myWidget = {
                         onLoad: function () {
-                            var dataGrid = new UWA.Controls.DataGrid({
-                                className: 'table',
-                                columns: [
-                                    {
-                                        text: 'Birthday',
-                                        dataIndex: 'date',
-                                        format: function (value) {
-                                            return UWADate.strftime(value, '%X');
-                                        },
-                                        sortKey: function (value) {
-                                            return value.getTime();
-                                        }
-                                    },
-                                    {
-                                        text: 'Name',
-                                        dataIndex: 'name',
-                                        sortKey: function (value) {
-                                            return value.split(' ').slice(1).join(' ');
-                                        }
-                                    }
-                                ],
-                                data: [
-                                    { 'date': new Date(), 'users': 'Foo Bar' }
-                                ],
-                                sortable: `true`
-                            }).inject(widget.body);
+                          
 
 
                             var btn = new UWA.Controls.Input.Button({
