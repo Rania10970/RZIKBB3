@@ -143,34 +143,73 @@
                                 id: 'kids1',
                             }).inject(table)
                             kids1.setStyles({
-                                "background-color":" midnightblue", "color": "#fff","text-align": "left"
+                                "background-color":" midnightblue", "color": "#fff","text-align": "left","border": "1px solid #ddd"
    
                             })
 
                             var th1 = widget.createElement('td', {
+                                id: 'th1',
                                 html: 'displayName'
                             }).inject(tr1)
+                            th1.setStyles({
+                                "padding": "15px 20px","border": "1px solid #ddd"
+   
+                            })
 
                             var th2 = widget.createElement('td', {
+                                id: 'th2',
                                 html: 'objectType'
                             }).inject(tr1)
+                            th2.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
 
                             var th3 = widget.createElement('td', {
+                                id: 'th3',
                                 html: 'objectId'
                             }).inject(tr1)
+                            th3.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
 
                             var th4 = widget.createElement('td', {
+                                id: 'th4',
+                                html: 'Revision'
 
 
                             }).inject(tr1)
+                            th4.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
 
 
-                            var th5 = widget.createElement('td').inject(tr1)
+                            var th5 = widget.createElement('td', {
+                                id: 'th5',
+                                html: 'State'
 
-                            var th6 = widget.createElement('td').inject(tr1)
+
+                            }).inject(tr1)
+                            th5.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
+
+                            var th6 = widget.createElement('td',{
+                                id: 'th6',
+                                html: 'collabspace'
 
 
+                            }
+                            ).inject(tr1)
 
+
+                            th6.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
 
 
 
@@ -244,14 +283,60 @@
                                     id: 'tr_' + i
                                 }).inject(table);
 
-                                var addtd1 = widget.createElement('td').inject(newRow)
-                                var addtd2 = widget.createElement('td').inject(newRow)
-                                var addtd3 = widget.createElement('td').inject(newRow)
-                                var addtd4 = widget.createElement('td').inject(newRow)
-                                var addtd5 = widget.createElement('td').inject(newRow)
-                                var addtd6 = widget.createElement('td').inject(newRow)
-                                var addtd7 = widget.createElement('td').inject(newRow)
-                                var addtd8 = widget.createElement('td').inject(newRow)
+                                var addtd1 = widget.createElement('td',{
+                                id: 'td1',
+                            }
+                                ).inject(newRow)
+
+                                td1.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
+                                var addtd2 = widget.createElement('td',{
+                                id: 'td2',
+                            }
+                                ).inject(newRow)
+
+                                td2.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
+                                var addtd3 = widget.createElement('td',{
+                                id: 'td3',
+                            }
+                                ).inject(newRow)
+
+                                td3.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
+                                var addtd4 = widget.createElement('td',{
+                                id: 'td4',
+                            }).inject(newRow)
+
+                            td4.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
+                                var addtd5 = widget.createElement('td',{
+                                id: 'td5',
+                            }).inject(newRow)
+
+                            td5.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
+                                var addtd6 = widget.createElement('td',{
+                                id: 'td6',
+                            }
+                                ).inject(newRow)
+
+                                td6.setStyles({
+                                "padding": "15px 20px","border":"1px solid #ddd"
+   
+                            })
+                                //var addtd7 = widget.createElement('td').inject(newRow)
+                                //var addtd8 = widget.createElement('td').inject(newRow)
 
 
                                 var add1 = widget.createElement('input', {
