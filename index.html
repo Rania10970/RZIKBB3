@@ -136,11 +136,16 @@
                                 " border-collapse": "collapse", "min-width": "400px", "box-shadow": "0 5px 50px rgba(0,0,0,0.15)",
                                 "cursor": "pointer", "margin": "100px auto", "border": "2px solid midnightblue"
                             })
-
+                            
+       
                             var tr1 = widget.createElement('tr', {
 
                                 id: 'kids1',
                             }).inject(table)
+                            kids1.setStyles({
+                                "background-color":" midnightblue", "color": "#fff","text-align": "left"
+   
+                            })
 
                             var th1 = widget.createElement('td', {
                                 html: 'displayName'
