@@ -15,9 +15,8 @@
     <meta name="description" content="A descriptive description" />
     <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Application Standalone emulation files -->
-    <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/Rania10970/RZIKBB3/main/index_style.css"> 
-
+     <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
+     <link rel="stylesheet" href="https://raw.githubusercontent.com/Rania10970/RZIKBB3/main/index_style.css"> 
 
     <script type="text/javascript" src="http://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
 
@@ -53,19 +52,18 @@
                     "DS/WAFData/WAFData",
                     "DS/UWPClientCode/Navigation",
                     "DS/UWPClientCode/Bootstrap",
-                    "DS/DataGridView/DataGridView", "DS/Windows/ImmersiveFrame", "DS/Tests_DataGridView/spec/Tests_DataGridView_Utils"
+                    
 
-
+                   
 
                 ],
-                function (PlatformAPI, DataDragAndDrop, WAFWAF, navigation, Bootstrap, WUXDataGridView, WUXImmersiveFrame, DataGridViewUtils) {
-
-                    "use strict";
+                function (PlatformAPI, DataDragAndDrop, WAFWAF, navigation, Bootstrap) {
 
 
-                    var list = new Array();
 
+                      var list= new Array();
 
+                  
                     var pathProc = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/application/CSRF';
                     var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem'
 
@@ -75,11 +73,11 @@
 
 
                             var btn = new UWA.Controls.Input.Button({
-                                value: 'Add new',
-
-
-                            }).inject(widget.body);
-
+                                    value: 'Add new',
+                                   
+                                   
+                                }).inject(widget.body);
+                    
                             function postcsrf(csrf) {
                                 var bodyRequest = {
                                     "items": [
@@ -128,19 +126,19 @@
 
 
 
-
+                   
 
                             var maindiv = widget.createElement('div', {
                                 id: 'mainDiv'
                             }).inject(widget.body)
 
-                            var table = widget.createElement('table', {
+                             var table = widget.createElement('table', {
                                 border: "1",
                                 id: 'kids'
                             }).inject(maindiv)
                             var tr1 = widget.createElement('tr').inject(table)
 
-                            var th1 = widget.createElement('td', {
+                             var th1 = widget.createElement('td', {
                                 html: 'displayName'
                             }).inject(tr1)
 
@@ -151,7 +149,7 @@
                             var th3 = widget.createElement('td', {
                                 html: 'objectId'
                             }).inject(tr1)
-
+ 
                             var th4 = widget.createElement('td', {
 
 
@@ -161,9 +159,9 @@
                             var th5 = widget.createElement('td').inject(tr1)
 
                             var th6 = widget.createElement('td').inject(tr1)
+ 
 
-
-
+ 
 
 
 
@@ -171,17 +169,17 @@
 
 
 
-
+                     
 
 
                             var sendBtn = new UWA.Controls.Input.Button({
                                 value: "send",
                                 emphasize: "success",
-                                disabled: true,
+                                disabled: true ,
                                 styles: {
-                                    'position': 'absolute',
-                                    'right': '20px',
-
+                                    'position':'absolute',
+                                    'right':'20px',
+                                
                                 },
                                 attributes: {
                                     id: 'submit'
@@ -221,7 +219,7 @@
                             }).inject(th5);
 
 
-
+                          
 
 
                             var theInput = document.getElementById('input1');
@@ -313,31 +311,30 @@
                                         console.log(jsondata)
                                         var objects = jsondata['member']
                                         console.log(objects)
+                                       
+                                            for (var j = 0; j < objects.length; j++) {
+                                                
+                                               // if (objects[j]['id'] == objectId ){console.log ("eror");}
+                                                //else {
+                                              createNewEntry();
+                                                var name = document.getElementById('input1_' + i);
+                                                var type = document.getElementById('input2_' + i);
+                                                var id = document.getElementById('input3_' + i);
+                                                var revision = document.getElementById('input4_' + i);
+                                                var state = document.getElementById('input5_' + i);
+                                                var collabspace = document.getElementById('input6_' + i);
+                                                var owner = document.getElementById('input_' + i);
+                                                name.value = objects[j]['name'];
+                                                type.value = objects[j]['type'];
+                                                id.value = objects[j]['id'];
+                                                revision.value = objects[j]['revision'];
+                                                state.value = objects[j]['state'];
+                                                collabspace.value = objects[j]['collabspace'];
+                                                owner.value = objects[j]['owner'] }
 
-                                        for (var j = 0; j < objects.length; j++) {
+                                               
 
-                                            // if (objects[j]['id'] == objectId ){console.log ("eror");}
-                                            //else {
-                                            createNewEntry();
-                                            var name = document.getElementById('input1_' + i);
-                                            var type = document.getElementById('input2_' + i);
-                                            var id = document.getElementById('input3_' + i);
-                                            var revision = document.getElementById('input4_' + i);
-                                            var state = document.getElementById('input5_' + i);
-                                            var collabspace = document.getElementById('input6_' + i);
-                                            var owner = document.getElementById('input_' + i);
-                                            name.value = objects[j]['name'];
-                                            type.value = objects[j]['type'];
-                                            id.value = objects[j]['id'];
-                                            revision.value = objects[j]['revision'];
-                                            state.value = objects[j]['state'];
-                                            collabspace.value = objects[j]['collabspace'];
-                                            owner.value = objects[j]['owner']
-                                        }
-
-
-
-                                        // }
+                                           // }
 
 
 
@@ -351,50 +348,50 @@
                                 });
 
                             }
-
-
-
+                        
+                      
+                      
                             DataDragAndDrop.droppable(maindiv, {
-
+                              
                                 drop: function (data) {
 
                                     var jsondata = JSON.parse(data)
                                     var objects = jsondata['data']['items']
-
-
+                                    
+                                
                                     for (var j = 0; j < objects.length; j++) {
+                                      
+                                    
+                                       var objectId = objects[j]['objectId']
+            
+                                     var result =  UWA.Array.detect(list,function(value,index){
+                                        
+                                           return value==objectId;
+                                        
+                                       })
+                                       if (!result){
+                                           list.push (objectId);
+                                           getdrop(objectId) 
 
-
-                                        var objectId = objects[j]['objectId']
-
-                                        var result = UWA.Array.detect(list, function (value, index) {
-
-                                            return value == objectId;
-
-                                        })
-                                        if (!result) {
-                                            list.push(objectId);
-                                            getdrop(objectId)
-
-                                        }
-
-
-
-
-
-
+                                       }
+                                      
+                               
+                                       
+                                
+                                       
+                                    
 
 
 
 
                                     }
-
-
+                                  
+                                   
 
 
 
                                 },
-
+                                
 
                                 enter: function () {
                                     console.log("drop1")
@@ -406,58 +403,16 @@
                                     console.log("drop3")
                                 },
 
+                             
+                          
 
-
-
-
+                                
 
 
                             });
 
 
                             // ===============================
-
-                            // DATAGRIDVIEW
-                            var mainObject = {
-                                data: undefined, // Will contains raw data of nodes
-                                model: undefined, // Will contains the TreeDocument object
-                                view: undefined, // Will contains the DataGridView object
-                                columns: undefined, // Will contains the columns definition
-                            };
-
-                            var options = {
-                                dataTypeRepresentation: "string",
-                                rowNumberByLeafNode: 50,
-                                columnNumber: 10,
-                                leftPinnedColumnNumber: 1,
-                                rightPinnedColumnNumber: 1,
-                                treeDepth: 2,
-                                numberOfNodesByDepthLevel: 4
-                            };
-
-                            DataGridViewUtils.generateTreeDocument(mainObject, options);
-
-                            // Create the DataGridView
-                            var myDataGridView = new WUXDataGridView({
-                                identifier: "myDataGridViewId",
-                                treeDocument: mainObject.model,
-                                columns: mainObject.columns,
-                                defaultColumnDef: { //Set default settings for columns
-                                    width: 150,
-                                    minWidth: 40,
-                                    editableFlag: true
-                                },
-                            });
-
-                            var immersiveFrame = new WUXImmersiveFrame({
-                                reactToPointerEventsFlag: false
-                            });
-                            immersiveFrame.setContentInBackgroundLayer(myDataGridView.getContent());
-
-                            immersiveFrame.inject(document.body);
-                            myDataGridView.onReady(function () {
-                                myDataGridView.ensureNodeModelVisible(myDataGridView.model[100]);
-                            });
 
                         },
 
