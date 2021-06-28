@@ -10,7 +10,20 @@
 	border: 0px;
   }
  
-body{
+#mainDiv{
+    background-color: aqua;
+
+}
+
+
+
+
+
+
+
+
+ 
+.mainDiv{
     background-color: aqua;
 
 }
