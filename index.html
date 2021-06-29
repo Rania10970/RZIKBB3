@@ -363,7 +363,7 @@ tr, td, th,input{
                                 var addtd8 = widget.createElement('td').inject(newRow)
 
 
-                                var add1 = widget.createElement('input', {
+                               /* var add1 = widget.createElement('input', {
                                     id: 'input1_' + i
                                 }).inject(addtd1);
 
@@ -412,7 +412,7 @@ tr, td, th,input{
 
                                     },
 
-                                }).inject(addtd8);
+                                }).inject(addtd8);*/
 
                             }
 
@@ -438,22 +438,25 @@ tr, td, th,input{
                                             // if (objects[j]['id'] == objectId ){console.log ("eror");}
                                             //else {
                                             createNewEntry();
-                                            var name = document.getElementById('input1_' + i)
+                                            var name = document.getElementById(td1)
                                             
 
-                                            var type = document.getElementById('input2_' + i)
+                                            var type = document.getElementById(td2)
 
-                                            var id = document.getElementById('input3_' + i)
+                                            var id = document.getElementById(td3)
 
-                                            var revision = document.getElementById('input4_' + i)
+                                            var revision = document.getElementById(td4)
 
-                                            var state = document.getElementById('input5_' + i)
+                                            var state = document.getElementById(td5)
 
-                                            var collabspace = document.getElementById('input6_' + i)
+                                            var collabspace = document.getElementById(td6)
 
 
                                             name.value = objects[j]['name'];
-                                           
+                                            
+                                            let text = document.createTextNode(objects[j]['name']);
+                                            name.appendChild(text)
+                                                                                    
                                             type.value = objects[j]['type'];
                                             
                                             id.value = objects[j]['id'];
