@@ -41,7 +41,24 @@
         <widget:preference type="text" name="ctx" label="Role.Organization.Collaborative Space"
             defaultValue="VPLMProjectLeader.MyCompany.3DS Private Collab Space"></widget:preference>
     </widget:preferences>
+ <style>
+    tbody tr:nth-child(odd) {
+    background-color: #ff33cc;
+    }
 
+    tbody tr:nth-child(even) {
+    background-color: #e495e4;
+    }
+
+    tbody tr {
+    background-image: url(noise.png);
+    }
+
+    table {
+    background-color: #ff33cc;
+    }
+
+ </style>
     <!-- Application JavaScript Source -->
     <script type="text/javascript">
         (function () {
@@ -140,47 +157,38 @@
                                 'class': ".table-striped"
                             }).inject(maindiv)
 
-                            table.setStyles({
-                                " border-collapse": "collapse", "min-width": "400px", "box-shadow": "0 5px 50px rgba(0,0,0,0.15)",
-                                "cursor": "pointer", "border": "2px solid midnightblue"
-                            })
+                            //table.setStyles({
+                             //   " border-collapse": "collapse", "min-width": "400px", "box-shadow": "0 5px 50px rgba(0,0,0,0.15)",
+                              //  "cursor": "pointer", "border": "2px solid midnightblue"
+                           // })
 
 
                             var tr1 = widget.createElement('tr', {
 
                                 id: 'kids1',
                             }).inject(table)
-                            tr1.setStyles({
+                          /*  tr1.setStyles({
                                 "background-color": " midnightblue", "color": "#fff", "text-align": "left", "border": "1px solid #ddd"
 
-                            })
+                            })*/
 
                             var th1 = widget.createElement('td', {
                                 id: 'th1',
                                 html: 'displayName'
                             }).inject(tr1)
-                            th1.setStyles({
-                                "padding": "15px 20px", "border": "1px solid #ddd"
-
-                            })
+                            
 
                             var th2 = widget.createElement('td', {
                                 id: 'th2',
                                 html: 'objectType'
                             }).inject(tr1)
-                            th2.setStyles({
-                                "padding": "15px 20px", "border": "1px solid #ddd"
-
-                            })
+                           
 
                             var th3 = widget.createElement('td', {
                                 id: 'th3',
                                 html: 'objectId'
                             }).inject(tr1)
-                            th3.setStyles({
-                                "padding": "15px 20px", "border": "1px solid #ddd"
-
-                            })
+                           
 
                             var th4 = widget.createElement('td', {
                                 id: 'th4',
@@ -188,10 +196,7 @@
 
 
                             }).inject(tr1)
-                            th4.setStyles({
-                                "padding": "15px 20px", "border": "1px solid #ddd"
-
-                            })
+                            
 
 
                             var th5 = widget.createElement('td', {
@@ -200,10 +205,7 @@
 
 
                             }).inject(tr1)
-                            th5.setStyles({
-                                "padding": "15px 20px", "border": "1px solid #ddd"
-
-                            })
+                            
 
                             var th6 = widget.createElement('td', {
                                 id: 'th6',
@@ -214,10 +216,7 @@
                             ).inject(tr1)
 
 
-                            th6.setStyles({
-                                "padding": "15px 20px", "border": "1px solid #ddd"
-
-                            })
+                         
 
 
 
@@ -291,10 +290,7 @@
                                     id: 'tr_' + i
                                 }).inject(table);
                                 
-                                newRow.setStyles({
-                                "background-color": " midnightblue", "color": "#fff", "text-align": "left", "border": "1px solid #ddd"
-
-                            })
+                              
 
                                 var addtd1 = widget.createElement('td', {
                                     id: 'td1',
