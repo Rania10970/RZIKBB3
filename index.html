@@ -59,11 +59,11 @@
 
     table {
         border-collapse: collapse;
-    min-width: 200px;
+    min-width: 800 px;
     width: auto;
     box-shadow: 0 5px 50px rgba(0,0,0,0.15);
     cursor: pointer;
-    margin: 50px auto;
+    margin: 0px auto;
     border: 2px solid midnightblue;
     /* border: 1px solid #ddd;  */
     
@@ -79,6 +79,17 @@ tr, td, th,input{
 
  tr:nth-child(even){
     background-color: #f3f3f3;
+}
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 
@@ -104,14 +115,11 @@ tr, td, th,input{
                         onLoad: function () {
                             console.log("=========================5" + JSON.stringify(UWA.Controls))
 
-                            var headdiv = widget.createElement('div', {
-                                id: 'headDiv'
-
-                            }).inject(widget.body)
+                        
                             var btn = new UWA.Controls.Input.Button({
                                 value: 'Export',
                                 id: 'btn'
-                            }).inject(headdiv);
+                            }).inject(widget.body);
 
                           
 
