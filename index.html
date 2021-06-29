@@ -404,50 +404,50 @@
                                             // if (objects[j]['id'] == objectId ){console.log ("eror");}
                                             //else {
                                             createNewEntry();
-                                            var name = document.getElementById('input1_' + i)
+                                            var name = document.getElementById('input1_' + i).setStyles({
+                                                "padding": "15px 20px", "background-color": "#f3f3f3","border": "1px solid #ddd"
 
-                                            var type = document.getElementById('input2_' + i)
+                                            })
+                                            
 
-                                            var id = document.getElementById('input3_' + i)
+                                            var type = document.getElementById('input2_' + i).setStyles({
+                                                "padding": "15px 20px", "background-color": "#f3f3f3","border": "1px solid #ddd"
 
-                                            var revision = document.getElementById('input4_' + i)
+                                            })
 
-                                            var state = document.getElementById('input5_' + i)
+                                            var id = document.getElementById('input3_' + i).setStyles({
+                                                "padding": "15px 20px", "background-color": "#f3f3f3","border": "1px solid #ddd"
 
-                                            var collabspace = document.getElementById('input6_' + i)
+                                            })
+
+                                            var revision = document.getElementById('input4_' + i).setStyles({
+                                                "padding": "15px 20px", "background-color": "#f3f3f3","border": "1px solid #ddd"
+
+                                            })
+
+                                            var state = document.getElementById('input5_' + i).setStyles({
+                                                "padding": "15px 20px", "background-color": "#f3f3f3","border": "1px solid #ddd"
+
+                                            })
+
+                                            var collabspace = document.getElementById('input6_' + i).setStyles({
+                                                "padding": "15px 20px", "background-color": "#f3f3f3","border": "1px solid #ddd"
+
+                                            })
 
 
                                             name.value = objects[j]['name'];
-                                           // input1_1.setStyles({
-                                              //  "padding": "15px 20px", "background-color": "#f3f3f3"
-
-                                           // })
+                                           
                                             type.value = objects[j]['type'];
-                                            //input2_1.setStyles({
-                                               // "padding": "15px 20px", "background-color": "#f3f3f3"
-
-                                            //})
+                                            
                                             id.value = objects[j]['id'];
-                                           // input3_1.setStyles({
-                                               // "padding": "15px 20px", "background-color": "#f3f3f3"
-
-                                            //})
+                                            
                                             revision.value = objects[j]['revision'];
-                                           // input4_1.setStyles({
-                                                //"padding": "15px 20px", "background-color": "#f3f3f3"
-
-                                            //})
+                                           
                                             state.value = objects[j]['state'];
-                                           // input5_1.setStyles({
-                                                //"padding": "15px 20px", "background-color": "#f3f3f3"
-
-                                            //})
+                                            
                                             collabspace.value = objects[j]['collabspace'];
-                                            //input6_1.setStyles({
-                                               // "padding": "15px 20px", "background-color": "#f3f3f3"
-
-                                           // })
-
+                                            
                                         }
 
 
