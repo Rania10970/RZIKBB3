@@ -69,7 +69,7 @@
     
     }
 
-    th, td {
+    th, td,input {
     padding: 15px 20px;
 }
 
@@ -363,56 +363,56 @@ tr, td, th,input {
                                 var addtd8 = widget.createElement('td').inject(newRow)
 
 
-                                //var add1 = widget.createElement('input', {
-                                //    id: 'input1_' + i
-                               // }).inject(addtd1);
+                                var add1 = widget.createElement('input', {
+                                    id: 'input1_' + i
+                                }).inject(addtd1);
 
 
-                               // var add2 = widget.createElement('input', {
-                                 //   id: 'input2_' + i
-                                //}).inject(addtd2);
+                                var add2 = widget.createElement('input', {
+                                    id: 'input2_' + i
+                                }).inject(addtd2);
 
 
-                                //var add3 = widget.createElement('input', {
-                                   // id: 'input3_' + i
-                                //}).inject(addtd3);
+                                var add3 = widget.createElement('input', {
+                                    id: 'input3_' + i
+                                }).inject(addtd3);
 
-                               // var add4 = widget.createElement('input', {
-                                  //  id: 'input4_' + i
-                               // }).inject(addtd4);
-
-
-                               // var add5 = widget.createElement('input', {
-                                   // id: 'input5_' + i
-                                //}).inject(addtd5);
+                                var add4 = widget.createElement('input', {
+                                    id: 'input4_' + i
+                                }).inject(addtd4);
 
 
+                                var add5 = widget.createElement('input', {
+                                    id: 'input5_' + i
+                                }).inject(addtd5);
 
-                                //var add6 = widget.createElement('input', {
-                                 // id: 'input6_' + i
-                              //  }).inject(addtd6);
 
 
-                                //var add7 = widget.createElement('input', {
-                                  //  id: 'input7_' + i
-                               // }).inject(addtd7);
+                                var add6 = widget.createElement('input', {
+                                    id: 'input6_' + i
+                                }).inject(addtd6);
 
-                                //var add8 = new UWA.Controls.Input.Button({
-                                    //value: "-",
-                                   // attributes: {
-                                    //    id: 'susBtn_' + i
-                                   // },
-                                   // events: {
-                                       // onClick: function (e) {
-                                         //   console.log(e.target.getParents())
-                                           // e.target.getParents()[1].remove()
-                                          //  i--
 
-                                      //  },
+                                var add7 = widget.createElement('input', {
+                                    id: 'input7_' + i
+                                }).inject(addtd7);
 
-                                // },
+                                var add8 = new UWA.Controls.Input.Button({
+                                    value: "-",
+                                    attributes: {
+                                        id: 'susBtn_' + i
+                                    },
+                                    events: {
+                                        onClick: function (e) {
+                                            console.log(e.target.getParents())
+                                            e.target.getParents()[1].remove()
+                                            i--
 
-                               // }).inject(addtd8);
+                                        },
+
+                                    },
+
+                                }).inject(addtd8);
 
                             }
 
@@ -438,19 +438,18 @@ tr, td, th,input {
                                             // if (objects[j]['id'] == objectId ){console.log ("eror");}
                                             //else {
                                             createNewEntry();
-                                            //var name = document.getElementById('input1_' + i)
-                                            var name = document.getElementById(td1)
+                                            var name = document.getElementById('input1_' + i)
                                             
 
-                                            var type = document.getElementById(td2)
+                                            var type = document.getElementById('input2_' + i)
 
-                                            var id = document.getElementById(td3)
+                                            var id = document.getElementById('input3_' + i)
 
-                                            var revision = document.getElementById(td4)
+                                            var revision = document.getElementById('input4_' + i)
 
-                                            var state = document.getElementById(td5)
+                                            var state = document.getElementById('input5_' + i)
 
-                                            var collabspace = document.getElementById(td6)
+                                            var collabspace = document.getElementById('input6_' + i)
 
 
                                             name.value = objects[j]['name'];
