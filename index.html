@@ -295,6 +295,10 @@
                                     id: 'td1',
                                 }
                                 ).inject(newRow)
+                                addtd1.setStyles({
+                                                "padding": "15px 20px", "background-color": "#f3f3f3","border": "1px solid #ddd"
+
+                                            })
 
 
                                 var addtd2 = widget.createElement('td', {
@@ -419,10 +423,7 @@
 
 
                                             name.value = objects[j]['name'];
-                                            name.setStyles({
-                                                "padding": "15px 20px", "background-color": "#f3f3f3","border": "1px solid #ddd"
-
-                                            })
+                                           
                                             type.value = objects[j]['type'];
                                             
                                             id.value = objects[j]['id'];
