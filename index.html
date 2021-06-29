@@ -448,6 +448,7 @@ tr, td, th,input{
                                             createNewEntry();
                                             var name = document.getElementById(td1)
                                             
+                                            
 
                                             var type = document.getElementById(td2)
 
@@ -459,10 +460,10 @@ tr, td, th,input{
 
                                             var collabspace = document.getElementById(td6)
 
-
-                                            name.value = objects[j]['name'];
+                                            let text = document.createTextNode(objects[j]['name']);
+                                            text.inject(type)
                                            
-                                            type.value = objects[j]['type'];
+                                            
                                             
                                             id.value = objects[j]['id'];
                                          
