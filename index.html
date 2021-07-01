@@ -79,7 +79,7 @@ tr, td, th,input{
     background-color: #f3f3f3;
 }
 
-#mylasthope{
+button{
     display: inline-block;
 background-color: #7b38d8;
 border-radius: 10px;
@@ -122,13 +122,13 @@ margin: 5px;
                             console.log("=========================5" + JSON.stringify(UWA.Controls))
 
                      
-                            var btn = new UWA.Controls.Input.Button({
+                            var btn = new UWA.Controls.Input.Button('button',{
                                 className:'mylasthope',
                                 value: 'Export',
                                 id: 'btn',
                              
                             },console.log("hello from the other world ")).inject(widget.body);
-                            console.log(btn)
+                       
                       
 
 
