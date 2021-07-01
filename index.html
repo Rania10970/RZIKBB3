@@ -115,18 +115,19 @@
                                   className: 'light-border-only medium uwa-button uwa-button-root uwa-input uwa-input-root active',
                                   displayFooter :'true'
                               }).inject(widget.body);*/
-                            function createButton(container, icon, id = "", className = "primary") {
-                                require(["DS/UIKIT/Input/Button"], (Button) =>
-                                    document.querySelector(container).hasChildNodes()
-                                        ? ""
-                                        : new Button({ icon, className, id }).inject(
-                                            document.querySelector(container)
-                                        ));
-                            }
 
-
-
-
+                            const myKanban = document.querySelector("#myKanban");
+                            const buttonContainer = document.querySelector("#myContainer");
+                            buttonContainer.innerHTML = `<div><div id="return"></div><div id="wrappedView"></div><div id="addIdea"></div><div id="addReload"></div><div id="addIdeaModal"></div></div>`;
+                            myKanban.innerHTML = "";
+                            createButton("#return", "fonticon fonticon-back");
+                            document.querySelector("#return").addEventListener("click", () => {
+                                widget.setTitle("");
+                                buttonContainer.innerHTML = "";
+                                myKanban.innerHTML = "";
+                                createCommunityList();
+                            });
+ 
 
 
 
@@ -575,6 +576,8 @@
 </head>
 
 <body>
+    <div id="myContainer"></div>
+    <div id="myKanban"></div>
 </body>
 
 </html>
