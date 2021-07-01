@@ -104,16 +104,11 @@ tr, td, th,input{
                         onLoad: function () {
                             console.log("=========================5" + JSON.stringify(UWA.Controls))
 
-                            var headdiv = widget.createElement('div', {
-                                id: 'headDiv'
-
-                            }).inject(widget.head)
-                            console.log(headdiv)
-                            
+                     
                             var btn = new UWA.Controls.Input.Button({
                                 value: 'Export',
                                 id: 'btn'
-                            }).inject(headdiv);
+                            }).inject(widget.body);
                             console.log(btn)
                       
 
