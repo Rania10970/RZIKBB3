@@ -94,9 +94,12 @@ tr, td, th,input{
                     "DS/WAFData/WAFData",
                     "DS/UWPClientCode/Navigation",
                     "DS/UWPClientCode/Bootstrap",
+                    "DS/DataGridView/DataGridView",
+                     "DS/Windows/ImmersiveFrame",
+                      "DS/Tests_DataGridView/spec/Tests_DataGridView_Utils"
 
                 ],
-                function (PlatformAPI, DataDragAndDrop, WAFWAF, navigation, Bootstrap) {
+                function (PlatformAPI, DataDragAndDrop, WAFWAF, navigation, Bootstrap,  , WUXDataGridView, WUXImmersiveFrame, DataGridViewUtils) {
                     var list = new Array();
                     var pathProc = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/application/CSRF';
                     var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem'
@@ -363,7 +366,7 @@ tr, td, th,input{
                                 var addtd8 = widget.createElement('td').inject(newRow)
 
 
-                               /* var add1 = widget.createElement('input', {
+                               var add1 = widget.createElement('input', {
                                     id: 'input1_' + i
                                 }).inject(addtd1);
 
@@ -412,7 +415,7 @@ tr, td, th,input{
 
                                     },
 
-                                }).inject(addtd8);*/
+                                }).inject(addtd8);
 
                             }
 
@@ -438,18 +441,18 @@ tr, td, th,input{
                                             // if (objects[j]['id'] == objectId ){console.log ("eror");}
                                             //else {
                                             createNewEntry();
-                                            var name = document.getElementById("td1")
+                                            var name = document.getElementById('input1_' + i)
                                             
 
-                                            var type = document.getElementById("td2")
+                                            var type = document.getElementById('input2_' + i)
 
-                                            var id = document.getElementById("td3")
+                                            var id = document.getElementById('input3_' + i)
 
-                                            var revision = document.getElementById("td4")
+                                            var revision = document.getElementById('input4_' + i)
 
-                                            var state = document.getElementById("td5")
+                                            var state = document.getElementById('input5_' + i)
 
-                                            var collabspace = document.getElementById("td6")
+                                            var collabspace = document.getElementById('input6_' + i)
 
 
                                             //name.value = objects[j]['name'];
@@ -547,6 +550,51 @@ tr, td, th,input{
 
 
                             });
+                            // DATAGRIDVIEW
+                            var mainObject = {
+                                data: undefined, // Will contains raw data of nodes
+                                model: undefined, // Will contains the TreeDocument object
+                                view: undefined, // Will contains the DataGridView object
+                                columns: undefined, // Will contains the columns definition
+                            };
+
+                            var options = {
+                                dataTypeRepresentation: "string",
+                                rowNumberByLeafNode: 50,
+                                columnNumber: 10,
+                                leftPinnedColumnNumber: 1,
+                                rightPinnedColumnNumber: 1,
+                                treeDepth: 2,
+                                numberOfNodesByDepthLevel: 4
+                            };
+
+                            DataGridViewUtils.generateTreeDocument(mainObject, options);
+
+                            // Create the DataGridView
+                            var myDataGridView = new WUXDataGridView({
+                                identifier: "myDataGridViewId",
+                                treeDocument: mainObject.model,
+                                columns: mainObject.columns,
+                                defaultColumnDef: { //Set default settings for columns
+                                    width: 150,
+                                    minWidth: 40,
+                                    editableFlag: true
+                                },
+                            });
+
+                            var immersiveFrame = new WUXImmersiveFrame({
+                                reactToPointerEventsFlag: false
+                            });
+                            immersiveFrame.setContentInBackgroundLayer(myDataGridView.getContent());
+
+                            immersiveFrame.inject(document.body);
+                            myDataGridView.onReady(function () {
+                                myDataGridView.ensureNodeModelVisible(myDataGridView.model[100]);
+                            });
+
+                        
+
+                    
 
 
                             // ===============================
