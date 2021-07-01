@@ -41,53 +41,47 @@
         <widget:preference type="text" name="ctx" label="Role.Organization.Collaborative Space"
             defaultValue="VPLMProjectLeader.MyCompany.3DS Private Collab Space"></widget:preference>
     </widget:preferences>
- <style>
-    tbody tr:nth-child(odd) {
-    background-color: #ff33cc;
-    }
+    <style>
+        tbody tr:nth-child(odd) {
+            background-color: #ff33cc;
+        }
 
-    tbody tr:nth-child(even) {
-    background-color: #e495e4;
-    }
+        tbody tr:nth-child(even) {
+            background-color: #e495e4;
+        }
 
-    
- tr  {
-    background-color: midnightblue;
-    color: #fff;
-    text-align: left;
-}
 
-    table {
-        border-collapse: collapse;
-    min-width: 400px;
-    width: auto;
-    box-shadow: 0 5px 50px rgba(0,0,0,0.15);
-    cursor: pointer;
-    margin: 100px auto;
-    border: 2px solid midnightblue;
-     border: 1px solid #ddd; 
-    
-    }
+        tr {
+            background-color: midnightblue;
+            color: #fff;
+            text-align: left;
+        }
 
- 
+        table {
+            border-collapse: collapse;
+            min-width: 400px;
+            width: auto;
+            box-shadow: 0 5px 50px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            margin: 100px auto;
+            border: 2px solid midnightblue;
+            border: 1px solid #ddd;
 
-tr, td, th,input{
-    border: 1px solid #ddd;
-}
+        }
 
- tr:nth-child(even){
-    background-color: #f3f3f3;
-}
 
-button{
 
-background-color: #7b38d8;
+        tr,
+        td,
+        th,
+        input {
+            border: 1px solid #ddd;
+        }
 
-margin: 5px;
-
-}
-
- </style>
+        tr:nth-child(even) {
+            background-color: #f3f3f3;
+        }
+    </style>
     <!-- Application JavaScript Source -->
     <script type="text/javascript">
         (function () {
@@ -99,7 +93,7 @@ margin: 5px;
                     "DS/WAFData/WAFData",
                     "DS/UWPClientCode/Navigation",
                     "DS/UWPClientCode/Bootstrap",
-                   
+
 
                 ],
                 function (PlatformAPI, DataDragAndDrop, WAFWAF, navigation, Bootstrap) {
@@ -110,18 +104,20 @@ margin: 5px;
                         onLoad: function () {
                             console.log("=========================5" + JSON.stringify(UWA.Controls))
 
-                     
-                            var btn = new UWA.Controls.Input.Button('button',{
-                                className:'mylasthope',
-                                value: 'Export',
-                                id: 'btn',
-                             
-                            },console.log("hello from the other world ")).inject(widget.body);
-                       
-                      
+
+                            var btn = new UWA.createElement('button', {
+                                text: 'Add new',
+                                styles: {
+                                    'position': 'absolute',
+                                    'left': '20px'
+                                },
+                                class: 'dark-grey uwa-button uwa-button-root uwa-input uwa-input-root active'
+                            }).inject(widget.body);
 
 
-                          
+
+
+
 
                             function postcsrf(csrf) {
                                 var bodyRequest = {
@@ -178,7 +174,7 @@ margin: 5px;
 
                             }).inject(widget.body)
 
-                            
+
 
 
 
@@ -192,37 +188,37 @@ margin: 5px;
                             }).inject(maindiv)
 
                             //table.setStyles({
-                             //   " border-collapse": "collapse", "min-width": "400px", "box-shadow": "0 5px 50px rgba(0,0,0,0.15)",
-                              //  "cursor": "pointer", "border": "2px solid midnightblue"
-                           // })
+                            //   " border-collapse": "collapse", "min-width": "400px", "box-shadow": "0 5px 50px rgba(0,0,0,0.15)",
+                            //  "cursor": "pointer", "border": "2px solid midnightblue"
+                            // })
 
 
                             var tr1 = widget.createElement('tr', {
 
                                 id: 'kids1',
                             }).inject(table)
-                          /*  tr1.setStyles({
-                                "background-color": " midnightblue", "color": "#fff", "text-align": "left", "border": "1px solid #ddd"
-
-                            })*/
+                            /*  tr1.setStyles({
+                                  "background-color": " midnightblue", "color": "#fff", "text-align": "left", "border": "1px solid #ddd"
+  
+                              })*/
 
                             var th1 = widget.createElement('td', {
                                 id: 'th1',
                                 html: 'displayName'
                             }).inject(tr1)
-                            
+
 
                             var th2 = widget.createElement('td', {
                                 id: 'th2',
                                 html: 'objectType'
                             }).inject(tr1)
-                           
+
 
                             var th3 = widget.createElement('td', {
                                 id: 'th3',
                                 html: 'objectId'
                             }).inject(tr1)
-                           
+
 
                             var th4 = widget.createElement('td', {
                                 id: 'th4',
@@ -230,7 +226,7 @@ margin: 5px;
 
 
                             }).inject(tr1)
-                            
+
 
 
                             var th5 = widget.createElement('td', {
@@ -239,7 +235,7 @@ margin: 5px;
 
 
                             }).inject(tr1)
-                            
+
 
                             var th6 = widget.createElement('td', {
                                 id: 'th6',
@@ -250,7 +246,7 @@ margin: 5px;
                             ).inject(tr1)
 
 
-                         
+
 
 
 
@@ -323,21 +319,21 @@ margin: 5px;
                                 var newRow = widget.createElement('tr', {
                                     id: 'tr_' + i
                                 }).inject(table);
-                                
-                              
+
+
 
                                 var addtd1 = widget.createElement('td', {
                                     id: 'td1',
                                 }
                                 ).inject(newRow)
-                               
+
 
 
                                 var addtd2 = widget.createElement('td', {
                                     id: 'td2',
                                 }
                                 ).inject(newRow)
-                               
+
 
 
 
@@ -345,33 +341,33 @@ margin: 5px;
                                     id: 'td3',
                                 }
                                 ).inject(newRow)
-                               
+
 
 
                                 var addtd4 = widget.createElement('td', {
                                     id: 'td4',
                                 }).inject(newRow)
-                               
+
 
 
                                 var addtd5 = widget.createElement('td', {
                                     id: 'td5',
                                 }).inject(newRow)
-                                
+
 
 
                                 var addtd6 = widget.createElement('td', {
                                     id: 'td6',
                                 }
                                 ).inject(newRow)
-                                
+
 
 
                                 var addtd7 = widget.createElement('td').inject(newRow)
-                               
 
 
-                               var add1 = widget.createElement('input', {
+
+                                var add1 = widget.createElement('input', {
                                     id: 'input1_' + i
                                 }).inject(addtd1);
 
@@ -401,7 +397,7 @@ margin: 5px;
                                 }).inject(addtd6);
 
 
-                           
+
 
                                 var add7 = new UWA.Controls.Input.Button({
                                     value: "-",
@@ -445,7 +441,7 @@ margin: 5px;
                                             //else {
                                             createNewEntry();
                                             var name = document.getElementById('input1_' + i)
-                                            
+
 
                                             var type = document.getElementById('input2_' + i)
 
@@ -459,20 +455,20 @@ margin: 5px;
 
 
                                             name.value = objects[j]['name'];
-                                            
-                                           // var text = document.createTextNode(objects[j]['name']);
+
+                                            // var text = document.createTextNode(objects[j]['name']);
                                             //name.appendChild(text)
-                                                                                    
+
                                             type.value = objects[j]['type'];
-                                            
+
                                             id.value = objects[j]['id'];
-                                         
+
                                             revision.value = objects[j]['revision'];
-                                           
+
                                             state.value = objects[j]['state'];
-                                         
+
                                             collabspace.value = objects[j]['collabspace'];
-                                          
+
                                         }
 
 
@@ -553,7 +549,7 @@ margin: 5px;
 
 
                             });
-                       
+
 
                         },
 
