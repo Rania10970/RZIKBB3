@@ -163,7 +163,12 @@
 
 
 
-
+                            function createButton(container, id = "", className = "primary") {
+                                require(["DS/UIKIT/Input/Button"], (Button) =>
+                                     new Button({ value: 'Primary', className: 'primary'}).inject(
+                                            container
+                                        ));
+                            }
 
 
 
