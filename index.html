@@ -107,7 +107,7 @@ tr, td, th,input{
                             var btn = new UWA.Controls.Input.Button({
                                 value: 'Export',
                                 id: 'btn'
-                            }).inject(widget.body);
+                            },console.log("hello from the other world ")).inject(widget.body);
                             console.log(btn)
                       
 
@@ -359,7 +359,7 @@ tr, td, th,input{
 
 
                                 var addtd7 = widget.createElement('td').inject(newRow)
-                                var addtd8 = widget.createElement('td').inject(newRow)
+                               
 
 
                                var add1 = widget.createElement('input', {
@@ -392,11 +392,9 @@ tr, td, th,input{
                                 }).inject(addtd6);
 
 
-                                var add7 = widget.createElement('input', {
-                                    id: 'input7_' + i
-                                }).inject(addtd7);
+                           
 
-                                var add8 = new UWA.Controls.Input.Button({
+                                var add7 = new UWA.Controls.Input.Button({
                                     value: "-",
                                     attributes: {
                                         id: 'susBtn_' + i
@@ -411,7 +409,7 @@ tr, td, th,input{
 
                                     },
 
-                                }).inject(addtd8);
+                                }).inject(addtd7);
 
                             }
 
