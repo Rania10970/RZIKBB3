@@ -106,28 +106,18 @@
                     var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem'
                     var myWidget = {
                         onLoad: function () {
-                            console.log("=========================5" + JSON.stringify(UWA.Controls))
+
+                            
 
 
-                            /* var btn = new UWA.createElement('button', {
+                             var btn = new UWA.createElement('button', {
                                   text: 'Add new',
                                  
                                   className: 'light-border-only medium uwa-button uwa-button-root uwa-input uwa-input-root active',
                                   displayFooter :'true'
-                              }).inject(widget.body);*/
+                              }).inject(widget.body)
 
-                            const myKanban = document.querySelector("#myKanban");
-                            const buttonContainer = document.querySelector("#myContainer");
-                            buttonContainer.innerHTML = `<div><div id="return"></div><div id="wrappedView"></div><div id="addIdea"></div><div id="addReload"></div><div id="addIdeaModal"></div></div>`;
-                            myKanban.innerHTML = "";
-                            createButton("#return", "fonticon fonticon-back");
-                            document.querySelector("#return").addEventListener("click", () => {
-                                widget.setTitle("");
-                                buttonContainer.innerHTML = "";
-                                myKanban.innerHTML = "";
-                                createCommunityList();
-                            });
- 
+                          
 
 
 
@@ -186,7 +176,7 @@
 
                             }).inject(widget.body)
 
-
+                            createButton(maindiv,'UIKIT','primary')
 
 
 
@@ -576,8 +566,7 @@
 </head>
 
 <body>
-    <div id="myContainer"></div>
-    <div id="myKanban"></div>
+ 
 </body>
 
 </html>
