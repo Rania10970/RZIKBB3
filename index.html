@@ -15,9 +15,9 @@
     <meta name="description" content="A descriptive description" />
     <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Applicatfion Standalone emulation files -->
-    <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
+    <link rel="stylesheet" type="text/css" href="https://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
     <link rel="stylesheet" href="https: //raw.githubusercontent.com/Rania10970/RZIKBB3/main/index_style.css">
-    <script type="text/javascript" src="http://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
+    <script type="text/javascript" src="https://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
@@ -107,17 +107,17 @@
                     var myWidget = {
                         onLoad: function () {
 
-                            
 
 
-                             var btn = new UWA.createElement('button', {
-                                  text: 'Add new',
-                                 
-                                  className: 'light-border-only medium uwa-button uwa-button-root uwa-input uwa-input-root active',
-                                  displayFooter :'true'
-                              }).inject(widget.body)
 
-                          
+                            var btn = new UWA.createElement('button', {
+                                text: 'Add new',
+
+                                className: 'light-border-only medium uwa-button uwa-button-root uwa-input uwa-input-root active',
+                                displayFooter: 'true'
+                            }).inject(widget.body)
+
+
 
 
 
@@ -161,7 +161,7 @@
 
 
 
-//KH
+                            //KH
 
                             // function createButton(container, id = "", className = "primary") {
                             //     require(["DS/UIKIT/Input/Button"], (Button) =>
@@ -171,7 +171,32 @@
                             // }
 
 
-
+                            var dataGrid = new UWA.Controls.DataGrid({
+                                className: 'table',
+                                columns: [
+                                    {
+                                        text: 'Birthday',
+                                        dataIndex: 'date',
+                                        format: function (value) {
+                                            return UWADate.strftime(value, '%X');
+                                        },
+                                        sortKey: function (value) {
+                                            return value.getTime();
+                                        }
+                                    },
+                                    {
+                                        text: 'Name',
+                                        dataIndex: 'name',
+                                        sortKey: function (value) {
+                                            return value.split(' ').slice(1).join(' ');
+                                        }
+                                    }
+                                ],
+                                data: [
+                                    { 'date': new Date(), 'users': 'Foo Bar' }
+                                ],
+                                sortable: `true`
+                            }).inject(widget.body);
 
 
 
@@ -571,7 +596,7 @@
 </head>
 
 <body>
- 
+
 </body>
 
 </html>
