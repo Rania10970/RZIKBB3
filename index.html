@@ -81,6 +81,7 @@
         tr:nth-child(even) {
             background-color: #f3f3f3;
         }
+      button{ position: absolute, } 
     </style>
     <!-- Application JavaScript Source -->
     <script type="text/javascript">
@@ -107,11 +108,8 @@
 
                             var btn = new UWA.createElement('button', {
                                 text: 'Add new',
-                                styles: {
-                                    'position': 'absolute',
-                                    'left': '20px'
-                                },
-                                class: 'dark-grey uwa-button uwa-button-root uwa-input uwa-input-root active'
+                               
+                                class: 'light-border-only medium uwa-button uwa-button-root uwa-input uwa-input-root active'
                             }).inject(widget.body);
 
 
