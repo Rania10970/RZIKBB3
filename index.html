@@ -92,31 +92,21 @@
             'use strict';
             require(
                 [
-                    'DS/PlatformAPI/PlatformAPI',
-                    'DS/DataDragAndDrop/DataDragAndDrop',
-                    "DS/WAFData/WAFData",
-                    "DS/UWPClientCode/Navigation",
-                    "DS/UWPClientCode/Bootstrap",
+                 
 
 
                 ],
                 function (PlatformAPI, DataDragAndDrop, WAFWAF, navigation, Bootstrap) {
                     var list = new Array();
-                    var pathProc = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/application/CSRF';
-                    var pathProc1 = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem'
+                    var pathProc = '';
+                    var pathProc1 = ''
                     var myWidget = {
                         onLoad: function () {
 
 
 
 
-                            var btn = new UWA.createElement('button', {
-                                text: 'Add new',
-
-                                className: 'light-border-only medium uwa-button uwa-button-root uwa-input uwa-input-root active',
-                                displayFooter: 'true'
-                            }).inject(widget.body)
-
+                        
 
 
 
@@ -289,51 +279,9 @@
 
 
 
-                            //var sendBtn = new UWA.Controls.Input.Button({
-                            //  value: "send",
-                            //  emphasize: "success",
-                            // disabled: true,
-                            // styles: {
-                            //  'position': 'absolute',
-                            // 'right': '20px',
+                    
+                          
 
-                            //  },
-                            // attributes: {
-                            //    id: 'submit'
-                            // },
-                            //events: {
-                            // onClick: function () {
-                            //  console.log("submit button ")
-                            //  WAFWAF.authenticatedRequest(pathProc, {
-                            //    method: "GET",
-                            //  headers: {
-                            //    'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
-                            //  },
-                            // onComplete: function (backendresponse, responseheaders) {
-                            //  console.log("========================================GETCOMPLETE")
-                            // console.log(backendresponse)
-                            // var jsondata = JSON.parse(backendresponse)
-                            // console.log(jsondata)
-                            // var csrf = jsondata['csrf']['value']
-                            //  console.log(csrf)
-                            //  postcsrf(csrf)
-
-
-                            //   },
-                            // onFailure: function (error, backendresponse, response_hdrs) {
-                            //   console.log("========================================GETERROR")
-                            //  console.log(error)
-
-                            // }
-                            //  });
-
-
-
-                            // },
-
-                            //},
-
-                            // }).inject(th5);
 
 
 
@@ -453,11 +401,11 @@
 
 
                             function getdrop(objectId) {
-                                var pathProcdrop = 'https://r1132100565133-eu1-space.3dexperience.3ds.com/enovia/resources/v1/modeler/dseng/dseng:EngItem/' + objectId;
+                                var pathProcdrop ='' + objectId;
                                 WAFWAF.authenticatedRequest(pathProcdrop, {
                                     method: "GET",
                                     headers: {
-                                        'SecurityContext': 'VPLMProjectLeader.Company Name.Intertenats'
+                                        'SecurityContext': ''
                                     },
                                     onComplete: function (backendresponse, responseheaders) {
                                         console.log("====GETDROP COMPLETE")
@@ -488,8 +436,8 @@
 
                                             name.value = objects[j]['name'];
 
-                                            // var text = document.createTextNode(objects[j]['name']);
-                                            //name.appendChild(text)
+                                          
+                                
 
                                             type.value = objects[j]['type'];
 
